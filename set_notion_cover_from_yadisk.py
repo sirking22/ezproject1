@@ -1,6 +1,6 @@
 import asyncio
 from services.media_cover_manager import MediaCoverManager
-from app.core.notion_client import NotionManager
+from src.services.notion_service import NotionService
 import os
 
 # Реальный путь к jpg-файлу на Яндекс.Диске
@@ -8,7 +8,7 @@ YADISK_PATH = '/TelegramImport_20250621_025209/group_20240125_031952/photo_1192@
 
 async def main():
     # 1. Создаем новую идею
-    notion = NotionManager()
+    notion = NotionService()
     page = await notion.create_page({
         "database_id": os.getenv("NOTION_IDEAS_DB_ID"),
         "title": "Тестовая идея с обложкой из Яндекс.Диска",

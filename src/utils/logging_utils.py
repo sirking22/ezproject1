@@ -32,15 +32,15 @@ def setup_logging(
     return logging.getLogger("notionBot")
 
 def get_logger(name: str) -> logging.Logger:
-    """Get logger by name
-    
-    Args:
-        name: Logger name
-        
-    Returns:
-        Logger instance
-    """
-    return logging.getLogger(f"notionBot.{name}")
+    """Simple logger getter with default configuration."""
+    logger = logging.getLogger(name)
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter('[%(asctime)s] %(levelname)s %(name)s: %(message)s')
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+    return logger
 
 # Примеры использования:
 """
