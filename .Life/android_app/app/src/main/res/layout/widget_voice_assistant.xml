@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Заголовок -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="🎤 Voice Assistant"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <!-- Кнопка записи -->
+    <Button
+        android:id="@+id/widgetVoiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/widget_button_background"
+        android:text="🎤 Запись"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+    <!-- Статус -->
+    <TextView
+        android:id="@+id/widgetStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Готов"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+    <!-- Кнопка настроек -->
+    <Button
+        android:id="@+id/widgetSettingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/widget_button_background"
+        android:text="⚙️"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</LinearLayout> 

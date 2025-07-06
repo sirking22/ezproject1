@@ -1,0 +1,470 @@
+{
+  "object": "database",
+  "id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+  "cover": null,
+  "icon": {
+    "type": "emoji",
+    "emoji": "↗️"
+  },
+  "created_time": "2025-04-15T15:51:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_time": "2025-06-25T16:01:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "KPI",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "KPI",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "properties": {
+    "📬 Гайды": {
+      "id": "%3ALpk",
+      "name": "📬 Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI",
+          "synced_property_id": "tZ%5By"
+        }
+      }
+    },
+    "Целевое значение": {
+      "id": "%3ENlZ",
+      "name": "Целевое значение",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Задачи полиграфии": {
+      "id": "AX_d",
+      "name": "Задачи полиграфии",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Выполненные": {
+      "id": "AzCs",
+      "name": "Выполненные",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Статус",
+        "relation_property_name": "Дизайн",
+        "rollup_property_id": "notion://projects/status_property",
+        "relation_property_id": "sfUQ",
+        "function": "count_per_group"
+      }
+    },
+    "Материалы": {
+      "id": "BEV%7B",
+      "name": "Материалы",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d9ace03-d9ff-8041-91a4-d35aeedcbbd4",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI",
+          "synced_property_id": "b%3BC~"
+        }
+      }
+    },
+    "Задачи SMM": {
+      "id": "CG%5BN",
+      "name": "Задачи SMM",
+      "type": "relation",
+      "relation": {
+        "database_id": "65a90504-cb5b-4a08-a721-e91df3c57d82",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI",
+          "synced_property_id": "y%7BsJ"
+        }
+      }
+    },
+    "Факт (результат)": {
+      "id": "CQ%7BB",
+      "name": "Факт (результат)",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  {{notion:block_property:Z%3B%60%3D:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"% выполнено\",\n  if(\n    {{notion:block_property:AzCs:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == 0,\n    0,\n    round(100 * toNumber({{notion:block_property:AzCs:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) / {{notion:block_property:%3ENlZ:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n  ),\n  if(\n    {{notion:block_property:Z%3B%60%3D:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Охват\",\n    {{notion:block_property:HGE%7B:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}},\n    if(\n      {{notion:block_property:Z%3B%60%3D:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Вовлечённость\",\n      {{notion:block_property:Kr%3Ek:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}},\n      if(\n        {{notion:block_property:Z%3B%60%3D:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Среднее значение\",\n        {{notion:block_property:yJVI:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}},\n        {{notion:block_property:KwF~:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n      )\n    )\n  )\n)"
+      }
+    },
+    "RDT": {
+      "id": "CZx%60",
+      "name": "RDT",
+      "type": "relation",
+      "relation": {
+        "database_id": "195ace03-d9ff-80c1-a1b0-d236ec3564d2",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI 1",
+          "synced_property_id": "%7BhVQ"
+        }
+      }
+    },
+    "Время выполнения": {
+      "id": "D%60xb",
+      "name": "Время выполнения",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Охват": {
+      "id": "HGE%7B",
+      "name": "Охват",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Вовлечённость": {
+      "id": "Kr%3Ek",
+      "name": "Вовлечённость",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Значение по умолчанию": {
+      "id": "KwF~",
+      "name": "Значение по умолчанию",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Конверсия": {
+      "id": "MlJM",
+      "name": "Конверсия",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Задачи сотрудника": {
+      "id": "Mwv%60",
+      "name": "Задачи сотрудника",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Дизайн задачи",
+        "relation_property_name": "Сотрудники",
+        "rollup_property_id": "o^`C",
+        "relation_property_id": "xciK",
+        "function": "show_original"
+      }
+    },
+    "Тип контента / направление": {
+      "id": "S%5BOJ",
+      "name": "Тип контента / направление",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "MxI\\",
+            "name": "Фото (Ozon",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "kPxz",
+            "name": "WB)",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "BlXg",
+            "name": "Текст",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "XD|W",
+            "name": "визуал",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "wN@C",
+            "name": "SMM",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "Tq:\\",
+            "name": "Бренд в целом",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "B>sL",
+            "name": "Видео (Reels",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "KB^q",
+            "name": "Shorts)",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "g>rS",
+            "name": "Видео",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "stVw",
+            "name": "Фото",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": ":X_M",
+            "name": "Polygraphy",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "VtXb",
+            "name": "Projects",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "q?EZ",
+            "name": "Tasks",
+            "color": "yellow",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Контент план": {
+      "id": "VH%3Fn",
+      "name": "Контент план",
+      "type": "relation",
+      "relation": {
+        "database_id": "b760c8e1-9805-455d-9541-10f691e824f1",
+        "type": "single_property",
+        "single_property": {}
+      }
+    },
+    "Цель / задача": {
+      "id": "VZIn",
+      "name": "Цель / задача",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "%": {
+      "id": "YE%7BV",
+      "name": "%",
+      "type": "formula",
+      "formula": {
+        "expression": ""
+      }
+    },
+    "Тип KPI": {
+      "id": "Z%3B%60%3D",
+      "name": "Тип KPI",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "bc980eda-a41e-4d11-9fca-2ba55a6e5f5d",
+            "name": "% выполнено",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "3572e3db-66ae-44ea-8d7d-a51ee071ae9a",
+            "name": "Охват",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "362eb493-d646-4080-a02e-7a4b351bd211",
+            "name": "Вовлечённость",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "eaf4339a-fb94-4059-9999-4e562cd2c9b2",
+            "name": "Количество",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "0f91fe01-d0fa-46d7-b928-1d6a9312fd5e",
+            "name": "Среднее значение",
+            "color": "orange",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Формула расчёта": {
+      "id": "_%7Bu_",
+      "name": "Формула расчёта",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Стартовое значение": {
+      "id": "exxK",
+      "name": "Стартовое значение",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "CTR": {
+      "id": "fNDJ",
+      "name": "CTR",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Достижение (%)": {
+      "id": "fnqw",
+      "name": "Достижение (%)",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  {{notion:block_property:Z%3B%60%3D:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Меньше — лучше\",\n  min(100, if(({{notion:block_property:CQ%7BB:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) == 0, 100, round(100 * ({{notion:block_property:%3ENlZ:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) / ({{notion:block_property:CQ%7BB:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}})))),\n  min(100, if(({{notion:block_property:%3ENlZ:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) == 0, 0, round(100 * ({{notion:block_property:CQ%7BB:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) / ({{notion:block_property:%3ENlZ:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:exxK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}))))\n)"
+      }
+    },
+    "Период": {
+      "id": "lZdP",
+      "name": "Период",
+      "type": "date",
+      "date": {}
+    },
+    "Команда": {
+      "id": "lqi%5D",
+      "name": "Команда",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI 1",
+          "synced_property_id": "%5DXf%3A"
+        }
+      }
+    },
+    "Дата периода": {
+      "id": "mSUy",
+      "name": "Дата периода",
+      "type": "date",
+      "date": {}
+    },
+    "Created time": {
+      "id": "nJFC",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "Комментарий": {
+      "id": "qX_B",
+      "name": "Комментарий",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Дизайн": {
+      "id": "sfUQ",
+      "name": "Дизайн",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI",
+          "synced_property_id": "Vrtl"
+        }
+      }
+    },
+    "1 правок": {
+      "id": "t%5B%3D%3B",
+      "name": "1 правок",
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "ROI": {
+      "id": "wmUX",
+      "name": "ROI",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Сотрудники": {
+      "id": "xciK",
+      "name": "Сотрудники",
+      "type": "relation",
+      "relation": {
+        "database_id": "195ace03-d9ff-80c1-a1b0-d236ec3564d2",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "KPI",
+          "synced_property_id": "%40jrs"
+        }
+      }
+    },
+    "Среднее значение": {
+      "id": "yJVI",
+      "name": "Среднее значение",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Задачи маркетинг": {
+      "id": "%7CDNo",
+      "name": "Задачи маркетинг",
+      "type": "relation",
+      "relation": {
+        "database_id": "231b91aa-831d-470c-9dda-a3dd45037594",
+        "type": "single_property",
+        "single_property": {}
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "block_id",
+    "block_id": "21bace03-d9ff-806a-ad8d-e1b5825f30cc"
+  },
+  "url": "https://www.notion.so/1d6ace03d9ff80bfb809ed21dfd2150c",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "1c833b5b-1c82-4927-950b-c5c80aa933bb"
+}

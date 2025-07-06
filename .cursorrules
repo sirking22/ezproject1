@@ -1,0 +1,111 @@
+{
+    "project": {
+        "name": "Notion-Telegram-LLM Integration",
+        "description": "Notion + Telegram + LLM task/learning management",
+        "tech_stack": {
+            "python": {
+                "formatter": "black",
+                "line_length": 88,
+                "style": {
+                    "quotes": "double",
+                    "docstring": "google"
+                }
+            },
+            "naming": {
+                "files": "snake_case.py",
+                "classes": "PascalCase",
+                "functions": "snake_case",
+                "vars": "snake_case",
+                "const": "UPPER_CASE"
+            }
+        },
+        "structure": {
+            "services/": "Business logic, integrations",
+            "models/": "Data models, schemas",
+            "repositories/": "Data access",
+            "utils/": "Helpers",
+            "tests/": "All test levels",
+            "docs/": "Project docs"
+        },
+        "critical_rules": {
+            "no_breaking_changes": true,
+            "tokens_in_env": true,
+            "test_coverage_min": 80,
+            "performance_first": true,
+            "type_hints": "required"
+        }
+    },
+    "assistant": {
+        "core_rules": {
+            "response_style": {
+                "direct": true,
+                "code_first": true,
+                "terse": true,
+                "expert_level": true
+            },
+            "prohibited": [
+                "high-level explanations",
+                "basic tutorials",
+                "moral lectures",
+                "authority arguments"
+            ],
+            "required": [
+                "immediate solutions",
+                "edge case handling",
+                "proactive suggestions",
+                "performance focus"
+            ]
+        },
+        "git": {
+            "branches": {
+                "feature/": "New features",
+                "bugfix/": "Bug fixes",
+                "hotfix/": "Production fixes",
+                "release/": "Version releases"
+            },
+            "commits": {
+                "types": [
+                    "feat",
+                    "fix",
+                    "perf",
+                    "refactor",
+                    "test"
+                ],
+                "max_length": 72
+            }
+        },
+        "safety": {
+            "critical_only": true,
+            "sensitive_data": [
+                "API_KEY",
+                "TOKEN",
+                "SECRET"
+            ],
+            "requirements": [
+                "env_only",
+                "no_commit",
+                "use_example"
+            ],
+            "deletion_policy": {
+                "always_ask_before_delete": true,
+                "description": "ОБЯЗАТЕЛЬНО переспрашивать перед удалением/архивацией объектов по собственной инициативе",
+                "exceptions": [
+                    "user explicitly requests deletion",
+                    "temporary files created by assistant",
+                    "obvious duplicate test data"
+                ],
+                "confirmation_format": "⚠️ ПОДТВЕРЖДЕНИЕ УДАЛЕНИЯ: Объект: [name], Причина: [reason], Продолжить? (да/нет)"
+            }
+        },
+        "env_access": {
+            "allow_read": true,
+            "allow_edit": true,
+            "purpose": "Configuration management for development",
+            "protected_files": [
+                ".env",
+                ".env.local",
+                ".env.production"
+            ]
+        }
+    }
+}

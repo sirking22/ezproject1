@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Voice Assistant</string>
+    
+    <!-- Основные строки -->
+    <string name="title_voice_assistant">🎤 Voice</string>
+    <string name="status_ready">Нажми для записи</string>
+    <string name="status_listening">Слушаю...</string>
+    <string name="status_processing">Обрабатываю...</string>
+    <string name="status_error">Ошибка</string>
+    
+    <!-- Команды -->
+    <string name="quick_command_task">• "Добавить задачу"</string>
+    <string name="quick_command_thought">• "Записать мысль"</string>
+    <string name="quick_command_habit">• "Отметить привычку"</string>
+    
+    <!-- Сообщения -->
+    <string name="message_permission_required">Нужен микрофон</string>
+    <string name="message_permission_granted">Микрофон разрешен</string>
+    <string name="message_command_processed">Готово</string>
+    <string name="message_processing_error">Ошибка</string>
+    <string name="message_try_again">Попробуй еще</string>
+    <string name="message_no_speech">Не слышу</string>
+    <string name="message_timeout">Время истекло</string>
+    
+    <!-- Успех -->
+    <string name="success_task_added">✅ Задача</string>
+    <string name="success_thought_recorded">💭 Мысль</string>
+    <string name="success_habit_tracked">🔄 Привычка</string>
+    <string name="success_synced">📝 Синхронизировано</string>
+    
+    <!-- Ошибки -->
+    <string name="error_network">Ошибка сети</string>
+    <string name="error_llm_server">Ошибка LLM</string>
+    <string name="error_notion_sync">Ошибка Notion</string>
+    <string name="error_telegram">Ошибка Telegram</string>
+    <string name="error_voice_recognition">Ошибка голоса</string>
+</resources> 

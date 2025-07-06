@@ -1,0 +1,1818 @@
+{
+  "object": "database",
+  "id": "ad92a6e2-1485-428c-84de-8587706b3be1",
+  "cover": {
+    "type": "external",
+    "external": {
+      "url": "https://images.unsplash.com/photo-1507494924047-60b8ee826ca9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    }
+  },
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/light-bulb_gray.svg"
+    }
+  },
+  "created_time": "2025-01-23T17:06:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+  },
+  "last_edited_time": "2025-07-04T23:42:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "База идей/советов",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "База идей/советов",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "properties": {
+    "Очередность": {
+      "id": "%40%60%3FV",
+      "name": "Очередность",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Файлы": {
+      "id": "AMvR",
+      "name": "Файлы",
+      "type": "files",
+      "files": {}
+    },
+    "Материалы": {
+      "id": "D%5CRH",
+      "name": "Материалы",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d9ace03-d9ff-8041-91a4-d35aeedcbbd4",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "База идей/советов",
+          "synced_property_id": "Iyh_"
+        }
+      }
+    },
+    "Направление/отделы": {
+      "id": "PVDc",
+      "name": "Направление/отделы",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "9cd693f4-a671-4fef-aec1-9ed6413cfe44",
+            "name": "Продукт",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "ef7abcd5-d89f-449c-97bc-e76cd8f0250f",
+            "name": "Маркет",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "20a63df3-d1e7-43dd-a335-ac45f2d0f3fc",
+            "name": "Бренд",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "77864700-53c7-46ad-8ca6-b566a48e0e6d",
+            "name": "Дизайн",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "1aff1838-84d1-41f1-b913-78d210370e62",
+            "name": "Веб",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "41e7055a-57e4-44bf-a09d-ce01fb7cf3a1",
+            "name": "Фото",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "92b31e19-7bd4-472d-a699-0acf76bb12e2",
+            "name": "Видео",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "6c6ae80d-835c-4ba3-88dc-f94597f52aff",
+            "name": "Стратегия",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "70a7a096-9469-457b-8310-2d89f26b615e",
+            "name": "СММ",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "e1286705-9c82-46b7-b530-489e9c12329d",
+            "name": "Копирайт",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "90f63aff-711a-4c97-9bd1-c60f17cdf032",
+            "name": "Общее",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Задачи": {
+      "id": "TAG%3F",
+      "name": "Задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "single_property",
+        "single_property": {}
+      }
+    },
+    "Created time": {
+      "id": "UmBL",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "📬 Гайды": {
+      "id": "WJ%3EJ",
+      "name": "📬 Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "База идей/советов",
+          "synced_property_id": "CV~N"
+        }
+      }
+    },
+    "Last edited time": {
+      "id": "%60GHS",
+      "name": "Last edited time",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "ID": {
+      "id": "c%7D_%5D",
+      "name": "ID",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null
+      }
+    },
+    "Концепты/Сценарии": {
+      "id": "iASY",
+      "name": "Концепты/Сценарии",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8088-97df-c7e1e74173ce",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "База идей/советов",
+          "synced_property_id": "ODYH"
+        }
+      }
+    },
+    "KPI": {
+      "id": "u%3EGY",
+      "name": "KPI",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+        "type": "single_property",
+        "single_property": {}
+      }
+    },
+    "Формат": {
+      "id": "uVFh",
+      "name": "Формат",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "f429f4c3-f53c-4627-8cb2-597b8c63d256",
+            "name": "Идея",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c5ada55a-1b18-471b-b66d-7044fadb75d2",
+            "name": "Совет",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "856c2928-08b0-4957-80e6-c7999f12c296",
+            "name": "Best Practice",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "188db950-ef9e-4f47-9061-d62b41c16e63",
+            "name": "Статья",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "715b1ecd-586d-4e05-8237-3066b920d736",
+            "name": "Видео",
+            "color": "pink",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Date": {
+      "id": "%7D%3F%7BL",
+      "name": "Date",
+      "type": "date",
+      "date": {}
+    },
+    "Реф": {
+      "id": "~UW%7D",
+      "name": "Реф",
+      "type": "relation",
+      "relation": {
+        "database_id": "2a0d2884-7d74-40a7-bad0-37e38157933f",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "База идей/советов",
+          "synced_property_id": "V%7B~V"
+        }
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    },
+    "Created By": {
+      "id": "prop_1",
+      "name": "Created By",
+      "type": "created_by",
+      "created_by": {}
+    },
+    "Теги": {
+      "id": "prop_2",
+      "name": "Теги",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "ae7ddb55-9b5c-4795-9062-9a0c211b743f",
+            "name": "Брендинг",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e92fff68-9b92-4393-8dbb-1ce2a19c3c65",
+            "name": "Офис",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "813b2a6d-b880-4076-981e-996c62ee392a",
+            "name": "Телеграмм",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "8f898efc-1b17-4e3a-80e6-9f60de81ba82",
+            "name": "Магазин",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "9a5844cd-45b9-4c80-bd28-80946ce5161a",
+            "name": "Организация",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "fb3e5327-15dc-4092-b4a2-2013ef98963d",
+            "name": "Команда",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "73abc52e-428c-4fc8-b3e5-11ea1d07980a",
+            "name": "Фото продуктов",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "716be6d9-5318-4d00-8867-d091a467c656",
+            "name": "Коробки",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "204c367a-4217-45ed-9c65-f6c5a8002c1c",
+            "name": "Продукт",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "40b4078d-ec60-4f62-bb8b-604b07453589",
+            "name": "Пекшот",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "0a1b4a21-3f40-453b-86d4-abe845d5d550",
+            "name": "Инстаграм",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "a6ade767-1200-4c4f-b21f-f11f50680579",
+            "name": "Под телефоны",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "cf82f40e-06ae-4c7c-914c-0495806d4c47",
+            "name": "Кулинария",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "982fcac8-0a5e-4dda-9c74-f84e9bad7a5d",
+            "name": "Рассылка",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "3aae2626-4a03-488f-9da2-b3f8074666d7",
+            "name": "Книга рецептов",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "312785be-b82f-41d9-9dbc-8eeacca55def",
+            "name": "Сайт",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "e8330d4c-1804-47f2-99ff-a4bd09141847",
+            "name": "Наклейки",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "359b9e7e-42cb-4a87-add3-4e08a7ad7445",
+            "name": "Сценарий",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "4d19954a-43a8-4f08-a721-5c868ea36ce3",
+            "name": "Инфо продукт",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "3b65eb72-0d97-416e-88e3-8ab67c9e46d7",
+            "name": "Гив",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "322e3689-03ee-4652-a1ac-00685b99b604",
+            "name": "Аниммация",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "b08e2845-2f8d-40d4-94aa-822d742fe32d",
+            "name": "Приложение",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "fa2f8328-e592-4f52-a6d5-2cd60e7e1e5e",
+            "name": "Бонусы",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "34b3bb35-e5bd-46b3-a9fb-d75cb983f17f",
+            "name": "Монтаж",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "bdfc5173-b8eb-49e8-b32f-f00a4ad613dc",
+            "name": "Мануал",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "fbf2eee2-cd06-48c8-bff8-76453e9703e5",
+            "name": "Материалы",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "0402e465-4562-4df2-b3bf-cf5ff3ab79c4",
+            "name": "Формат",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e3745896-6c92-4b1d-b0b2-6b74d0e88926",
+            "name": "Соцсети",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "f2eb209e-c7d1-4dc4-aa8e-dcd02c490c80",
+            "name": "Развитие",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "59898bfa-ace3-4f95-b638-001193a1ecbb",
+            "name": "Продвижение",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "33d9e97e-312d-43e6-ae88-f366f4744f32",
+            "name": "тест",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "23931972-a96c-44f3-987e-4ea35a9e53e0",
+            "name": "автоматизация",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "562129fd-8bcd-46aa-9944-d2bb76b05897",
+            "name": "python",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "f73daada-cad1-4c2f-b287-c680f031635a",
+            "name": "соцсети",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "7a4e7873-31c4-4ab8-9527-7cb4c8334845",
+            "name": "cli",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "4fdced12-60e1-450b-8ce7-358636f45f30",
+            "name": "концепт",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7eb551c4-7819-48c5-a588-59a1d6e06f69",
+            "name": "идеи",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "0d531425-a25b-4a8b-8253-2c49bb9790ad",
+            "name": "notion",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "a35b2262-b552-4a1f-92b5-7785b13827a0",
+            "name": "api",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "9764f81c-b04b-4dbb-8d8f-8eaa51b02f29",
+            "name": "оптимизация",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "9d2f2488-0ad7-40ca-ab47-c521c4097174",
+            "name": "процессы",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "05f4955b-d7fd-4f06-a75e-e614e0575bab",
+            "name": "обработка",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "8a0a2c7b-ebad-40c7-971b-c259de696caf",
+            "name": "видео",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "3838fa2f-dffe-44d3-b193-764405ec6bb3",
+            "name": "контент",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "3f704bc4-42df-477c-9676-c21b2bc9431d",
+            "name": "статья",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "b3c8ea9c-9f83-4a0f-9b0c-6a02ac12b474",
+            "name": "знания",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "15ce6e66-12e8-421e-9315-7626bc0fd77f",
+            "name": "код",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "83bc0431-2236-4822-8078-b79311310179",
+            "name": "техническое",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "dd100af6-3243-4201-b4b2-ccb47f6c8918",
+            "name": "тренды",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "ec6a1865-dd21-4fb6-9ac7-61b8b04f3802",
+            "name": "изображение",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "ad892104-b0ed-45a2-a37b-e3c34efcd0da",
+            "name": "дизайн",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "67105b5a-ed9e-42f9-bdcd-69e41ae213e2",
+            "name": "Картинки",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "e8cc5f69-dac9-42e5-b48e-62605d75ce09",
+            "name": "Тег теста",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "de16f92c-4304-4c50-9bf8-80f89f88aadc",
+            "name": "еще какойто тест",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "905cf5cc-f7a6-4497-996a-30d29113a810",
+            "name": "идея",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "b83ab9c9-2843-492b-aac3-072bc819b4d1",
+            "name": "файлы",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "70c99aac-4ed5-4f81-81e1-b2fa643ac546",
+            "name": "описание",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "8425d895-8a1a-42a7-b101-88a930243057",
+            "name": "файл",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "210d93ba-bd24-4635-a2de-fcb9d51a2198",
+            "name": "система",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "a3dda782-0ca8-4273-9f40-ecd740506f4c",
+            "name": "исследование",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "bdab118c-eaae-497a-bb36-1022c69a9a30",
+            "name": "аудитория",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "912020da-cba6-47c2-8bd4-680589adb4ee",
+            "name": "опрос",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "e430ef52-d0a2-480e-9366-20994ad47887",
+            "name": "видеофайл",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "8591f687-767c-4927-b778-33a504c38129",
+            "name": "мнения",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "018bb7ad-340a-4e37-81aa-c53865f23b83",
+            "name": "оценки",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "8d8dc212-5115-4624-9f6f-9be1e5ef9b76",
+            "name": "предпочтения",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "da901c45-b9d3-493b-a818-4df0aa25a4a1",
+            "name": "заголовок",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "a0486be4-3911-4e41-8a9f-7a65302f2208",
+            "name": "маркетинг",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "9ec7b335-116f-42e2-acf2-0aa76cc6b739",
+            "name": "SEO",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "d2f03f7a-326c-48b1-861c-a5f85d746df8",
+            "name": "зрители",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "adaaa53d-d759-4d77-877f-fe4e58349a39",
+            "name": "текст",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1f995288-c9f2-4a3e-9eb1-45dd3ba426d5",
+            "name": "экспорт",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "a7a84f56-0392-4981-9c89-0c2918db977b",
+            "name": "группа",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "7f046db1-e739-4733-96ed-b7b1ff645b42",
+            "name": "VK",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "ff7dd55e-86b4-4565-a611-6602bcf96ac7",
+            "name": "анализ контента",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "3296ad36-4b5f-4314-bf3c-323fbe7ae5c3",
+            "name": "отчёты",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "4713edb5-0e47-497a-998d-0672c4c73e46",
+            "name": "рекомендации",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "a4edddf2-f94d-405a-b18a-2f8e9877dc2a",
+            "name": "маркетологи",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e9a2b089-da4f-4208-90f7-8c0db84113c6",
+            "name": "инструменты",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "99ff5587-13cd-46c6-9058-8988ed124531",
+            "name": "бизнес",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "87237922-8750-435c-ac1e-5479038efebd",
+            "name": "умный дом",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "2d5aad1b-ba76-43c2-aaac-1c1cf927b790",
+            "name": "музыка",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "fb388697-5060-43b2-9bd2-84273a8575ea",
+            "name": "сервис",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "ae4a3102-2739-4ad9-ab91-813d18b9ebe6",
+            "name": "итех",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1b79647a-47fe-426a-ace6-7c2a5c0417bb",
+            "name": "интеграция",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "d5f3b990-64c2-483a-b824-91ffb79956f3",
+            "name": "домашнее обслуживание",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "63bea1ad-43e6-478f-966d-1183a2ed2668",
+            "name": "логотип",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "2f2d0c39-b56a-4ecd-bd25-600574742789",
+            "name": "поход",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "d5b15aaf-e037-46c6-a707-bf16a3fb959a",
+            "name": "Игорь",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "0a052cd4-8cfd-4131-8fe7-a91415ddc8ac",
+            "name": "улучшения",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "89a7f40b-8b21-4e5a-a1c7-a0f8428ea0db",
+            "name": "конкуренты",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "8d0b3f95-5429-48de-9f72-e56cfa4c90f6",
+            "name": "брендирование",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "8df0f51e-6ea3-473c-b2f5-8bb6cc83d145",
+            "name": "узнаваемость",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "e9b0a85f-5e02-4793-9f71-0e6195b93bcd",
+            "name": "улучшение",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "ba13bc5f-e263-4e60-af65-e5affb960a9a",
+            "name": "Машинное обучение",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "3ad11e98-a6a7-4092-ac7e-f2472b06a651",
+            "name": "Telegram",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "59a03826-9611-4e39-b31e-4e6348937238",
+            "name": "библиотека",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "36fa5116-c28d-4605-b37c-0de07d3cef0f",
+            "name": "бот",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "2732ee0f-aebf-4c86-a5d3-d26df1583652",
+            "name": "управление",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "333af4fa-473b-4ec9-bddd-659106b4e8a5",
+            "name": "пользователи",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7922b0f5-6262-4a88-ac4a-d56f7a916bb2",
+            "name": "решения",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "d0dcd548-5505-44da-8417-306c2b263854",
+            "name": "управление задачами",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "b1dde85c-cdd8-4018-8488-ee14b47dc786",
+            "name": "\"web-разработка",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "34cbaac2-6ad1-43ea-96c7-c84d0cd1cbca",
+            "name": "пользовательский интерфейс",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c7ade850-25a9-4d14-83b1-47124c009206",
+            "name": "текстовое редактирование",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "1616fd95-016d-40f4-9e29-1e022821e3f4",
+            "name": "простое оформление\"",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "6beac2bf-c18b-4100-93bf-c77f11ec3eb8",
+            "name": "Machine Learning",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "224596f6-8ebf-4468-a4b5-22ab4514ce1f",
+            "name": "Natural Language Processing",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "02790558-0650-4e4c-a16e-5e3c3e6d7dc6",
+            "name": "NLTK",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c9cb9852-ff66-4fab-9b56-912ace267267",
+            "name": "spaCy",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "a0755074-fc3b-40e9-9e07-3c555ca3c245",
+            "name": "Performance",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "514546fe-1701-4706-a128-2522d4f97e38",
+            "name": "Efficiency",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "ead537de-040d-49d6-9799-857a348088cf",
+            "name": "анализ продаж",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "82496c28-ea3a-4010-b63b-77819bc67f38",
+            "name": "Telegram Bot API",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c7a1ae06-ffee-47b9-8f4a-bc24d281d761",
+            "name": "python-telegram-bot",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "5302fd4b-5424-4e2b-9c3e-d6cdbc6985f9",
+            "name": "автоматизация задач",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "99b8c935-5cde-4b2c-9cd7-db968283c171",
+            "name": "Notion API",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "0a6173ec-9a88-4955-b629-19d88f74a3f0",
+            "name": "сообщения",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "077ee1ec-0930-4c09-8a6a-3d9493f4f917",
+            "name": "текстовое содержание",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "a4ce9872-b795-4e9f-86c5-44b8af629f6e",
+            "name": "простое сообщение",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "a9a69c02-42b4-493c-99c7-4b1c3c3b4f35",
+            "name": "анализ текста",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "0fb2e8da-9ccc-4aef-965d-c0a2d12405b2",
+            "name": "Telegram бот",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "35b05f69-c326-4846-839c-02b39fc61c9e",
+            "name": "массовый импорт",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "8f8c4102-457d-400a-bbe3-23e5aed1a089",
+            "name": "очередь файлов",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "b543d7ec-9000-4500-b574-ede7fa5ad992",
+            "name": "документация",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "79171c80-fa20-4081-a51b-be0f9ee34f0d",
+            "name": "OpenRouter",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "8b52f333-b784-426b-990c-01b0fe4c2bc2",
+            "name": "LLM",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "7eaedfc3-500d-4f85-9ca1-59e8c7ce77a6",
+            "name": "анализ",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "693585d7-79ea-440d-aeb9-d09dc6ac9e4f",
+            "name": "модели",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "bceead24-e9af-4219-b505-8ea41ccaddcb",
+            "name": "OpenRouter API",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "6e258ed5-b3b0-47e6-8923-3e20aafe3f9b",
+            "name": "настройка промптов",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "d43d8f7c-41ce-4482-b06d-013c38fb38b6",
+            "name": "чаты",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "22d040a7-90e2-4eba-9409-637e43511fe6",
+            "name": "импорт",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "109685c9-463c-4494-8147-2f69a2d6e3c5",
+            "name": "группировка по времени",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "f3f82645-3d64-474a-9397-202c3d62d449",
+            "name": "LLM анализ",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "771c47fc-f185-438e-a803-f49a57ed0bb4",
+            "name": "Яндекс.Диск",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "ec48a479-d743-4f96-bf92-39cc4e98fbc8",
+            "name": "документы",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "f7723918-3d29-4e6e-b6f6-ae17498e6722",
+            "name": "фото",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "4fa84b54-15e8-49b4-97ed-2e00a261c4eb",
+            "name": "аудио",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "3d4668b1-51ee-420e-9e3a-d2fa27766c61",
+            "name": "кэширование",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "20d260fc-3099-4f91-9b5d-12858f266664",
+            "name": "производительность",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "e9842678-56dd-47e1-bf04-aac95fdd71f0",
+            "name": "документация проекта",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "bc5f7400-05bd-4d4e-8ce7-49941bb4481f",
+            "name": "продакшен",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "5ec1e237-d822-45b9-9134-24d55be4a1ab",
+            "name": "файловый мониторинг",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "38693e3e-662e-41f2-bce3-dc85f4e6a8c7",
+            "name": "веб-интерфейс",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e13d58cf-d4f9-45e9-9dca-729a041a625a",
+            "name": "улучшенная группировка",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "6c8eea41-8024-4ba5-9339-a155636dc239",
+            "name": "архитектура ПО",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "467d2be9-8767-4181-813b-de2c4908480d",
+            "name": "мультиварка",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "c2553003-6c82-4e57-b633-a41eac4eaeb6",
+            "name": "технология",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "845a83dd-e768-4c0f-8cd6-61ee43d1ea63",
+            "name": "функционал",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "da380e09-22f3-44d6-8eaa-ec6c8133384b",
+            "name": "требует_проверки",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "0a959560-f664-4878-ad9f-d111d7f8d60e",
+            "name": "перспектива",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "43b69ca7-809b-4a3d-904f-2f29f2de28b5",
+            "name": "нагрузка команды",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "7d9e41f8-1766-4251-b61a-a8c59f57d160",
+            "name": "telegram_import",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "e827c03e-9c8d-4d63-b29e-6923a204020e",
+            "name": "no_files",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "63af507a-2dd7-4edd-90ca-d1a0f99caf32",
+            "name": "has_links",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "ea0d6170-98d2-4986-b131-ef7161483a4c",
+            "name": "has_files",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "062f0c26-1340-4cbb-887f-7f9fe012e422",
+            "name": "single_link",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "00befbc7-fbb3-4847-8a0b-9a0542325d53",
+            "name": "multiple_links",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "b9f12207-e1a0-4c6d-8f0a-602e36ce69a4",
+            "name": "links",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7eaf6901-ebb9-4c1a-8ff2-0cc84f698dbc",
+            "name": "media",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "90bfe0a2-d894-4812-9794-b6071354d3e5",
+            "name": "web",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "c064024e-88fd-4598-932c-a3a0aad90b2b",
+            "name": "question",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "fe70206c-d8b9-4f4b-b449-37d29d0c26db",
+            "name": "javascript",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "2fbbd838-d852-4216-9a4f-69d98fca33e8",
+            "name": "ai",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "b8d5cac0-f682-49b5-83aa-e376b34c8101",
+            "name": "idea",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "5f0f377d-31c7-457e-8a15-d535ae6af43e",
+            "name": "design",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "1a09feda-544f-432d-945c-ff081ee164c7",
+            "name": "tutorial",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f0c53055-756a-4074-9785-9702dacb8404",
+            "name": "mobile",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "6a0499a3-8c62-46b9-91fd-33dd9b6bdf31",
+            "name": "news",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "b37f10c3-be6c-4851-9bc4-070481393699",
+            "name": "project",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "681d43e9-ec5f-420a-8225-04e4eef2b85a",
+            "name": "research",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "ceed037b-a7ef-4e9a-92a6-c14f2785d3ac",
+            "name": "video",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f341f5a3-4f30-46b0-ae1f-290ea754fd03",
+            "name": "image",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "1311bb8a-ad94-4e25-9a73-04777b3f23dc",
+            "name": "long_read",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "ea01b8e1-0b43-4547-ad8d-c5450cc399dd",
+            "name": "article",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "971852f0-faa9-47c9-82f3-de80350edf17",
+            "name": "business",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "5c260bba-c4af-41b9-8cc9-c0f229864a5d",
+            "name": "tools",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "33f07c7f-92f6-48bd-821f-6b2a04c3bd98",
+            "name": "code",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "5fc57d25-78b1-4b74-9aa1-c779d7a42342",
+            "name": "education",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e844060b-4cb5-444f-9605-81632fa7b382",
+            "name": "book",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "c8144b28-9c2b-4cda-854b-aa0ed64f379f",
+            "name": "music",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "161f61de-59d6-486f-8492-851574aa49f9",
+            "name": "personal",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "c92a739c-43df-4ecb-9575-a6f9a5cd3c09",
+            "name": "meme",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "271af3b7-9b9d-4628-b8b6-d02cd62afbc3",
+            "name": "document",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "3aaf5d39-dc15-4c51-bfef-73a729aebca1",
+            "name": "crypto",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "0173edd2-2068-425b-a328-08f2db4fbfa9",
+            "name": "Проект",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "e69c3551-9921-4b44-bcb8-61dbcfa03585",
+            "name": "Обучение",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f16ba9a3-5056-49ae-a125-53cd1f54ec73",
+            "name": "изображения",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "68bea8e2-16f4-476a-8099-d320e32d0da2",
+            "name": "Figma",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "e0701138-e7d3-47d3-923d-49cddfeb36a3",
+            "name": "GitHub",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e29f9408-60d8-4001-931b-d4d1df8bb33a",
+            "name": "Социальные сети",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "0f218949-f416-4c0c-a99a-12cb4e47b2da",
+            "name": "Instagram",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "f19bb39f-bdb4-4c32-ae7a-5fae672c9c84",
+            "name": "YouTube",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "213fc5fe-17c0-46f1-a277-d6186b04c8e9",
+            "name": "Reels",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "e7b5b964-caab-4114-be19-e9984068089f",
+            "name": "Хабр",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "4c6c3777-87cb-49a8-a70b-a1b8c6ba2add",
+            "name": "Статьи",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "2df053be-98ac-43b6-8be9-71dcf05664ca",
+            "name": "ai_analyzed",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "a42cb73f-8d45-43ce-bb8a-d9c4ba625849",
+            "name": "ai_related",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "018dea06-9535-403c-adac-2d7850e9de83",
+            "name": "high_priority",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "d0223274-1033-48a8-8036-806fd75d5bdc",
+            "name": "ML",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "b0df104b-01a1-422b-b653-24a88e0a56b5",
+            "name": "Ссылка",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "d50422bb-985b-4c00-98d4-081013fbb4df",
+            "name": "Подробное",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "df6adb3a-dea2-44c9-a2dc-ce9fb09d9079",
+            "name": "UI/UX",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "e3bbef79-e163-4ef4-a960-6bded330d016",
+            "name": "Стратегия",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "0063c93f-1840-4f1e-9978-0fb177b319cb",
+            "name": "Медиа",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "73bfd672-96a1-449b-8cea-2b861a92f2e6",
+            "name": "Нейросети",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "f454dfa6-2f7d-4f1c-be07-ab8bbe6cc4d0",
+            "name": "Видеогенераторы",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "f1983724-3f30-45a1-9171-0eb10da9415c",
+            "name": "липсинг",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "f5f89bbe-5d1c-4c29-b327-0e69968cec3f",
+            "name": "MCP",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "9d61c3d1-594f-4aee-ace4-9f733edc0d8c",
+            "name": "срочно",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "ef82ec0d-7c4a-4cad-8862-18f63c885f05",
+            "name": "разработка",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "dc1e48f6-cd48-4c53-9cf0-b1f3fc8e80a0",
+            "name": "#review",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "6b34dee2-2ae2-4ddf-af7c-88cc56eba5d3",
+            "name": "Бренд",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "7b1f83a5-7e4a-406a-83ad-a6eda9477fef",
+            "name": "Веб",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "b6831cd8-c57f-4ad5-b848-43ca3126c4cc",
+            "name": "боты",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "6db940ff-3ba7-4617-85ee-f7bc1319e69d",
+            "name": "воронки продаж",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "5ec034d5-70fc-4995-b923-b39a294a74ba",
+            "name": "воронка продаж",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "b8ba4385-972f-4ff8-80a2-f1acffde39e4",
+            "name": "чат-бот",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "URL": {
+      "id": "04098750-7b0e-43a6-a08f-e6cab882e020",
+      "name": "URL",
+      "type": "url",
+      "url": {}
+    },
+    "Статус": {
+      "id": "4b416307-90c2-45aa-aaca-b9998850d830",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "nWpg",
+            "name": "To do",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "gr?m",
+            "name": "Обсудить",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "NbvL",
+            "name": "In progress",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "Hj:{",
+            "name": "+\\-",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "TEzQ",
+            "name": "Ок",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "K}Eh",
+            "name": "Архив",
+            "color": "red",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "0fb1b198-9101-4c53-8855-a478e946db3d",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "nWpg"
+            ]
+          },
+          {
+            "id": "48e612e3-409e-4e26-a08d-7f2434e3fcf4",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "gr?m",
+              "NbvL",
+              "Hj:{"
+            ]
+          },
+          {
+            "id": "03e38b8a-98ae-4706-9f34-da0fd441f6b1",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "TEzQ",
+              "K}Eh"
+            ]
+          }
+        ]
+      }
+    },
+    "Участник": {
+      "id": "51c1d5e6-24f1-490e-bca0-bcee3bfac5ff",
+      "name": "Участник",
+      "type": "people",
+      "people": {}
+    },
+    "Для чего?": {
+      "id": "5975e235-4647-4477-a0cc-305861dfe0a3",
+      "name": "Для чего?",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Что классно?": {
+      "id": "9f0ec818-f7da-45b3-870e-47f8c29f15b5",
+      "name": "Что классно?",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "OeYi",
+            "name": "Цвета",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "[lKl",
+            "name": "Свет",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "n=kn",
+            "name": "Композиция",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "02d14637-3baf-4aab-b34a-8a606def3927",
+            "name": "Динамика",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "1469dde2-618f-4161-9b2b-b5e63a671c5b",
+            "name": "Живость",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "a5101141-bf57-4022-a8df-d498b182df8c",
+            "name": "Эмоции",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "48142e5a-74d3-427a-95d6-8b27fbe0ff2e",
+            "name": "Идея",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "a4c256dc-7c41-4e19-b0fd-afc20634d2e3",
+            "name": "Информат",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "2c0142b2-a7db-4161-b03b-506e37e00d30",
+            "name": "Формат",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "2fb004d9-5a34-473a-b5f5-57bfa2bff287",
+            "name": "Сценарий",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "10be27f6-8ffa-4795-9ad5-ac9a6610fe3f",
+            "name": "Графика",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "7d714e7e-eff6-4727-85e3-21797d01c0a3",
+            "name": "Монтаж",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "cd2b02d7-400f-40aa-b1cf-27c0320eda33",
+            "name": "Функционал",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "29be1da3-1f05-40b0-b9c7-29cd4761957f",
+            "name": "тест",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Вес": {
+      "id": "a79eaacc-f3dc-4ed1-8eaa-7c7fba050b19",
+      "name": "Вес",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Описание": {
+      "id": "ceea04c7-bb32-474b-8505-3129296f3cc8",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    }
+  },
+  "parent": {
+    "type": "block_id",
+    "block_id": "2709187c-f26b-4872-829c-d472f7ba7243"
+  },
+  "url": "https://www.notion.so/ad92a6e21485428c84de8587706b3be1",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "fce8a158-0631-47b8-972a-fd5f07d550ff"
+}

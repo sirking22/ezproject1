@@ -1,0 +1,227 @@
+{
+  "object": "database",
+  "id": "3e6a5838-b404-4a87-a843-3c3664995c5b",
+  "cover": null,
+  "icon": null,
+  "created_time": "2025-01-22T15:20:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_time": "2025-05-12T19:35:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Супер сборники гайдов",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Супер сборники гайдов",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": true,
+  "properties": {
+    "В цепочке": {
+      "id": "IF%5E%3C",
+      "name": "В цепочке",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "22d5fffa-6839-461e-9937-c4dbbb7ce87b",
+            "name": "Сторонний",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "zils",
+            "name": "Планирование",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "Vwqm",
+            "name": "Предпроизводство",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "9ec21b8e-00ec-46f9-9f2f-0fe949a58109",
+            "name": "Производство",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "?bI?",
+            "name": "Продвижение",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "d{@O",
+            "name": "Поддержка",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "af81a9cd-a248-4906-bc43-d9c2e2304a27",
+            "name": "Закрыт",
+            "color": "green",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "14719be0-45c4-460b-a67b-607ee5feaf95",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "22d5fffa-6839-461e-9937-c4dbbb7ce87b",
+              "zils"
+            ]
+          },
+          {
+            "id": "d190a075-e0b5-49e3-8653-614b80c9e3d8",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "Vwqm",
+              "?bI?",
+              "9ec21b8e-00ec-46f9-9f2f-0fe949a58109",
+              "d{@O"
+            ]
+          },
+          {
+            "id": "cd0fca87-7802-470d-8763-c7e479786490",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "af81a9cd-a248-4906-bc43-d9c2e2304a27"
+            ]
+          }
+        ]
+      }
+    },
+    "Status": {
+      "id": "QA%5D%60",
+      "name": "Status",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "246a604b-589f-4d48-9c15-7b9d2d609ff2",
+            "name": "Not started",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "48ae9101-3979-45b5-8687-a1a3faab0045",
+            "name": "In progress",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "022504f8-b1b6-41fd-8e73-2d0611b59b20",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "ae8808b1-38ac-448a-b9e2-97c37d015281",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "246a604b-589f-4d48-9c15-7b9d2d609ff2"
+            ]
+          },
+          {
+            "id": "a45a8ce3-ae92-4d69-a3d9-a724ca81b02e",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "48ae9101-3979-45b5-8687-a1a3faab0045"
+            ]
+          },
+          {
+            "id": "752f6583-b53b-4e84-9ac9-46d98b684fde",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "022504f8-b1b6-41fd-8e73-2d0611b59b20"
+            ]
+          }
+        ]
+      }
+    },
+    "Супер сборник": {
+      "id": "kplC",
+      "name": "Супер сборник",
+      "type": "relation",
+      "relation": {
+        "database_id": "3e6a5838-b404-4a87-a843-3c3664995c5b",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Мини сборник",
+          "synced_property_id": "x%5Bmw"
+        }
+      }
+    },
+    "📬 КГМ": {
+      "id": "xP_O",
+      "name": "📬 КГМ",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Сборник гайдов",
+          "synced_property_id": "%3EBGX"
+        }
+      }
+    },
+    "Мини сборник": {
+      "id": "x%5Bmw",
+      "name": "Мини сборник",
+      "type": "relation",
+      "relation": {
+        "database_id": "3e6a5838-b404-4a87-a843-3c3664995c5b",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Супер сборник",
+          "synced_property_id": "kplC"
+        }
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "8ebd6139-37a3-4639-9cd8-feffc08ac13b"
+  },
+  "url": "https://www.notion.so/3e6a5838b4044a87a8433c3664995c5b",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "9e5cdc29-ea4c-4dee-99d5-8acafb2c75fe"
+}

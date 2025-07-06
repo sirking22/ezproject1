@@ -1,0 +1,406 @@
+{
+    "database_fields_config": {
+        "description": "Конфигурация полей для базы данных Платформы в Notion",
+        "fields": {
+            "Engagement Rate": {
+                "type": "number",
+                "number": {
+                    "format": "percent"
+                },
+                "description": "% взаимодействий: (Лайки + Комментарии + Шейры) / Подписчики × 100"
+            },
+            "Growth Rate": {
+                "type": "number",
+                "number": {
+                    "format": "percent"
+                },
+                "description": "% рост подписчиков за месяц: (Новые подписчики / Текущие) × 100"
+            },
+            "Platform Rank": {
+                "type": "select",
+                "select": {
+                    "options": [
+                        {
+                            "name": "🔥 Excellent",
+                            "color": "green"
+                        },
+                        {
+                            "name": "✅ High",
+                            "color": "blue"
+                        },
+                        {
+                            "name": "📊 Medium",
+                            "color": "yellow"
+                        },
+                        {
+                            "name": "⚠️ Low",
+                            "color": "red"
+                        }
+                    ]
+                },
+                "description": "Автоматический рейтинг эффективности платформы"
+            },
+            "Content Score": {
+                "type": "number",
+                "number": {
+                    "format": "number"
+                },
+                "description": "Оценка качества контента по шкале 1-10"
+            },
+            "vs Industry": {
+                "type": "number",
+                "number": {
+                    "format": "percent"
+                },
+                "description": "% отклонение от индустриальных бенчмарков"
+            },
+            "Reach Rate": {
+                "type": "number",
+                "number": {
+                    "format": "percent"
+                },
+                "description": "% охвата: Просмотры / Подписчики × 100"
+            },
+            "Posts per Week": {
+                "type": "number",
+                "number": {
+                    "format": "number"
+                },
+                "description": "Частота публикаций в неделю"
+            },
+            "Alert Status": {
+                "type": "select",
+                "select": {
+                    "options": [
+                        {
+                            "name": "🚀 Excellent",
+                            "color": "green"
+                        },
+                        {
+                            "name": "✅ Good",
+                            "color": "blue"
+                        },
+                        {
+                            "name": "⚠️ Warning",
+                            "color": "yellow"
+                        },
+                        {
+                            "name": "🚨 Critical",
+                            "color": "red"
+                        }
+                    ]
+                },
+                "description": "Текущий статус алертов"
+            },
+            "Last Analytics": {
+                "type": "date",
+                "date": {},
+                "description": "Дата последнего анализа"
+            },
+            "Next Action": {
+                "type": "rich_text",
+                "rich_text": {},
+                "description": "Конкретные рекомендации для улучшения"
+            },
+            "Monthly Goal": {
+                "type": "number",
+                "number": {
+                    "format": "number"
+                },
+                "description": "Цель подписчиков на текущий месяц"
+            },
+            "Goal Progress": {
+                "type": "formula",
+                "formula": {
+                    "expression": "round((prop(\"Followers\") / prop(\"Monthly Goal\")) * 100)"
+                },
+                "description": "% достижения месячной цели (формула)"
+            },
+            "Engagement Trend": {
+                "type": "select",
+                "select": {
+                    "options": [
+                        {
+                            "name": "📈 Growing",
+                            "color": "green"
+                        },
+                        {
+                            "name": "📊 Stable",
+                            "color": "blue"
+                        },
+                        {
+                            "name": "📉 Declining",
+                            "color": "red"
+                        }
+                    ]
+                },
+                "description": "Тренд engagement за последние 7 дней"
+            },
+            "ROI Score": {
+                "type": "number",
+                "number": {
+                    "format": "number"
+                },
+                "description": "Оценка возврата инвестиций (1-10)"
+            },
+            "Platform Priority": {
+                "type": "select",
+                "select": {
+                    "options": [
+                        {
+                            "name": "🔥 High",
+                            "color": "red"
+                        },
+                        {
+                            "name": "📊 Medium",
+                            "color": "yellow"
+                        },
+                        {
+                            "name": "⚪ Low",
+                            "color": "gray"
+                        }
+                    ]
+                },
+                "description": "Приоритет развития платформы"
+            },
+            "Benchmark Score": {
+                "type": "formula",
+                "formula": {
+                    "expression": "if(prop(\"Engagement Rate\") > 0, round((prop(\"Engagement Rate\") / prop(\"Industry Benchmark\")) * 100), 0)"
+                },
+                "description": "% от индустриального бенчмарка (формула)"
+            },
+            "Industry Benchmark": {
+                "type": "number",
+                "number": {
+                    "format": "percent"
+                },
+                "description": "Индустриальный бенчмарк engagement для платформы"
+            },
+            "Weekly Growth": {
+                "type": "number",
+                "number": {
+                    "format": "number"
+                },
+                "description": "Прирост подписчиков за неделю"
+            },
+            "Growth Status": {
+                "type": "formula",
+                "formula": {
+                    "expression": "if(prop(\"Weekly Growth\") > 50, \"🚀 Excellent\", if(prop(\"Weekly Growth\") > 20, \"✅ Good\", if(prop(\"Weekly Growth\") > 0, \"📊 Slow\", \"🚨 Declining\")))"
+                },
+                "description": "Статус роста на основе недельного прироста (формула)"
+            },
+            "Content Quality": {
+                "type": "formula",
+                "formula": {
+                    "expression": "if(prop(\"Content Score\") >= 8, \"🔥 Excellent\", if(prop(\"Content Score\") >= 6, \"✅ Good\", if(prop(\"Content Score\") >= 4, \"📊 Average\", \"⚠️ Poor\")))"
+                },
+                "description": "Качество контента на основе Content Score (формула)"
+            },
+            "Total Reach": {
+                "type": "formula",
+                "formula": {
+                    "expression": "round(prop(\"Followers\") * (prop(\"Reach Rate\") / 100))"
+                },
+                "description": "Расчетный охват постов (формула)"
+            }
+        }
+    },
+    "manual_setup_instructions": {
+        "description": "Инструкции по ручной настройке полей в Notion",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Открыть базу данных Платформы в Notion",
+                "details": "Перейти в свою базу данных с платформами"
+            },
+            {
+                "step": 2,
+                "action": "Добавить простые поля",
+                "fields_to_add": [
+                    "Engagement Rate (Number, Percent)",
+                    "Growth Rate (Number, Percent)",
+                    "Content Score (Number)",
+                    "vs Industry (Number, Percent)",
+                    "Reach Rate (Number, Percent)",
+                    "Posts per Week (Number)",
+                    "Monthly Goal (Number)",
+                    "Industry Benchmark (Number, Percent)",
+                    "Weekly Growth (Number)",
+                    "Last Analytics (Date)",
+                    "Next Action (Text)"
+                ]
+            },
+            {
+                "step": 3,
+                "action": "Добавить Select поля",
+                "fields_to_add": [
+                    {
+                        "name": "Platform Rank",
+                        "options": [
+                            "🔥 Excellent",
+                            "✅ High",
+                            "📊 Medium",
+                            "⚠️ Low"
+                        ]
+                    },
+                    {
+                        "name": "Alert Status",
+                        "options": [
+                            "🚀 Excellent",
+                            "✅ Good",
+                            "⚠️ Warning",
+                            "🚨 Critical"
+                        ]
+                    },
+                    {
+                        "name": "Engagement Trend",
+                        "options": [
+                            "📈 Growing",
+                            "📊 Stable",
+                            "📉 Declining"
+                        ]
+                    },
+                    {
+                        "name": "Platform Priority",
+                        "options": [
+                            "🔥 High",
+                            "📊 Medium",
+                            "⚪ Low"
+                        ]
+                    }
+                ]
+            },
+            {
+                "step": 4,
+                "action": "Добавить Formula поля",
+                "formulas": [
+                    {
+                        "name": "Goal Progress",
+                        "formula": "round((prop(\"Followers\") / prop(\"Monthly Goal\")) * 100)",
+                        "description": "% достижения цели"
+                    },
+                    {
+                        "name": "Benchmark Score",
+                        "formula": "if(prop(\"Engagement Rate\") > 0, round((prop(\"Engagement Rate\") / prop(\"Industry Benchmark\")) * 100), 0)",
+                        "description": "% от бенчмарка"
+                    },
+                    {
+                        "name": "Growth Status",
+                        "formula": "if(prop(\"Weekly Growth\") > 50, \"🚀 Excellent\", if(prop(\"Weekly Growth\") > 20, \"✅ Good\", if(prop(\"Weekly Growth\") > 0, \"📊 Slow\", \"🚨 Declining\")))",
+                        "description": "Статус роста"
+                    },
+                    {
+                        "name": "Content Quality",
+                        "formula": "if(prop(\"Content Score\") >= 8, \"🔥 Excellent\", if(prop(\"Content Score\") >= 6, \"✅ Good\", if(prop(\"Content Score\") >= 4, \"📊 Average\", \"⚠️ Poor\")))",
+                        "description": "Качество контента"
+                    },
+                    {
+                        "name": "Total Reach",
+                        "formula": "round(prop(\"Followers\") * (prop(\"Reach Rate\") / 100))",
+                        "description": "Расчетный охват"
+                    }
+                ]
+            }
+        ]
+    },
+    "default_values": {
+        "description": "Рекомендуемые начальные значения для твоих платформ",
+        "platforms": {
+            "Telegram": {
+                "Industry Benchmark": 0.025,
+                "Monthly Goal": 6000,
+                "Platform Priority": "🔥 High",
+                "Engagement Rate": 0.173,
+                "Content Score": 8.1,
+                "vs Industry": 5.92,
+                "Platform Rank": "🔥 Excellent",
+                "Alert Status": "🚀 Excellent"
+            },
+            "YouTube": {
+                "Industry Benchmark": 0.04,
+                "Monthly Goal": 55000,
+                "Platform Priority": "🔥 High",
+                "Engagement Rate": 0.045,
+                "Content Score": 7.8,
+                "vs Industry": 0.13,
+                "Platform Rank": "✅ High",
+                "Alert Status": "✅ Good"
+            },
+            "Instagram": {
+                "Industry Benchmark": 0.035,
+                "Monthly Goal": 8500,
+                "Platform Priority": "📊 Medium",
+                "Engagement Rate": 0.03,
+                "Content Score": 6.5,
+                "vs Industry": -0.14,
+                "Platform Rank": "📊 Medium",
+                "Alert Status": "⚠️ Warning"
+            },
+            "TikTok": {
+                "Industry Benchmark": 0.05,
+                "Monthly Goal": 12000,
+                "Platform Priority": "🔥 High",
+                "Engagement Rate": 0.055,
+                "Content Score": 7.2,
+                "vs Industry": 0.10,
+                "Platform Rank": "✅ High",
+                "Alert Status": "✅ Good"
+            },
+            "Facebook": {
+                "Industry Benchmark": 0.015,
+                "Monthly Goal": 21000,
+                "Platform Priority": "⚪ Low",
+                "Engagement Rate": 0.012,
+                "Content Score": 5.5,
+                "vs Industry": -0.20,
+                "Platform Rank": "📊 Medium",
+                "Alert Status": "⚠️ Warning"
+            },
+            "Twitter": {
+                "Industry Benchmark": 0.02,
+                "Monthly Goal": 16500,
+                "Platform Priority": "📊 Medium",
+                "Engagement Rate": 0.022,
+                "Content Score": 6.8,
+                "vs Industry": 0.10,
+                "Platform Rank": "✅ High",
+                "Alert Status": "✅ Good"
+            },
+            "VK": {
+                "Industry Benchmark": 0.028,
+                "Monthly Goal": 2000,
+                "Platform Priority": "🔥 High",
+                "Engagement Rate": 0,
+                "Content Score": 0,
+                "vs Industry": 0,
+                "Platform Rank": "⚠️ Low",
+                "Alert Status": "🚨 Critical"
+            }
+        }
+    },
+    "automation_fields": {
+        "description": "Поля, которые будут автоматически обновляться скриптами",
+        "auto_updated_fields": [
+            "Followers",
+            "Posts",
+            "Engagement Rate",
+            "Growth Rate",
+            "Platform Rank",
+            "Content Score",
+            "vs Industry",
+            "Alert Status",
+            "Last Analytics",
+            "Next Action",
+            "Weekly Growth",
+            "Reach Rate"
+        ],
+        "manual_fields": [
+            "Monthly Goal",
+            "Industry Benchmark",
+            "Platform Priority",
+            "Posts per Week"
+        ]
+    }
+}

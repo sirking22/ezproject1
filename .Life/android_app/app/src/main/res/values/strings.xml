@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quick Voice Assistant</string>
+    
+    <!-- Основные строки -->
+    <string name="title_voice_assistant">🎤 Quick Voice Assistant</string>
+    <string name="status_ready">Статус: Готов к работе</string>
+    <string name="status_listening">Статус: Слушаю...</string>
+    <string name="status_processing">Статус: Обрабатываю...</string>
+    <string name="status_error">Статус: Ошибка</string>
+    
+    <!-- Кнопки -->
+    <string name="button_start_recording">🎤\nНачать запись</string>
+    <string name="button_stop_recording">🛑\nОстановить</string>
+    <string name="button_retry">🔄 Повторить</string>
+    
+    <!-- Сообщения -->
+    <string name="message_permission_required">Необходимо разрешение на микрофон</string>
+    <string name="message_permission_granted">Разрешение на микрофон получено</string>
+    <string name="message_command_processed">Команда выполнена</string>
+    <string name="message_processing_error">Ошибка обработки</string>
+    <string name="message_try_again">Попробуйте еще раз</string>
+    <string name="message_no_speech">Не удалось распознать речь</string>
+    <string name="message_timeout">Время ожидания истекло</string>
+    
+    <!-- Команды -->
+    <string name="command_placeholder">Нажмите кнопку и скажите команду</string>
+    <string name="result_placeholder">Здесь появится результат обработки</string>
+    
+    <!-- Быстрые команды -->
+    <string name="quick_commands_title">🎯 Быстрые команды:</string>
+    <string name="quick_command_task">• \"Добавить задачу купить продукты\"</string>
+    <string name="quick_command_thought">• \"Записать мысль о проекте\"</string>
+    <string name="quick_command_progress">• \"Показать прогресс за неделю\"</string>
+    <string name="quick_command_ritual">• \"Создать утренний ритуал\"</string>
+    <string name="quick_command_mood">• \"Анализ настроения\"</string>
+    
+    <!-- Настройки -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_llm_server">LLM Сервер</string>
+    <string name="settings_notion_token">Notion Токен</string>
+    <string name="settings_telegram_token">Telegram Токен</string>
+    <string name="settings_voice_timeout">Таймаут записи</string>
+    <string name="settings_auto_sync">Автосинхронизация</string>
+    <string name="settings_notifications">Уведомления</string>
+    
+    <!-- Ошибки -->
+    <string name="error_network">Ошибка сети</string>
+    <string name="error_llm_server">Ошибка LLM сервера</string>
+    <string name="error_notion_sync">Ошибка синхронизации с Notion</string>
+    <string name="error_telegram">Ошибка отправки в Telegram</string>
+    <string name="error_voice_recognition">Ошибка распознавания речи</string>
+    
+    <!-- Успех -->
+    <string name="success_task_added">✅ Задача добавлена</string>
+    <string name="success_thought_recorded">💭 Мысль записана</string>
+    <string name="success_habit_tracked">🔄 Привычка отмечена</string>
+    <string name="success_idea_saved">💡 Идея сохранена</string>
+    <string name="success_synced">📝 Данные синхронизированы</string>
+    
+    <!-- Контекст -->
+    <string name="context_morning">Утренний режим</string>
+    <string name="context_work">Рабочий режим</string>
+    <string name="context_evening">Вечерний режим</string>
+    <string name="context_night">Ночной режим</string>
+    <string name="context_home">Домашний режим</string>
+</resources> 

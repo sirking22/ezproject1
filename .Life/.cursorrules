@@ -1,0 +1,64 @@
+# Правила разработки для персональной AI-экосистемы
+
+## Архитектурные принципы
+- Модульная архитектура с четким разделением ответственности
+- Async/await для всех I/O операций
+- Type hints для всех функций
+- Comprehensive logging
+- Error handling с graceful degradation
+
+## Стиль кода
+- PEP 8 compliance
+- Docstrings для всех функций и классов
+- Meaningful variable names
+- Single responsibility principle
+
+## Интеграции
+- Notion API для хранения данных
+- Telegram Bot API для интерфейса
+- Todoist API для управления задачами
+- OpenRouter API для LLM (временно)
+
+## Безопасность
+- Environment variables для секретов
+- Input validation
+- Rate limiting
+- Error messages без sensitive data
+
+## Тестирование
+- Unit tests для всех функций
+- Integration tests для API
+- Mock external services
+- Coverage > 80%
+
+## Структура проекта
+- src/ - основной код
+- tests/ - тесты
+- docs/ - документация
+- config/ - конфигурации
+- scripts/ - скрипты автоматизации
+
+## Приоритеты разработки
+1. Интеграция Todoist (текущий фокус)
+2. Локальная LLM интеграция
+3. Fine-tuning pipeline
+4. Автоматизация и аналитика
+
+## Конвенции именования
+- Файлы: snake_case
+- Классы: PascalCase
+- Функции: snake_case
+- Константы: UPPER_SNAKE_CASE
+- Переменные: snake_case
+
+## Логирование
+- Используй structured logging
+- Логируй все важные операции
+- Не логируй sensitive данные
+- Используй разные уровни (DEBUG, INFO, WARNING, ERROR)
+
+## Обработка ошибок
+- Всегда обрабатывай исключения
+- Предоставляй понятные сообщения пользователю
+- Логируй детали ошибок для отладки
+- Graceful degradation при недоступности сервисов 

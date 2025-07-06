@@ -1,0 +1,70 @@
+{"timestamp": "2025-06-16T00:20:32.713120", "agent": "system_architect", "role": "Системный архитектор", "action": "Анализ требований", "details": "Проверка Python, Node.js, Git", "success": true, "phase": "analysis"}
+2025-06-16 00:20:32,714 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Анализ требований - ✅ Проверка Python, Node.js, Git
+{"timestamp": "2025-06-16T00:20:33.959075", "agent": "system_architect", "role": "Системный архитектор", "action": "Анализ требований", "details": "Python: Python 3.11.6, pip: доступен", "success": true, "phase": "analysis"}
+2025-06-16 00:20:33,960 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Анализ требований - ✅ Python: Python 3.11.6, pip: доступен
+{"timestamp": "2025-06-16T00:20:33.960076", "agent": "system_architect", "role": "Системный архитектор", "action": "Проектирование архитектуры", "details": "Создание структуры директорий", "success": true, "phase": "analysis"}
+2025-06-16 00:20:33,960 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Проектирование архитектуры - ✅ Создание структуры директорий
+{"timestamp": "2025-06-16T00:20:33.961078", "agent": "system_architect", "role": "Системный архитектор", "action": "Проектирование архитектуры", "details": "Создано 8 директорий", "success": true, "phase": "analysis"}
+2025-06-16 00:20:33,962 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Проектирование архитектуры - ✅ Создано 8 директорий
+{"timestamp": "2025-06-16T00:20:33.962477", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Настройка Python окружения", "details": "Создание виртуального окружения", "success": true, "phase": "environment_setup"}
+2025-06-16 00:20:33,962 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Настройка Python окружения - ✅ Создание виртуального окружения
+{"timestamp": "2025-06-16T00:20:51.519433", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Настройка Python окружения", "details": "Виртуальное окружение создано", "success": true, "phase": "environment_setup"}
+2025-06-16 00:20:51,519 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Настройка Python окружения - ✅ Виртуальное окружение создано
+{"timestamp": "2025-06-16T00:20:51.520444", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Установка зависимостей", "details": "Установка Python пакетов", "success": true, "phase": "environment_setup"}
+2025-06-16 00:20:51,520 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Установка зависимостей - ✅ Установка Python пакетов
+{"timestamp": "2025-06-16T00:20:53.988766", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Установка зависимостей", "details": "Ошибка: Ошибка установки: ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'server/requirements.txt'\n\n[notice] A new release of pip is available: 23.2.1 -> 25.1.1\n[notice] To update, run: Z:\\Файлы\\.Life\\venv\\Scripts\\python.exe -m pip install --upgrade pip\n", "success": false, "phase": "environment_setup"}
+2025-06-16 00:20:53,989 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Установка зависимостей - ❌ Ошибка: Ошибка установки: ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'server/requirements.txt'
+
+[notice] A new release of pip is available: 23.2.1 -> 25.1.1
+[notice] To update, run: Z:\Файлы\.Life\venv\Scripts\python.exe -m pip install --upgrade pip
+
+{"timestamp": "2025-06-16T00:21:27.501344", "agent": "system_architect", "role": "Системный архитектор", "action": "Анализ требований", "details": "Проверка Python, Node.js, Git", "success": true, "phase": "analysis"}
+2025-06-16 00:21:27,501 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Анализ требований - ✅ Проверка Python, Node.js, Git
+{"timestamp": "2025-06-16T00:21:28.141020", "agent": "system_architect", "role": "Системный архитектор", "action": "Анализ требований", "details": "Python: Python 3.11.6, pip: доступен", "success": true, "phase": "analysis"}
+2025-06-16 00:21:28,141 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Анализ требований - ✅ Python: Python 3.11.6, pip: доступен
+{"timestamp": "2025-06-16T00:21:28.142023", "agent": "system_architect", "role": "Системный архитектор", "action": "Проектирование архитектуры", "details": "Создание структуры директорий", "success": true, "phase": "analysis"}
+2025-06-16 00:21:28,142 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Проектирование архитектуры - ✅ Создание структуры директорий
+{"timestamp": "2025-06-16T00:21:28.142023", "agent": "system_architect", "role": "Системный архитектор", "action": "Проектирование архитектуры", "details": "Создано 8 директорий", "success": true, "phase": "analysis"}
+2025-06-16 00:21:28,143 - __main__ - INFO - 🤖 system_architect (Системный архитектор): Проектирование архитектуры - ✅ Создано 8 директорий
+{"timestamp": "2025-06-16T00:21:28.143020", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Настройка Python окружения", "details": "Создание виртуального окружения", "success": true, "phase": "environment_setup"}
+2025-06-16 00:21:28,143 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Настройка Python окружения - ✅ Создание виртуального окружения
+{"timestamp": "2025-06-16T00:21:30.952538", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Настройка Python окружения", "details": "Виртуальное окружение создано", "success": true, "phase": "environment_setup"}
+2025-06-16 00:21:30,953 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Настройка Python окружения - ✅ Виртуальное окружение создано
+{"timestamp": "2025-06-16T00:21:30.954417", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Установка зависимостей", "details": "Установка Python пакетов", "success": true, "phase": "environment_setup"}
+2025-06-16 00:21:30,954 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Установка зависимостей - ✅ Установка Python пакетов
+{"timestamp": "2025-06-16T00:42:25.717408", "agent": "devops_engineer", "role": "DevOps инженер", "action": "Установка зависимостей", "details": "Ошибка: Ошибка установки:   error: subprocess-exited-with-error\n  \n  Building wheel for llama-cpp-python (pyproject.toml) did not run successfully.\n  exit code: 1\n  \n  [20 lines of output]\n  *** scikit-build-core 0.11.4 using CMake 4.0.3 (wheel)\n  *** Configuring CMake...\n  2025-06-16 00:42:09,548 - scikit_build_core - WARNING - Can't find a Python library, got libdir=None, ldlibrary=None, multiarch=None, masd=None\n  loading initial cache file C:\\Users\\Arseniy\\AppData\\Local\\Temp\\tmpgjp0hr8z\\build\\CMakeInit.txt\n  -- Building for: Visual Studio 17 2022\n  -- The C compiler identification is unknown\n  -- The CXX compiler identification is unknown\n  CMake Error at CMakeLists.txt:3 (project):\n    No CMAKE_C_COMPILER could be found.\n  \n  \n  \n  CMake Error at CMakeLists.txt:3 (project):\n    No CMAKE_CXX_COMPILER could be found.\n  \n  \n  \n  -- Configuring incomplete, errors occurred!\n  \n  *** CMake configuration failed\n  [end of output]\n  \n  note: This error originates from a subprocess, and is likely not a problem with pip.\n  ERROR: Failed building wheel for llama-cpp-python\nERROR: Could not build wheels for llama-cpp-python, which is required to install pyproject.toml-based projects\n\n[notice] A new release of pip is available: 23.2.1 -> 25.1.1\n[notice] To update, run: Z:\\Файлы\\.Life\\venv\\Scripts\\python.exe -m pip install --upgrade pip\n", "success": false, "phase": "environment_setup"}
+2025-06-16 00:42:25,718 - __main__ - INFO - 🤖 devops_engineer (DevOps инженер): Установка зависимостей - ❌ Ошибка: Ошибка установки:   error: subprocess-exited-with-error
+  
+  Building wheel for llama-cpp-python (pyproject.toml) did not run successfully.
+  exit code: 1
+  
+  [20 lines of output]
+  *** scikit-build-core 0.11.4 using CMake 4.0.3 (wheel)
+  *** Configuring CMake...
+  2025-06-16 00:42:09,548 - scikit_build_core - WARNING - Can't find a Python library, got libdir=None, ldlibrary=None, multiarch=None, masd=None
+  loading initial cache file C:\Users\Arseniy\AppData\Local\Temp\tmpgjp0hr8z\build\CMakeInit.txt
+  -- Building for: Visual Studio 17 2022
+  -- The C compiler identification is unknown
+  -- The CXX compiler identification is unknown
+  CMake Error at CMakeLists.txt:3 (project):
+    No CMAKE_C_COMPILER could be found.
+  
+  
+  
+  CMake Error at CMakeLists.txt:3 (project):
+    No CMAKE_CXX_COMPILER could be found.
+  
+  
+  
+  -- Configuring incomplete, errors occurred!
+  
+  *** CMake configuration failed
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for llama-cpp-python
+ERROR: Could not build wheels for llama-cpp-python, which is required to install pyproject.toml-based projects
+
+[notice] A new release of pip is available: 23.2.1 -> 25.1.1
+[notice] To update, run: Z:\Файлы\.Life\venv\Scripts\python.exe -m pip install --upgrade pip
+

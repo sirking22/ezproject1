@@ -1,0 +1,174 @@
+{
+    "app": {
+        "name": "Quick Voice Assistant",
+        "version": "1.0.0",
+        "description": "Быстрый голосовой доступ к LLM и базе данных",
+        "author": "Life System"
+    },
+    "server": {
+        "url": "http://192.168.1.100:8000",
+        "endpoints": {
+            "voice": "/watch/voice",
+            "telegram": "/telegram/send",
+            "ping": "/ping",
+            "health": "/health"
+        },
+        "timeout": 10000
+    },
+    "voice": {
+        "autoRecordOnWake": true,
+        "recordTimeout": 10000,
+        "retryAttempts": 2,
+        "wakeWords": [
+            "ассистент",
+            "помощь",
+            "вопрос",
+            "задача",
+            "мысль",
+            "идея"
+        ]
+    },
+    "gestures": {
+        "shake": "activate_recording",
+        "double_tap": "activate_recording",
+        "long_press": "show_menu",
+        "swipe_up": "repeat_last"
+    },
+    "screens": {
+        "main": {
+            "title": "🎤 Готов",
+            "message": "Подними руку\nи говори",
+            "button1": "●",
+            "button2": "Меню",
+            "color": "green"
+        },
+        "recording": {
+            "title": "🔴 Запись",
+            "message": "Говорите...",
+            "button1": "●",
+            "button2": "Стоп",
+            "color": "red",
+            "animation": "wave"
+        },
+        "processing": {
+            "title": "🔄 Обработка",
+            "message": "Анализирую...",
+            "button1": "●",
+            "button2": "Отмена",
+            "color": "blue"
+        },
+        "response": {
+            "title": "✅ Готово",
+            "message": "",
+            "button1": "Повтор",
+            "button2": "Новое",
+            "color": "green"
+        },
+        "error": {
+            "title": "❌ Ошибка",
+            "message": "",
+            "button1": "Повтор",
+            "button2": "Отмена",
+            "color": "red"
+        }
+    },
+    "commands": {
+        "add_task": {
+            "patterns": [
+                "добавь задачу",
+                "создай задачу",
+                "задача"
+            ],
+            "action": "create_task",
+            "database": "actions"
+        },
+        "save_thought": {
+            "patterns": [
+                "запиши мысль",
+                "сохрани идею",
+                "мысль"
+            ],
+            "action": "save_reflection",
+            "database": "reflections"
+        },
+        "create_habit": {
+            "patterns": [
+                "создай привычку",
+                "новая привычка",
+                "привычка"
+            ],
+            "action": "create_habit",
+            "database": "habits"
+        },
+        "show_progress": {
+            "patterns": [
+                "покажи прогресс",
+                "статистика",
+                "прогресс"
+            ],
+            "action": "get_progress",
+            "database": "all"
+        },
+        "health_check": {
+            "patterns": [
+                "как мое здоровье",
+                "здоровье",
+                "состояние"
+            ],
+            "action": "health_analysis",
+            "database": "biometrics"
+        },
+        "sync_data": {
+            "patterns": [
+                "синхронизируй",
+                "синхронизация",
+                "обнови"
+            ],
+            "action": "sync_all",
+            "database": "all"
+        }
+    },
+    "ui": {
+        "colors": {
+            "green": "#4CAF50",
+            "red": "#F44336",
+            "blue": "#2196F3",
+            "orange": "#FF9800",
+            "white": "#FFFFFF",
+            "black": "#000000"
+        },
+        "animations": {
+            "wave": {
+                "type": "wave",
+                "duration": 1000,
+                "repeat": true
+            },
+            "pulse": {
+                "type": "pulse",
+                "duration": 500,
+                "repeat": true
+            }
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "types": {
+            "success": {
+                "color": "green",
+                "duration": 3000
+            },
+            "error": {
+                "color": "red",
+                "duration": 5000
+            },
+            "warning": {
+                "color": "orange",
+                "duration": 4000
+            },
+            "info": {
+                "color": "blue",
+                "duration": 3000
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "notion-mcp-server": {
+            "command": "python",
+            "args": [
+                "mcp_notion_server.py"
+            ],
+            "cwd": "Z:\\Files\\VS_code",
+            "env": {
+                "NOTION_TOKEN": "your_notion_token_here",
+                "NOTION_IDEAS_DB_ID": "ad92a6e21485428c84de8587706b3be1",
+                "NOTION_TASKS_DB_ID": "d09df250ce7e4e0d9fbe4e036d320def",
+                "NOTION_SUBTASKS_DB_ID": "9c5f4269d61449b6a7485579a3c21da3",
+                "NOTION_MATERIALS_DB_ID": "1d9ace03d9ff804191a4d35aeedcbbd4",
+                "NOTION_PROJECTS_DB_ID": "342f18c67a5e41fead73dcec00770f4e",
+                "NOTION_KPI_DB_ID": "1d6ace03d9ff80bfb809ed21dfd2150c"
+            }
+        }
+    }
+}

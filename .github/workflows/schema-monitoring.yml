@@ -1,0 +1,120 @@
+name: Schema Monitoring
+
+on:
+  schedule:
+    # Запуск каждый день в 9:00 UTC
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    # Ручной запуск
+
+jobs:
+  monitor-schemas:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install notion-client
+        pip install -r requirements.txt
+        
+    - name: Configure environment
+      run: |
+        echo "NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}" >> $GITHUB_ENV
+        
+    - name: Run schema monitoring
+      run: |
+        python notion_schema_monitor.py
+        
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if [ -f schema_changes.json ]; then
+          echo "changes=true" >> $GITHUB_OUTPUT
+          echo "📝 Обнаружены изменения в схемах:"
+          cat schema_changes.json
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "✅ Изменений не обнаружено"
+        fi
+        
+    - name: Create Pull Request if changes detected
+      if: steps.check-changes.outputs.changes == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "feat: автоматическое обновление схем Notion"
+        body: |
+          🔄 Обнаружены изменения в схемах баз данных Notion
+          
+          ## Изменения:
+          ```json
+          $(cat schema_changes.json)
+          ```
+          
+          ## Следующие шаги:
+          1. Проверить изменения в `schema_changes.json`
+          2. Запустить `python auto_update_schemas.py`
+          3. Проверить тесты: `python test_schemas_integration.py`
+          4. Закоммитить обновления
+          
+          **Автоматически создано системой мониторинга схем**
+        branch: feature/auto-schema-update
+        commit-message: "feat: автоматическое обновление схем на основе обнаруженных изменений"
+        
+    - name: Upload schema changes as artifact
+      if: steps.check-changes.outputs.changes == 'true'
+      uses: actions/upload-artifact@v3
+      with:
+        name: schema-changes
+        path: |
+          schema_changes.json
+          update_schemas.py
+          schema_backup.json
+        retention-days: 7
+        
+    - name: Comment on PR
+      if: steps.check-changes.outputs.changes == 'true'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const changes = JSON.parse(fs.readFileSync('schema_changes.json', 'utf8'));
+          
+          let comment = '## 🔍 Обнаруженные изменения в схемах\n\n';
+          
+          const changesByDb = {};
+          changes.forEach(change => {
+            if (!changesByDb[change.database_name]) {
+              changesByDb[change.database_name] = [];
+            }
+            changesByDb[change.database_name].push(change);
+          });
+          
+          for (const [dbName, dbChanges] of Object.entries(changesByDb)) {
+            comment += `### 📊 ${dbName}\n`;
+            dbChanges.forEach(change => {
+              comment += `- **${change.change_type}**: ${change.property_name} = \`${change.new_value}\`\n`;
+            });
+            comment += '\n';
+          }
+          
+          comment += '### 📋 Рекомендуемые действия:\n';
+          comment += '1. Проверить корректность изменений\n';
+          comment += '2. Запустить автоматическое обновление\n';
+          comment += '3. Проверить тесты\n';
+          comment += '4. Закоммитить изменения\n';
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          }); 

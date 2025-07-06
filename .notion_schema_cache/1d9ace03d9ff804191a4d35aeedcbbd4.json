@@ -1,0 +1,353 @@
+{
+  "object": "database",
+  "id": "1d9ace03-d9ff-8041-91a4-d35aeedcbbd4",
+  "cover": null,
+  "icon": null,
+  "created_time": "2025-04-18T18:56:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+  },
+  "last_edited_time": "2025-07-05T21:01:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Материалы",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Материалы",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "properties": {
+    "База идей/советов": {
+      "id": "Iyh_",
+      "name": "База идей/советов",
+      "type": "relation",
+      "relation": {
+        "database_id": "ad92a6e2-1485-428c-84de-8587706b3be1",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "D%5CRH"
+        }
+      }
+    },
+    "Дизайн задачи": {
+      "id": "JMly",
+      "name": "Дизайн задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "V%40_%3C"
+        }
+      }
+    },
+    "Целевые действия?": {
+      "id": "QXPS",
+      "name": "Целевые действия?",
+      "type": "formula",
+      "formula": {
+        "expression": ""
+      }
+    },
+    "Вовлеченность": {
+      "id": "Y%3FW%3B",
+      "name": "Вовлеченность",
+      "type": "formula",
+      "formula": {
+        "expression": ""
+      }
+    },
+    "KPI": {
+      "id": "b%3BC~",
+      "name": "KPI",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "BEV%7B"
+        }
+      }
+    },
+    "Дизайн": {
+      "id": "bMB%7B",
+      "name": "Дизайн",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "single_property",
+        "single_property": {}
+      }
+    },
+    "Created time": {
+      "id": "k%3Cx%5E",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "Date": {
+      "id": "l%7B%40%7B",
+      "name": "Date",
+      "type": "date",
+      "date": {}
+    },
+    "📬 Гайды": {
+      "id": "v%7D%3EI",
+      "name": "📬 Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "YWbA"
+        }
+      }
+    },
+    "Контент план": {
+      "id": "wQ%5DO",
+      "name": "Контент план",
+      "type": "relation",
+      "relation": {
+        "database_id": "b760c8e1-9805-455d-9541-10f691e824f1",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "%7DpA%7C"
+        }
+      }
+    },
+    "📄 Концепты/Сценарии": {
+      "id": "zFWF",
+      "name": "📄 Концепты/Сценарии",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8088-97df-c7e1e74173ce",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Материалы",
+          "synced_property_id": "Bf%7DQ"
+        }
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    },
+    "Статус": {
+      "id": "102fe3aa-67ed-4d25-8dad-2fe17d030808",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "pZkI",
+            "name": "Backlog",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "nWpg",
+            "name": "To do",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "NbvL",
+            "name": "In progress",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "Hj:{",
+            "name": "+\\-",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "xhac",
+            "name": "К релизу",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "TEzQ",
+            "name": "Ок",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "kq`Y",
+            "name": "Сторонние",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "K}Eh",
+            "name": "Архив",
+            "color": "red",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "0fb1b198-9101-4c53-8855-a478e946db3d",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "pZkI",
+              "nWpg"
+            ]
+          },
+          {
+            "id": "48e612e3-409e-4e26-a08d-7f2434e3fcf4",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "NbvL",
+              "Hj:{"
+            ]
+          },
+          {
+            "id": "03e38b8a-98ae-4706-9f34-da0fd441f6b1",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "xhac",
+              "kq`Y",
+              "TEzQ",
+              "K}Eh"
+            ]
+          }
+        ]
+      }
+    },
+    "Вес": {
+      "id": "691740ca-fa37-4766-b8d7-72d01624a2f1",
+      "name": "Вес",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Описание": {
+      "id": "b456c705-fa44-44be-9450-ac6c6cb449aa",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "URL": {
+      "id": "c482a283-a728-461f-8297-27a65b087070",
+      "name": "URL",
+      "type": "url",
+      "url": {}
+    },
+    "Теги": {
+      "id": "e128816c-1a47-4fe4-82ff-76f54638533a",
+      "name": "Теги",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "9cd693f4-a671-4fef-aec1-9ed6413cfe44",
+            "name": "Продукт",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "ef7abcd5-d89f-449c-97bc-e76cd8f0250f",
+            "name": "Маркет",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "20a63df3-d1e7-43dd-a335-ac45f2d0f3fc",
+            "name": "Бренд",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "77864700-53c7-46ad-8ca6-b566a48e0e6d",
+            "name": "Дизайн",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "1aff1838-84d1-41f1-b913-78d210370e62",
+            "name": "Веб",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "41e7055a-57e4-44bf-a09d-ce01fb7cf3a1",
+            "name": "Фото",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "92b31e19-7bd4-472d-a699-0acf76bb12e2",
+            "name": "Видео",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "6c6ae80d-835c-4ba3-88dc-f94597f52aff",
+            "name": "Стратегия",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "70a7a096-9469-457b-8310-2d89f26b615e",
+            "name": "СММ",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "e1286705-9c82-46b7-b530-489e9c12329d",
+            "name": "Копирайт",
+            "color": "purple",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Для чего?": {
+      "id": "fd9cbe1a-138c-4703-89aa-85243e19e02b",
+      "name": "Для чего?",
+      "type": "rich_text",
+      "rich_text": {}
+    }
+  },
+  "parent": {
+    "type": "block_id",
+    "block_id": "21bace03-d9ff-80bf-877a-e34a3ae356ae"
+  },
+  "url": "https://www.notion.so/1d9ace03d9ff804191a4d35aeedcbbd4",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "6f4f8f17-a1b1-4408-bfc3-f845485f0393"
+}

@@ -1,0 +1,650 @@
+{
+  "object": "database",
+  "id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+  "cover": null,
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/token_gray.svg"
+    }
+  },
+  "created_time": "2023-06-30T01:14:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+  },
+  "last_edited_time": "2025-07-01T23:05:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Эпики",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Эпики",
+      "href": null
+    }
+  ],
+  "description": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Мета проекты (2 уровня)",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Мета проекты (2 уровня)",
+      "href": null
+    }
+  ],
+  "is_inline": false,
+  "properties": {
+    "Основные проекты": {
+      "id": "%3AJiL",
+      "name": "Основные проекты",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Стадии": {
+      "id": "%3C%5BUp",
+      "name": "Стадии",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "hmUc",
+            "name": "Предпроизводство",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "Hc}~",
+            "name": "Производство",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "`MJ\\",
+            "name": "Продвижение",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "wEx>",
+            "name": "Поддержка",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7d9fae23-0d98-453c-8e91-147d95e054b7",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "c54fd191-0618-4c19-9b07-05815b4287e0",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "hmUc"
+            ]
+          },
+          {
+            "id": "e40710e7-ddbc-4a6b-abe1-7ea47cfb5801",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "Hc}~",
+              "`MJ\\"
+            ]
+          },
+          {
+            "id": "6b83b61e-7800-4ab7-a65a-6df7d7161e20",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "wEx>",
+              "7d9fae23-0d98-453c-8e91-147d95e054b7"
+            ]
+          }
+        ]
+      }
+    },
+    "Часы": {
+      "id": "B%7CPg",
+      "name": "Часы",
+      "type": "formula",
+      "formula": {
+        "expression": "((({{notion:block_property:dw%5Bb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:iuzX:342f18c6-7a5e-41fe-ad73-dcec00770f4e:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 100).round()) / 100"
+      }
+    },
+    "Приоритеты": {
+      "id": "HvvE",
+      "name": "Приоритеты",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "50d0e47e-0fbb-4487-b1cd-e39af82a8ac3",
+            "name": "Срочно",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "b26eac04-7afc-42ee-8a6d-cfb78874a53a",
+            "name": "Высокий",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "2b31771e-cd06-4549-aa01-4d17ead356b1",
+            "name": "Норм",
+            "color": "green",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Сроки": {
+      "id": "Kzmt",
+      "name": "Сроки",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  or(\n    {{notion:block_property:a4fd0c01-67ee-449d-9da5-ec7e437b7e15:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"In Production\",\n    {{notion:block_property:a4fd0c01-67ee-449d-9da5-ec7e437b7e15:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\",\n    {{notion:block_property:a4fd0c01-67ee-449d-9da5-ec7e437b7e15:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Canceled\",\n    {{notion:block_property:a4fd0c01-67ee-449d-9da5-ec7e437b7e15:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Archived\"\n  ),\n  \"✅ Завершено\".style(\"b\", \"green\"),\n  if(\n    empty(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}})),\n    \"🕓 Без срока\".style(\"b\", \"gray\"),\n    if(\n      dateBetween(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\") < 0,\n      if(\n        abs(dateBetween(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) > 3,\n        \"🔥 ⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\"),\n        \"⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\")\n      ),\n      if(\n        formatDate(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(now(), \"YYYY-MM-DD\"),\n        \"🟡 Сегодня\".style(\"b\", \"yellow\"),\n        if(\n          formatDate(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 1, \"days\"), \"YYYY-MM-DD\"),\n          \"🟠 Завтра\".style(\"b\", \"orange\"),\n          if(\n            formatDate(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 2, \"days\"), \"YYYY-MM-DD\"),\n            \"🟣 Послезавтра\".style(\"b\", \"purple\"),\n            \"📆 \" + format(dateBetween(dateEnd({{notion:block_property:MeN%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) + \" д.\".style(\"b\", \"blue\")\n          )\n        )\n      )\n    )\n  )\n)\n"
+      }
+    },
+    "Срок": {
+      "id": "MeN%40",
+      "name": "Срок",
+      "type": "date",
+      "date": {}
+    },
+    "Описание": {
+      "id": "OL%60v",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Blocked by": {
+      "id": "Oamu",
+      "name": "Blocked by",
+      "type": "relation",
+      "relation": {
+        "database_id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Blocking",
+          "synced_property_id": "epeP"
+        }
+      }
+    },
+    "Статус тестирования": {
+      "id": "PY%60g",
+      "name": "Статус тестирования",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "b2987320-6963-47a4-b696-b874dc2a9c21",
+            "name": "Не тестировался",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "0295efa2-56f8-465f-accc-5b26017bb11d",
+            "name": "В тестировании",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "71cfa9f1-2b17-43f1-b0d5-3cb76b18bafc",
+            "name": "Успешен",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "5bbbb81e-15da-40c9-bdcc-f10042d0a00c",
+            "name": "Провален",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Рекомендация": {
+      "id": "SSnL",
+      "name": "Рекомендация",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "7bd2e05a-8430-4d5b-9cd6-75d374dbf4b4",
+            "name": "Внедрять",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "71537e25-2178-4a74-a8f0-b3a1392c9531",
+            "name": "Доработать",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "72df0c20-0cd5-4012-b2ff-1821cbed4b3e",
+            "name": "Отклонить",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Rollup": {
+      "id": "T%3FYR",
+      "name": "Rollup",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:dw%5Bb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:PKB%3E:342f18c6-7a5e-41fe-ad73-dcec00770f4e:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "млад?": {
+      "id": "WzeH",
+      "name": "млад?",
+      "type": "relation",
+      "relation": {
+        "database_id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Related Эпики",
+          "synced_property_id": "kl~%5C"
+        }
+      }
+    },
+    "Tags": {
+      "id": "ZKCk",
+      "name": "Tags",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "9fd4775c-a9e8-458d-86d7-688711d2439c",
+            "name": "Маркет",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "271bc98f-c081-41a8-8d6c-7a8334890ba9",
+            "name": "Соцсети",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "4a4e92b9-32ef-4e5b-aa57-6370df2f32a3",
+            "name": "Бренд",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "776ef70b-5419-4559-9d20-464e8dc48d63",
+            "name": "Продукт",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "7f9d2052-6333-4e72-9fb9-72e37488ca6b",
+            "name": "Стратегия",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "10034263-3067-48b8-9b2c-88adc100635e",
+            "name": "Орг",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "8d5a0d1d-810f-438d-900e-d45c7cde3a0f",
+            "name": "Активности",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "7df4f9a0-e603-4dc4-ae86-d7e750763960",
+            "name": "Фото",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "bcd6c9db-f4ad-499f-8c9a-8dd985b9c833",
+            "name": "Видео",
+            "color": "red",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Formula": {
+      "id": "%5B%3Bzy",
+      "name": "Formula",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:dw%5Bb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:PKB%3E:342f18c6-7a5e-41fe-ad73-dcec00770f4e:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Recommendation": {
+      "id": "%5Eh%7Bh",
+      "name": "Recommendation",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "58c28a41-6d7f-438a-9f30-d68ea675dbd4",
+            "name": "Implement",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "ad957e6d-0a44-4d27-8063-79a4aabf077a",
+            "name": "Improve",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "90fbcc5e-a68d-4ee6-ade7-33b6483b4f44",
+            "name": "Reject",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Планируемые метрики": {
+      "id": "c%7Dv%40",
+      "name": "Планируемые метрики",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "DuHu",
+            "name": "CTR",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "p^`~",
+            "name": "вовлеченность",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "YgF]",
+            "name": "охваты конкурсов",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "udM:",
+            "name": "продажи акционных товаров",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "TCjB",
+            "name": "Количество участников клуба",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "@uzJ",
+            "name": "продажи через клуб и марафон",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "NjQl",
+            "name": "ROI от акций",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "<<b_",
+            "name": "Охваты",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "BUN<",
+            "name": "количество участников марафона",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "\\]{e",
+            "name": "стоимость привлечения (CPC)",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "?IsP",
+            "name": "Количество проданных аэрогрилей и мультиварок",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "GRuU",
+            "name": "конверсии",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "[rIT",
+            "name": "продажи климатической техники и пылесосов",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Проекты": {
+      "id": "dw%5Bb",
+      "name": "Проекты",
+      "type": "relation",
+      "relation": {
+        "database_id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Эпик",
+          "synced_property_id": "%3Ft%5DL"
+        }
+      }
+    },
+    "Blocking": {
+      "id": "epeP",
+      "name": "Blocking",
+      "type": "relation",
+      "relation": {
+        "database_id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Blocked by",
+          "synced_property_id": "Oamu"
+        }
+      }
+    },
+    "Test Status": {
+      "id": "il%40%5D",
+      "name": "Test Status",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "1895782b-dc47-4257-a7b7-ad158c2aa4df",
+            "name": "Not Tested",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "e83fbdba-d82a-40b0-a81f-649be13a3e2b",
+            "name": "In Testing",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "4b1c83d8-6241-4220-b822-f2b85ad319dc",
+            "name": "Success",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1a1b0e11-e128-4007-9f31-59a08e0b8c90",
+            "name": "Failed",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Related Эпики": {
+      "id": "kl~%5C",
+      "name": "Related Эпики",
+      "type": "relation",
+      "relation": {
+        "database_id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "млад?",
+          "synced_property_id": "WzeH"
+        }
+      }
+    },
+    "Линейки продуктов": {
+      "id": "w%7BuD",
+      "name": "Линейки продуктов",
+      "type": "relation",
+      "relation": {
+        "database_id": "ebaf801e-b212-465e-8b3f-e888eb583081",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Эпики",
+          "synced_property_id": "Q%7CP%3C"
+        }
+      }
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    },
+    "Статус": {
+      "id": "a4fd0c01-67ee-449d-9da5-ec7e437b7e15",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "QqoH",
+            "name": "Regular",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "backlog",
+            "name": "Backlog",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "paused",
+            "name": "Paused",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "planned",
+            "name": "Planning",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "in-progress",
+            "name": "In Progress",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "done",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "canceled",
+            "name": "Canceled",
+            "color": "red",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "todo-status-group",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "QqoH",
+              "backlog"
+            ]
+          },
+          {
+            "id": "in-progress-status-group",
+            "name": "In Progress",
+            "color": "blue",
+            "option_ids": [
+              "in-progress",
+              "paused",
+              "planned"
+            ]
+          },
+          {
+            "id": "complete-status-group",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "done",
+              "canceled"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": {
+    "type": "workspace",
+    "workspace": true
+  },
+  "url": "https://www.notion.so/6fc4322e6d0c45a6b37ac49b818a063a",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "9c7c589d-310a-4dea-bfe5-0f5155e3697d"
+}

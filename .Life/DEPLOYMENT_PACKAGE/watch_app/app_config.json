@@ -1,0 +1,87 @@
+{
+    "server": {
+        "url": "http://192.168.1.100:8000",
+        "timeout": 10000,
+        "retryAttempts": 3,
+        "retryDelay": 1000
+    },
+    "voice": {
+        "autoRecordOnWake": true,
+        "recordTimeout": 10000,
+        "wakeWords": [
+            "ассистент",
+            "помощь",
+            "вопрос",
+            "задача",
+            "мысль",
+            "привычка"
+        ],
+        "language": "ru",
+        "sampleRate": 16000
+    },
+    "ui": {
+        "theme": "dark",
+        "fontSize": "medium",
+        "showAnimations": true,
+        "vibrationOnWake": true,
+        "screenTimeout": 30000
+    },
+    "commands": {
+        "addTask": {
+            "patterns": [
+                "добавь задачу",
+                "создай задачу",
+                "задача"
+            ],
+            "description": "Добавить новую задачу"
+        },
+        "saveThought": {
+            "patterns": [
+                "запиши мысль",
+                "сохрани идею",
+                "мысль"
+            ],
+            "description": "Сохранить мысль или идею"
+        },
+        "createHabit": {
+            "patterns": [
+                "создай привычку",
+                "новая привычка",
+                "привычка"
+            ],
+            "description": "Создать новую привычку"
+        },
+        "showProgress": {
+            "patterns": [
+                "покажи прогресс",
+                "статистика",
+                "прогресс"
+            ],
+            "description": "Показать прогресс"
+        },
+        "healthCheck": {
+            "patterns": [
+                "как мое здоровье",
+                "здоровье",
+                "состояние"
+            ],
+            "description": "Проверить состояние здоровья"
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "sound": true,
+        "vibration": true,
+        "showOnWatch": true
+    },
+    "sync": {
+        "autoSync": true,
+        "syncInterval": 300000,
+        "syncOnWake": true
+    },
+    "debug": {
+        "enabled": false,
+        "logLevel": "info",
+        "showTimestamps": true
+    }
+}

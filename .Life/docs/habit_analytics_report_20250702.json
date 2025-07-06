@@ -1,0 +1,45 @@
+{
+  "date": "2025-07-02",
+  "period": "30 дней",
+  "total_habits": 2,
+  "completed_habits": 0,
+  "overall_completion_rate": 0.0,
+  "effectiveness_report": {
+    "Бокс": {
+      "completion_rate": 0.0,
+      "avg_energy": 0,
+      "avg_duration": 0,
+      "mood_distribution": {},
+      "priority_score": 1,
+      "total_attempts": 1,
+      "successful_attempts": 0
+    },
+    "Чтение по расписанию": {
+      "completion_rate": 0.0,
+      "avg_energy": 0,
+      "avg_duration": 0,
+      "mood_distribution": {},
+      "priority_score": 1,
+      "total_attempts": 1,
+      "successful_attempts": 0
+    }
+  },
+  "suggestions": [
+    {
+      "habit_type": "Бокс",
+      "suggestions": [
+        "🔴 Низкое выполнение - упростить или изменить подход",
+        "🔋 Низкая энергия - перенести на другое время или упростить"
+      ],
+      "priority_score": 1
+    },
+    {
+      "habit_type": "Чтение по расписанию",
+      "suggestions": [
+        "🔴 Низкое выполнение - упростить или изменить подход",
+        "🔋 Низкая энергия - перенести на другое время или упростить"
+      ],
+      "priority_score": 1
+    }
+  ]
+}

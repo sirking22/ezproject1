@@ -1,0 +1,411 @@
+{
+  "object": "database",
+  "id": "9c5f4269-d614-49b6-a748-5579a3c21da3",
+  "cover": {
+    "type": "external",
+    "external": {
+      "url": "https://images.unsplash.com/photo-1569135581065-4e94ac11d57a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    }
+  },
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/stars_gray.svg"
+    }
+  },
+  "created_time": "2023-06-28T01:14:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "46239144-3373-45cb-9cdd-b9157fc950b3"
+  },
+  "last_edited_time": "2025-07-04T14:32:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Дизайн",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Дизайн",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "properties": {
+    "Результат": {
+      "id": "%3Co%7Cg",
+      "name": "Результат",
+      "type": "url",
+      "url": {}
+    },
+    "Переработка": {
+      "id": "CxVj",
+      "name": "Переработка",
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "Комменты": {
+      "id": "HsGe",
+      "name": "Комменты",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Баллов": {
+      "id": "V%3FxL",
+      "name": "Баллов",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:%7D_rx:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}*{{notion:block_property:notion%3A%2F%2Ftasks%2Ftask_to_project_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:s%5EVv:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "CRM подпроекта": {
+      "id": "YVm%3F",
+      "name": "CRM подпроекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "CRM задачи",
+        "relation_property_name": "Задачи",
+        "rollup_property_id": "1c9cb982-3949-4c52-ad53-6d0feb42c58a",
+        "relation_property_id": "notion://tasks/task_to_project_relation",
+        "function": "show_original"
+      }
+    },
+    "Коменты": {
+      "id": "_LGw",
+      "name": "Коменты",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Last edited time": {
+      "id": "jWOt",
+      "name": "Last edited time",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "📬 Гайды": {
+      "id": "l%5E%5Cq",
+      "name": "📬 Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн подзадачи",
+          "synced_property_id": "iVrm"
+        }
+      }
+    },
+    "Created time": {
+      "id": "q%5D%3Fk",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "Исполнитель (стата)": {
+      "id": "t%3Fx_",
+      "name": "Исполнитель (стата)",
+      "type": "relation",
+      "relation": {
+        "database_id": "195ace03-d9ff-80c1-a1b0-d236ec3564d2",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн чеклисты",
+          "synced_property_id": "eAc%40"
+        }
+      }
+    },
+    "CRM": {
+      "id": "zi%3Cy",
+      "name": "CRM",
+      "type": "url",
+      "url": {}
+    },
+    "Проект": {
+      "id": "%7B%5Cwc",
+      "name": "Проект",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Проект",
+        "relation_property_name": "Задачи",
+        "rollup_property_id": "RySv",
+        "relation_property_id": "notion://tasks/task_to_project_relation",
+        "function": "show_original"
+      }
+    },
+    "Часы": {
+      "id": "%7D_rx",
+      "name": "Часы",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Подзадачи": {
+      "id": "title",
+      "name": "Подзадачи",
+      "type": "title",
+      "title": {}
+    },
+    "Направление": {
+      "id": "notion%3A%2F%2Ftasks%2Ftags_property",
+      "name": "Направление",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "JH_g",
+            "name": "Продукт",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "TDr{",
+            "name": "Бренд",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "FQyd",
+            "name": "Маркет",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "V}RP",
+            "name": "Соц сети",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "A^Lh",
+            "name": "Видео",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "dZY<",
+            "name": "Фото",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "Sfos",
+            "name": "Дизайн",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "{V_=",
+            "name": "Веб",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "Dwd:",
+            "name": "Стратегия",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "g|=D",
+            "name": "Аналитика",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "a\\Lt",
+            "name": "Копирайт",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "RHeY",
+            "name": "Орг",
+            "color": "gray",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Исполнитель": {
+      "id": "notion%3A%2F%2Ftasks%2Fassign_property",
+      "name": "Исполнитель",
+      "type": "people",
+      "people": {}
+    },
+    " Статус": {
+      "id": "notion%3A%2F%2Ftasks%2Fstatus_property",
+      "name": " Статус",
+      "description": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "|ZYN",
+            "name": "needs review",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "D]uQ",
+            "name": "in progress",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "JwFg",
+            "name": "complete",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "33fa62ad-6a6c-44c4-ac62-1e1c50096b3a",
+            "name": "To do",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "49d60716-509a-4c0b-9494-61ea651c52b8",
+            "name": "In progress",
+            "color": "default",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "todo-status-group",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "33fa62ad-6a6c-44c4-ac62-1e1c50096b3a",
+              "49d60716-509a-4c0b-9494-61ea651c52b8"
+            ]
+          },
+          {
+            "id": "in-progress-status-group",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "|ZYN",
+              "D]uQ"
+            ]
+          },
+          {
+            "id": "complete-status-group",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "JwFg"
+            ]
+          }
+        ]
+      }
+    },
+    "Дата": {
+      "id": "notion%3A%2F%2Ftasks%2Fdue_date_property",
+      "name": "Дата",
+      "type": "date",
+      "date": {}
+    },
+    "Приоритет": {
+      "id": "notion%3A%2F%2Ftasks%2Fpriority_property",
+      "name": "Приоритет",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "a~[h",
+            "name": "!!!",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "priority_high",
+            "name": "!!",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "priority_medium",
+            "name": "!",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "c^A_",
+            "name": ".",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "b42e4ae5-cf9a-479a-a08d-ddc6c04e3468",
+            "name": ">>",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "33f2969f-4ee0-42a4-8e1c-34b4ca29f3ea",
+            "name": ">",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "399dd83a-659a-40a5-adef-b0bb94ea0605",
+            "name": "Средний",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Описание": {
+      "id": "bd51a939-587a-4572-86d5-460d79accbdb",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Задачи": {
+      "id": "notion%3A%2F%2Ftasks%2Ftask_to_project_relation",
+      "name": "Задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Под задачи",
+          "synced_property_id": "notion%3A%2F%2Fprojects%2Fproject_to_task_relation"
+        }
+      }
+    },
+    "Task ID": {
+      "id": "notion%3A%2F%2Ftasks%2Fauto_increment_id_property",
+      "name": "Task ID",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": "TAS"
+      }
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "150b9fce-5e98-452b-81c3-8b03857f9fb7"
+  },
+  "url": "https://www.notion.so/9c5f4269d61449b6a7485579a3c21da3",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "eb5fef84-0173-4d50-b142-9cdbd35002a2"
+}

@@ -1,0 +1,835 @@
+{
+  "results": [
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-81b2-ac9d-e262eb10f691",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-18T16:23:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "1d6ace03-d9ff-81f3-8f5d-ca00bd3473ac"
+            }
+          ],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Обратная связь, коммуникации, опросы",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Обратная связь, коммуникации, опросы",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Team Survey",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Team Survey",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "PR / Customer Care",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "PR / Customer Care",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/PR-Customer-Care-1d6ace03d9ff81b2ac9de262eb10f691",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-81b8-bc7b-f7b3ee79f9b4",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-15T16:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "AI, копирайтинг, тексты, описания, рассылки",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "AI, копирайтинг, тексты, описания, рассылки",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Oksana",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Oksana",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Контент",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Контент",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1d6ace03d9ff81b8bc7bf7b3ee79f9b4",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-817e-866d-c512391f410f",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-18T16:32:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": {
+        "type": "emoji",
+        "emoji": "🖌️"
+      },
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Идеи, концепты, гайды, бренд-платформа",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Идеи, концепты, гайды, бренд-платформа",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Arseniy",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Arseniy",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Креатив",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Креатив",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1d6ace03d9ff817e866dc512391f410f",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-8150-87a3-c443e42ec8fc",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-15T16:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "SMM, Ads, аналитика, стратегия продвижения",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "SMM, Ads, аналитика, стратегия продвижения",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Maria",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Maria",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Маркетинг",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Маркетинг",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1d6ace03d9ff815087a3c443e42ec8fc",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-81aa-b997-c743100fc577",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-15T16:47:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": null,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Видео, монтаж, съемки, студийный продакшн",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Видео, монтаж, съемки, студийный продакшн",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ivan",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ivan",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Продакшн",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Продакшн",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1d6ace03d9ff81aab997c743100fc577",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "1d6ace03-d9ff-819e-afb0-e54a7eb00e91",
+      "created_time": "2025-04-15T16:47:00.000Z",
+      "last_edited_time": "2025-04-23T19:59:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7"
+      },
+      "archived": false,
+      "in_trash": false,
+      "properties": {
+        "Rollup": {
+          "id": "%3BHrH",
+          "type": "rollup",
+          "rollup": {
+            "type": "array",
+            "array": [],
+            "function": "show_original"
+          }
+        },
+        "В срок": {
+          "id": "JMN%7B",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": 0,
+            "function": "average"
+          }
+        },
+        "Без правок": {
+          "id": "XXNT",
+          "type": "rollup",
+          "rollup": {
+            "type": "number",
+            "number": 0,
+            "function": "average"
+          }
+        },
+        "KPI 1": {
+          "id": "%5DXf%3A",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "1d6ace03-d9ff-81f3-be9d-d29b6920d9fe"
+            },
+            {
+              "id": "1d6ace03-d9ff-8164-988b-f04cf49fbf8f"
+            }
+          ],
+          "has_more": false
+        },
+        "Описание": {
+          "id": "aI%5CA",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Визуальные концепты, полиграфия, упаковка, карточки",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Визуальные концепты, полиграфия, упаковка, карточки",
+              "href": null
+            }
+          ]
+        },
+        "RDT": {
+          "id": "aflj",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "e1af172f-6992-4a0c-92cd-cda9cc62ac37"
+            },
+            {
+              "id": "769414d2-e65d-449f-a2df-d33fe4696260"
+            },
+            {
+              "id": "786006a0-f42a-4417-9c61-76114e73f15c"
+            },
+            {
+              "id": "aa6d2e6f-54bc-4c68-bff7-b6e0108d4cda"
+            }
+          ],
+          "has_more": false
+        },
+        "Руководитель": {
+          "id": "r%5BVd",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Anna",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Anna",
+              "href": null
+            }
+          ]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Дизайн",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Дизайн",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/1d6ace03d9ff819eafb0e54a7eb00e91",
+      "public_url": null
+    }
+  ]
+}

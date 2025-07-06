@@ -1,0 +1,912 @@
+{
+  "object": "database",
+  "id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+  "cover": {
+    "type": "external",
+    "external": {
+      "url": "https://images.unsplash.com/photo-1446608943998-cbd52b140335?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    }
+  },
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/star-half_gray.svg"
+    }
+  },
+  "created_time": "2023-06-28T01:14:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "46239144-3373-45cb-9cdd-b9157fc950b3"
+  },
+  "last_edited_time": "2025-07-02T12:43:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Дизайн",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Дизайн",
+      "href": null
+    }
+  ],
+  "description": [
+    {
+      "type": "text",
+      "text": {
+        "content": "- Всем проектам в ",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "- Всем проектам в ",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": "“In Progress”",
+        "link": null
+      },
+      "annotations": {
+        "bold": true,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "yellow_background"
+      },
+      "plain_text": "“In Progress”",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": " выставлять ",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": " выставлять ",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": "задачи",
+        "link": null
+      },
+      "annotations": {
+        "bold": true,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "задачи",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": " с оценками",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": " с оценками",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": "\n",
+        "link": null
+      },
+      "annotations": {
+        "bold": true,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "\n",
+      "href": null
+    },
+    {
+      "type": "text",
+      "text": {
+        "content": "- Сроки проектов в течение недели не меняем",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "- Сроки проектов в течение недели не меняем",
+      "href": null
+    }
+  ],
+  "is_inline": false,
+  "properties": {
+    "Ф задачи": {
+      "id": "%3AE%60%40",
+      "name": "Ф задачи",
+      "description": "Файлы задачи",
+      "type": "url",
+      "url": {}
+    },
+    "Время за неделю": {
+      "id": "%3CAc%5E",
+      "name": "Время за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "(\n  {{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n    .filter(\n      current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n      and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n    )\n    .map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}) \n    .sum()\n).round(1)\n"
+      }
+    },
+    "Сроки": {
+      "id": "%3DTK%5C",
+      "name": "Сроки",
+      "description": "От дат",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  or(\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"In Production\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Canceled\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Archived\"\n  ),\n  \"✅ Завершено\".style(\"b\", \"green\"),\n  if(\n    empty(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}})),\n    \"🕓 Без срока\".style(\"b\", \"gray\"),\n    if(\n      dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\") < 0,\n      if(\n        abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) > 3,\n        \"🔥 ⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\"),\n        \"⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\")\n      ),\n      if(\n        formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(now(), \"YYYY-MM-DD\"),\n        \"🟡 Сегодня\".style(\"b\", \"yellow\"),\n        if(\n          formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 1, \"days\"), \"YYYY-MM-DD\"),\n          \"🟠 Завтра\".style(\"b\", \"orange\"),\n          if(\n            formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 2, \"days\"), \"YYYY-MM-DD\"),\n            \"🟣 Послезавтра\".style(\"b\", \"purple\"),\n            \"📆 \" + format(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) + \" д.\".style(\"b\", \"blue\")\n          )\n        )\n      )\n    )\n  )\n)\n"
+      }
+    },
+    "Типовые задачи": {
+      "id": "AbMK",
+      "name": "Типовые задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "1f2ace03-d9ff-806d-b364-e869f27d83de",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн",
+          "synced_property_id": "%3BBe%7C"
+        }
+      }
+    },
+    "Отчеты": {
+      "id": "A~%5BY",
+      "name": "Отчеты",
+      "type": "relation",
+      "relation": {
+        "database_id": "2970a03c-8d89-4a55-b98e-fe299c470f66",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Related to Задачи (Спринт)",
+          "synced_property_id": "%3Bij%7D"
+        }
+      }
+    },
+    "Срок проекта": {
+      "id": "CoAg",
+      "name": "Срок проекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Сроки",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "=TK\\",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Статус проекта": {
+      "id": "EW_E",
+      "name": "Статус проекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Статус",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "notion://projects/status_property",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Число правок": {
+      "id": "GN%5Ev",
+      "name": "Число правок",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Саша за неделю": {
+      "id": "H%40%3Bp",
+      "name": "Саша за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n.filter(\n  current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Александр Трусов\"\n)\n.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n.sum()\n.round(1)\n"
+      }
+    },
+    "Отклонение Raw %": {
+      "id": "IxgN",
+      "name": "Отклонение Raw %",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  and({{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0, {{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0),\n  ({{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) / {{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} * 100,\n  0\n)\n"
+      }
+    },
+    "Часы": {
+      "id": "MCyb",
+      "name": "Часы",
+      "type": "formula",
+      "formula": {
+        "expression": "round(sum({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})) * 10) / 10"
+      }
+    },
+    "Арс за неделю": {
+      "id": "RGbI",
+      "name": "Арс за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n.filter(\n  current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Arsentiy\"\n)\n.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n.sum()\n.round(1)\n"
+      }
+    },
+    "Проект": {
+      "id": "RySv",
+      "name": "Проект",
+      "type": "relation",
+      "relation": {
+        "database_id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн",
+          "synced_property_id": "lox_"
+        }
+      }
+    },
+    "Материалы": {
+      "id": "V%40_%3C",
+      "name": "Материалы",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d9ace03-d9ff-8041-91a4-d35aeedcbbd4",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн задачи",
+          "synced_property_id": "JMly"
+        }
+      }
+    },
+    "KPI": {
+      "id": "Vrtl",
+      "name": "KPI",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн",
+          "synced_property_id": "sfUQ"
+        }
+      }
+    },
+    "CRM проекта": {
+      "id": "YenM",
+      "name": "CRM проекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "CRM",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "1c9cb982-3949-4c52-ad53-6d0feb42c58a",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Баллы Саши": {
+      "id": "ZBrS",
+      "name": "Баллы Саши",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n\t.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Александр Трусов\")\n\t.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()\n\t* \n\t{{notion:block_property:s%5EVv:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}"
+      }
+    },
+    "Часы - среднее время": {
+      "id": "%5BDk%3B",
+      "name": "Часы - среднее время",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n    empty({{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) or empty({{notion:block_property:AbMK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \n    0, \n    round(\n        ({{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:AbMK:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%3E%3DKY:1f2ace03-d9ff-806d-b364-e869f27d83de:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 100\n    ) / 100\n)"
+      }
+    },
+    "Эпик проекта": {
+      "id": "%5Br%3CA",
+      "name": "Эпик проекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Эпик",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "?t]L",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Ф проекта": {
+      "id": "%5BtjR",
+      "name": "Ф проекта",
+      "description": "Файлы проектов",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Файлы",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "[tjR",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "📬 Гайды": {
+      "id": "%5CKOv",
+      "name": "📬 Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн задачи",
+          "synced_property_id": "hdt%5C"
+        }
+      }
+    },
+    "Вика за месяц": {
+      "id": "%5EiCH",
+      "name": "Вика за месяц",
+      "description": "",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Виктория Владимировна\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"05\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\")).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 10).round() / 10"
+      }
+    },
+    "Гайды/Концепты": {
+      "id": "_Y%60X",
+      "name": "Гайды/Концепты",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Гайды",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "B<Ld",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Чек листы": {
+      "id": "_a%5Cg",
+      "name": "Чек листы",
+      "type": "relation",
+      "relation": {
+        "database_id": "088f06a6-69a8-4818-af37-9b37421682c9",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн",
+          "synced_property_id": "K%40l_"
+        }
+      }
+    },
+    "! Проекта": {
+      "id": "c%3AUd",
+      "name": "! Проекта",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Приоритет",
+        "relation_property_name": "Проект",
+        "rollup_property_id": "bed2d953-5e00-4287-b09b-b59cf9f50076",
+        "relation_property_id": "RySv",
+        "function": "show_original"
+      }
+    },
+    "Вика за неделю": {
+      "id": "fqGX",
+      "name": "Вика за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n.filter(\n  current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Виктория Владимировна\"\n)\n.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n.sum()\n.round(1)\n"
+      }
+    },
+    "Маша за месяц": {
+      "id": "gZ%3EQ",
+      "name": "Маша за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Мария Безродная\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"05\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\")).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum())* 10).round() / 10"
+      }
+    },
+    "Last edited timeы": {
+      "id": "h%3EzM",
+      "name": "Last edited timeы",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "Маша за неделю": {
+      "id": "hUK%3B",
+      "name": "Маша за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n.filter(\n  current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Маша Безродная\"\n)\n.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n.sum()\n.round(1)\n"
+      }
+    },
+    "Категория": {
+      "id": "j%60B%3C",
+      "name": "Категория",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "gPbq",
+            "name": "Полиграфия",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "Ulk>",
+            "name": "Маркет",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "RlB\\",
+            "name": "Видео",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "SCrm",
+            "name": "Активности",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "v}dj",
+            "name": "Веб",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "W^jJ",
+            "name": "Бренд",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "?K[V",
+            "name": "Копирайт",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "NtUf",
+            "name": "SMM",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "rsz|",
+            "name": "Фото",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "RP~t",
+            "name": "Дизайн",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "4f660236-a543-44e5-8f1f-3e86aab34cd8",
+            "name": "Стратегия",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "ead553ac-ea5a-4f5f-a91c-3870878a4634",
+            "name": "Орг",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "d12ed3ed-18e5-4de9-94f6-4384e7bafa54",
+            "name": "Материалы",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "f3664895-32e2-427b-a70f-4eae1ef1417f",
+            "name": "Аналитика",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "0bc06135-0104-42a5-af85-bf7ec82e5e66",
+            "name": "Полиграфия товаров",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Саша за месяц": {
+      "id": "o%7CSA",
+      "name": "Саша за месяц",
+      "description": "",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Александр Трусов\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"05\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\")).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 10).round() / 10"
+      }
+    },
+    "Отзыв ": {
+      "id": "s%3ALM",
+      "name": "Отзыв ",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Оценка": {
+      "id": "s%5EVv",
+      "name": "Оценка",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Арс за месяц": {
+      "id": "tHJK",
+      "name": "Арс за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Arsentiy\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"01\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\") ).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum())* 10).round() / 10"
+      }
+    },
+    "Концепты/Сценарии": {
+      "id": "tNbj",
+      "name": "Концепты/Сценарии",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8088-97df-c7e1e74173ce",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Задачи",
+          "synced_property_id": "rqwu"
+        }
+      }
+    },
+    "Аня за неделю": {
+      "id": "uCes",
+      "name": "Аня за неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n.filter(\n  current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == now().formatDate(\"W\") \n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"Y\") == now().formatDate(\"Y\")\n  and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Анна Когут\"\n)\n.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n.sum()\n.round(1)\n"
+      }
+    },
+    "Аня за месяц": {
+      "id": "vN~O",
+      "name": "Аня за месяц",
+      "description": "",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fassign_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.format() == \"Анна Когут\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"06\" and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\")).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 10).round() / 10"
+      }
+    },
+    "Комент": {
+      "id": "xDHG",
+      "name": "Комент",
+      "description": "Для форс мажоров ",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Участник (стата)": {
+      "id": "y%3FoP",
+      "name": "Участник (стата)",
+      "type": "relation",
+      "relation": {
+        "database_id": "195ace03-d9ff-80c1-a1b0-d236ec3564d2",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Дизайн задачи",
+          "synced_property_id": "o%5E%60C"
+        }
+      }
+    },
+    "Отклонение": {
+      "id": "zKTQ",
+      "name": "Отклонение",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  and({{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0, {{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0),\n  if(\n    {{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} > {{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}},\n    \"+\",\n    \"-\"\n  ) + format(\n    round(\n      abs({{notion:block_property:MCyb:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} - {{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}) / {{notion:block_property:1c53e197-db30-4028-821b-b66d3abb20dd:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} * 100 * 10\n    ) / 10\n  ) + \" %\",\n  \"–\"\n)\n"
+      }
+    },
+    "Время за день": {
+      "id": "z%5ChK",
+      "name": "Время за день",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"M/D\") == formatDate(now(), \"M/D\")).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()) * 10).round() / 10\n\n"
+      }
+    },
+    "Created time": {
+      "id": "zrHP",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "Баллы Дани": {
+      "id": "%7Dw%3Ez",
+      "name": "Баллы Дани",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:APvU:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}"
+      }
+    },
+    "За месяц": {
+      "id": "~FuF",
+      "name": "За месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "(\n  {{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n    .filter(\n      current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"MM\") == \"04\" \n      and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == now().formatDate(\"YYYY\")\n    )\n    .map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n    .sum()\n).round(1)\n"
+      }
+    },
+    "Задача": {
+      "id": "title",
+      "name": "Задача",
+      "type": "title",
+      "title": {}
+    },
+    "Участники": {
+      "id": "notion%3A%2F%2Fprojects%2Fpeople_property",
+      "name": "Участники",
+      "type": "people",
+      "people": {}
+    },
+    "Статус": {
+      "id": "notion%3A%2F%2Fprojects%2Fstatus_property",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "zD^~",
+            "name": "Regular",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "backlog",
+            "name": "Backlog",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "WRem",
+            "name": "To do",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "paused",
+            "name": "Paused",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "TfZm",
+            "name": "Review",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "in-progress",
+            "name": "In Progress",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "qlDy",
+            "name": "Done out date",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "done",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "{Ijw",
+            "name": "In Production",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "canceled",
+            "name": "Canceled",
+            "color": "red",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "todo-status-group",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "zD^~",
+              "backlog",
+              "WRem"
+            ]
+          },
+          {
+            "id": "in-progress-status-group",
+            "name": "In Progress",
+            "color": "blue",
+            "option_ids": [
+              "paused",
+              "TfZm",
+              "in-progress"
+            ]
+          },
+          {
+            "id": "complete-status-group",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "qlDy",
+              "{Ijw",
+              "done",
+              "canceled"
+            ]
+          }
+        ]
+      }
+    },
+    "Ориентир": {
+      "id": "1c53e197-db30-4028-821b-b66d3abb20dd",
+      "name": "Ориентир",
+      "description": "Примерное время на задачу",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "CRM задачи": {
+      "id": "1c9cb982-3949-4c52-ad53-6d0feb42c58a",
+      "name": "CRM задачи",
+      "description": "",
+      "type": "url",
+      "url": {}
+    },
+    "Описание": {
+      "id": "8dcc5184-2ed5-4cfe-834e-6c164689799b",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "! Задачи": {
+      "id": "bed2d953-5e00-4287-b09b-b59cf9f50076",
+      "name": "! Задачи",
+      "description": "Приоритеты",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "U|d?",
+            "name": "!!!",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "Xwlq",
+            "name": "!!",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "gdXi",
+            "name": "!",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "ddb8d8ee-9615-454f-a09e-1b831b4e110d",
+            "name": ".",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "24d6f3d1-7d7f-46b2-8195-b32322295700",
+            "name": "тест",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Дата": {
+      "id": "notion%3A%2F%2Fprojects%2Fproject_dates_property",
+      "name": "Дата",
+      "type": "date",
+      "date": {}
+    },
+    "Под задачи": {
+      "id": "notion%3A%2F%2Fprojects%2Fproject_to_task_relation",
+      "name": "Под задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "9c5f4269-d614-49b6-a748-5579a3c21da3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Задачи",
+          "synced_property_id": "notion%3A%2F%2Ftasks%2Ftask_to_project_relation"
+        }
+      }
+    },
+    "Is Blocking": {
+      "id": "notion%3A%2F%2Fprojects%2Fproject_blocking_relation",
+      "name": "Is Blocking",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Blocked By",
+          "synced_property_id": "notion%3A%2F%2Fprojects%2Fproject_blocked_by_relation"
+        }
+      }
+    },
+    "Blocked By": {
+      "id": "notion%3A%2F%2Fprojects%2Fproject_blocked_by_relation",
+      "name": "Blocked By",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Is Blocking",
+          "synced_property_id": "notion%3A%2F%2Fprojects%2Fproject_blocking_relation"
+        }
+      }
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "150b9fce-5e98-452b-81c3-8b03857f9fb7"
+  },
+  "url": "https://www.notion.so/d09df250ce7e4e0d9fbe4e036d320def",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "d66dc780-d18e-4218-a9dc-e7830470aacc"
+}

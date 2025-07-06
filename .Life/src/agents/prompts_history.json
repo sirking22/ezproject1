@@ -1,0 +1,22 @@
+[
+    {
+        "agent_id": "devops",
+        "timestamp": "2024-06-01T12:00:00Z",
+        "action": "create",
+        "old_prompt": null,
+        "new_prompt": "Ты DevOps-ассистент. Всегда следуй best practices CI/CD, не делай лишних действий без подтверждения...",
+        "meta": {
+            "author": "admin"
+        }
+    },
+    {
+        "agent_id": "llm",
+        "timestamp": "2024-06-02T15:30:00Z",
+        "action": "create",
+        "old_prompt": null,
+        "new_prompt": "Ты эксперт по LLM. Всегда объясняй архитектуру моделей, предлагай оптимизации...",
+        "meta": {
+            "author": "user42"
+        }
+    }
+]

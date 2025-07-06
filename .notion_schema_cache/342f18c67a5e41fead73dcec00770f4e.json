@@ -1,0 +1,637 @@
+{
+  "object": "database",
+  "id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+  "cover": {
+    "type": "external",
+    "external": {
+      "url": "https://images.unsplash.com/photo-1446608943998-cbd52b140335?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    }
+  },
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/star_gray.svg"
+    }
+  },
+  "created_time": "2024-02-05T20:47:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "784fd599-d46c-4511-a8f8-b1ab78821e64"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_time": "2025-07-02T13:55:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Проекты",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Проекты",
+      "href": null
+    }
+  ],
+  "description": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Без полиграфии товаров",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Без полиграфии товаров",
+      "href": null
+    }
+  ],
+  "is_inline": false,
+  "properties": {
+    "Сроки": {
+      "id": "%3DTK%5C",
+      "name": "Сроки",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  or(\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"In Production\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Canceled\",\n    {{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Archived\"\n  ),\n  \"✅ Завершено\".style(\"b\", \"green\"),\n  if(\n    empty(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}})),\n    \"🕓 Без срока\".style(\"b\", \"gray\"),\n    if(\n      dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\") < 0,\n      if(\n        abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) > 3,\n        \"🔥 ⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\"),\n        \"⛔️ \" + format(abs(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\"))) + \" д.\".style(\"b\", \"red\")\n      ),\n      if(\n        formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(now(), \"YYYY-MM-DD\"),\n        \"🟡 Сегодня\".style(\"b\", \"yellow\"),\n        if(\n          formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 1, \"days\"), \"YYYY-MM-DD\"),\n          \"🟠 Завтра\".style(\"b\", \"orange\"),\n          if(\n            formatDate(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), \"YYYY-MM-DD\") == formatDate(dateAdd(now(), 2, \"days\"), \"YYYY-MM-DD\"),\n            \"🟣 Послезавтра\".style(\"b\", \"purple\"),\n            \"📆 \" + format(dateBetween(dateEnd({{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}), now(), \"days\")) + \" д.\".style(\"b\", \"blue\")\n          )\n        )\n      )\n    )\n  )\n)\n"
+      }
+    },
+    "Вывод": {
+      "id": "%3EWTY",
+      "name": "Вывод",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Эпик": {
+      "id": "%3Ft%5DL",
+      "name": "Эпик",
+      "type": "relation",
+      "relation": {
+        "database_id": "6fc4322e-6d0c-45a6-b37a-c49b818a063a",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проекты",
+          "synced_property_id": "dw%5Bb"
+        }
+      }
+    },
+    "Blocked by": {
+      "id": "%40iyu",
+      "name": "Blocked by",
+      "type": "relation",
+      "relation": {
+        "database_id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Blocking",
+          "synced_property_id": "%5E%5CuP"
+        }
+      }
+    },
+    "Гайды": {
+      "id": "B%3CLd",
+      "name": "Гайды",
+      "type": "relation",
+      "relation": {
+        "database_id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проекты",
+          "synced_property_id": "A%3D~~"
+        }
+      }
+    },
+    "Last edited time": {
+      "id": "Fhsc",
+      "name": "Last edited time",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    " Копирайт": {
+      "id": "JD%5Cn",
+      "name": " Копирайт",
+      "type": "relation",
+      "relation": {
+        "database_id": "3e45d8ff-81a1-4f23-9706-7b6ea4bd469f",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    "Аня за месяц": {
+      "id": "Nwfh",
+      "name": "Аня за месяц",
+      "description": "Аня за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:vN~O:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Ориентир": {
+      "id": "PKB%3E",
+      "name": "Ориентир",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Ориентир",
+        "relation_property_name": "Дизайн",
+        "rollup_property_id": "1c53e197-db30-4028-821b-b66d3abb20dd",
+        "relation_property_id": "lox_",
+        "function": "sum"
+      }
+    },
+    "Даня за месяц": {
+      "id": "QcO%60",
+      "name": "Даня за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%3F%5BNC:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()\n* 10).round()\n/ 10"
+      }
+    },
+    "Маша Р. за месяц": {
+      "id": "RCo%7D",
+      "name": "Маша Р. за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:c%5D%40K:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%3F%5BNC:b2aefe1c-0b9b-438c-b5db-3764cf55f1f3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Маша за месяц": {
+      "id": "Smxb",
+      "name": "Маша за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:gZ%3EQ:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()\n* 10).round()\n/ 10"
+      }
+    },
+    "Файлы": {
+      "id": "%5BtjR",
+      "name": "Файлы",
+      "description": "",
+      "type": "url",
+      "url": {}
+    },
+    "Общее время": {
+      "id": "%5CZuG",
+      "name": "Общее время",
+      "type": "formula",
+      "formula": {
+        "expression": "(round(sum({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:MCyb:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}})) *10)) / 10"
+      }
+    },
+    "Blocking": {
+      "id": "%5E%5CuP",
+      "name": "Blocking",
+      "type": "relation",
+      "relation": {
+        "database_id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Blocked by",
+          "synced_property_id": "%40iyu"
+        }
+      }
+    },
+    "Концепты/Сценарии": {
+      "id": "_%60OK",
+      "name": "Концепты/Сценарии",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8088-97df-c7e1e74173ce",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проекты",
+          "synced_property_id": "v%5By%3A"
+        }
+      }
+    },
+    "Вика за месяц": {
+      "id": "%60sge",
+      "name": "Вика за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%5EiCH:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Арс за месяц": {
+      "id": "a%40SR",
+      "name": "Арс за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:tHJK:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()\n* 10).round()\n/ 10"
+      }
+    },
+    "Фото": {
+      "id": "c%5D%40K",
+      "name": "Фото",
+      "type": "relation",
+      "relation": {
+        "database_id": "b2aefe1c-0b9b-438c-b5db-3764cf55f1f3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    "СММ": {
+      "id": "cue%7B",
+      "name": "СММ",
+      "type": "relation",
+      "relation": {
+        "database_id": "65a90504-cb5b-4a08-a721-e91df3c57d82",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    " Теги": {
+      "id": "j%60B%3C",
+      "name": " Теги",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "c97aeb26-9bfd-4f18-a17d-5879114550c3",
+            "name": "Полиграфия товаров",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "gPbq",
+            "name": "Полиграфия",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "Ulk>",
+            "name": "Маркет",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "W^jJ",
+            "name": "Бренд",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "v}dj",
+            "name": "Веб",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "NtUf",
+            "name": "SMM",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "RlB\\",
+            "name": "Видео",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "rsz|",
+            "name": "Фото",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "ead553ac-ea5a-4f5f-a91c-3870878a4634",
+            "name": "Орг",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "SCrm",
+            "name": "Активности",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "?K[V",
+            "name": "Копирайт",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "RP~t",
+            "name": "Дизайн",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "4f660236-a543-44e5-8f1f-3e86aab34cd8",
+            "name": "Стратегия",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "d12ed3ed-18e5-4de9-94f6-4384e7bafa54",
+            "name": "Материалы",
+            "color": "pink",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Среднее время": {
+      "id": "k%5Cny",
+      "name": "Среднее время",
+      "type": "rollup",
+      "rollup": {
+        "rollup_property_name": "Среднее время готовых проекто",
+        "relation_property_name": "Типовые проекты",
+        "rollup_property_id": "?EfP",
+        "relation_property_id": "n}:{",
+        "function": "show_original"
+      }
+    },
+    "Дизайн": {
+      "id": "lox_",
+      "name": "Дизайн",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    "Типовые проекты": {
+      "id": "n%7D%3A%7B",
+      "name": "Типовые проекты",
+      "type": "relation",
+      "relation": {
+        "database_id": "21dace03-d9ff-8086-a520-c5eef064fe3b",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проекты",
+          "synced_property_id": "X%3ATQ"
+        }
+      }
+    },
+    "Время за эту неделю": {
+      "id": "pi%7BY",
+      "name": "Время за эту неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"W\") == formatDate(now(), \"W\") and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\"))).map(current.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()).sum())* 10).round() / 10"
+      }
+    },
+    "Продакт": {
+      "id": "xvnb",
+      "name": "Продакт",
+      "type": "relation",
+      "relation": {
+        "database_id": "24ae54f7-fe0b-4e03-8070-ae9294f46553",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    "Саша за месяц": {
+      "id": "%7BMZ%3D",
+      "name": "Саша за месяц",
+      "description": "",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:o%7CSA:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Маркет": {
+      "id": "%7B%5Ezu",
+      "name": "Маркет",
+      "type": "relation",
+      "relation": {
+        "database_id": "231b91aa-831d-470c-9dda-a3dd45037594",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проект",
+          "synced_property_id": "RySv"
+        }
+      }
+    },
+    "Время за месяц": {
+      "id": "%7BoBW",
+      "name": "Время за месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "(({{notion:block_property:lox_:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_to_task_relation:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"M\") == formatDate(now(), \"M\") and current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}.formatDate(\"YYYY\") == formatDate(now(), \"YYYY\") )).map(current.map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()).sum())* 10).round() / 10"
+      }
+    },
+    "Чек лист полиграфии": {
+      "id": "~Nc%3B",
+      "name": "Чек лист полиграфии",
+      "type": "relation",
+      "relation": {
+        "database_id": "088f06a6-69a8-4818-af37-9b37421682c9",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Проекты",
+          "synced_property_id": "JJiU"
+        }
+      }
+    },
+    " Проект": {
+      "id": "title",
+      "name": " Проект",
+      "type": "title",
+      "title": {}
+    },
+    "Участники": {
+      "id": "notion%3A%2F%2Fprojects%2Fpeople_property",
+      "name": "Участники",
+      "type": "people",
+      "people": {}
+    },
+    "Статус": {
+      "id": "notion%3A%2F%2Fprojects%2Fstatus_property",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "~}{L",
+            "name": "Regular",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "backlog",
+            "name": "Backlog",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "paused",
+            "name": "Paused",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "planned",
+            "name": "Planning",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "in-progress",
+            "name": "In Progress",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "xcq|",
+            "name": "Review",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "{Ijw",
+            "name": "In Production",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "done",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "canceled",
+            "name": "Canceled",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": ">WJa",
+            "name": "Archived",
+            "color": "red",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "todo-status-group",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "~}{L",
+              "backlog"
+            ]
+          },
+          {
+            "id": "in-progress-status-group",
+            "name": "In Progress",
+            "color": "blue",
+            "option_ids": [
+              "xcq|",
+              "paused",
+              "planned",
+              "in-progress"
+            ]
+          },
+          {
+            "id": "complete-status-group",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "{Ijw",
+              "done",
+              "canceled",
+              ">WJa"
+            ]
+          }
+        ]
+      }
+    },
+    "CRM": {
+      "id": "1c9cb982-3949-4c52-ad53-6d0feb42c58a",
+      "name": "CRM",
+      "description": "",
+      "type": "url",
+      "url": {}
+    },
+    "Описание": {
+      "id": "8dcc5184-2ed5-4cfe-834e-6c164689799b",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Приоритет": {
+      "id": "bed2d953-5e00-4287-b09b-b59cf9f50076",
+      "name": "Приоритет",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "dn{E",
+            "name": "!!!",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "mlBw",
+            "name": "!!",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "WjCe",
+            "name": "!",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "fd66ba80-c5c5-4c37-9560-3210c291b7aa",
+            "name": ".",
+            "color": "gray",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Дата": {
+      "id": "notion%3A%2F%2Fprojects%2Fproject_dates_property",
+      "name": "Дата",
+      "type": "date",
+      "date": {}
+    }
+  },
+  "parent": {
+    "type": "workspace",
+    "workspace": true
+  },
+  "url": "https://www.notion.so/342f18c67a5e41fead73dcec00770f4e",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "aecfc020-6c57-4e30-8bab-f1f808ca60df"
+}

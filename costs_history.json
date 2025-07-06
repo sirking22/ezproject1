@@ -1,0 +1,412 @@
+[
+  {
+    "timestamp": "2025-06-23T04:10:29.182433",
+    "model": "deepseek-chat",
+    "input_tokens": 100,
+    "output_tokens": 50,
+    "cost": 0.001,
+    "request_id": "test_1",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:29.284778",
+    "model": "deepseek-chat",
+    "input_tokens": 200,
+    "output_tokens": 100,
+    "cost": 0.002,
+    "request_id": "test_2",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:29.385936",
+    "model": "deepseek-reasoner",
+    "input_tokens": 500,
+    "output_tokens": 200,
+    "cost": 0.005,
+    "request_id": "test_3",
+    "success": false,
+    "error": "Timeout"
+  },
+  {
+    "timestamp": "2025-06-23T04:10:29.487460",
+    "model": "deepseek-chat",
+    "input_tokens": 150,
+    "output_tokens": 75,
+    "cost": 0.0015,
+    "request_id": "test_4",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:33.745441",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "4df82e12-11bf-4305-9cb4-ecca0a2d0e7e",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:34.583128",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "b858144a-2c9f-451a-ad62-0718e860919e",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:35.369599",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "1794b6cb-aa3d-4bd9-81d6-942c4be56de9",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:36.099537",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "8001d469-da66-4911-b4ac-4d0293259cf1",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:10:36.380385",
+    "model": "deepseek-reasoner",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "6a4adc33-a1f2-4e25-9c4a-0eb117eb5cf3",
+    "success": false,
+    "error": "HTTP 429: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n<title>Access denied | hubai.loe.gg used Cloudflare to restrict access</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<link rel=\"stylesheet\" id=\"cf_styles-css\" href=\"/cdn-cgi/styles/main.css\" />\n\n\n<script>\n(function(){if(document.addEventListener&&window.XMLHttpRequest&&JSON&&JSON.stringify){var e=function(a){var c=document.getElementById(\"error-feedback-survey\"),d=document.getElementById(\"error-feedback-success\"),b=new XMLHttpRequest;a={event:\"feedback clicked\",properties:{errorCode:1015,helpful:a,version:1}};b.open(\"POST\",\"https://sparrow.cloudflare.com/api/v1/event\");b.setRequestHeader(\"Content-Type\",\"application/json\");b.setRequestHeader(\"Sparrow-Source-Key\",\"c771f0e4b54944bebf4261d44bd79a1e\");\nb.send(JSON.stringify(a));c.classList.add(\"feedback-hidden\");d.classList.remove(\"feedback-hidden\")};document.addEventListener(\"DOMContentLoaded\",function(){var a=document.getElementById(\"error-feedback\"),c=document.getElementById(\"feedback-button-yes\"),d=document.getElementById(\"feedback-button-no\");\"classList\"in a&&(a.classList.remove(\"feedback-hidden\"),c.addEventListener(\"click\",function(){e(!0)}),d.addEventListener(\"click\",function(){e(!1)}))})}})();\n</script>\n\n<script defer src=\"https://performance.radar.cloudflare.com/beacon.js\"></script>\n</head>\n<body>\n  <div id=\"cf-wrapper\">\n    <div class=\"cf-alert cf-alert-error cf-cookie-error hidden\" id=\"cookie-alert\" data-translate=\"enable_cookies\">Please enable cookies.</div>\n    <div id=\"cf-error-details\" class=\"p-0\">\n      <header class=\"mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-15 antialiased\">\n         <h1 class=\"inline-block md:block mr-2 md:mb-2 font-light text-60 md:text-3xl text-black-dark leading-tight\">\n           <span data-translate=\"error\">Error</span>\n           <span>1015</span>\n         </h1>\n         <span class=\"inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed\">Ray ID: 95401b524f9c665e &bull;</span>\n         <span class=\"inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed\">2025-06-23 01:10:37 UTC</span>\n        <h2 class=\"text-gray-600 leading-1.3 text-3xl lg:text-2xl font-light\">You are being rate limited</h2>\n      </header>\n\n      <section class=\"w-240 lg:w-full mx-auto mb-8 lg:px-8\">\n          <div id=\"what-happened-section\" class=\"w-1/2 md:w-full\">\n            <h2 class=\"text-3xl leading-tight font-normal mb-4 text-black-dark antialiased\" data-translate=\"what_happened\">What happened?</h2>\n            <p>The owner of this website (hubai.loe.gg) has banned you temporarily from accessing this website.</p>\n            \n              <p>Please see <a rel=\"noopener noreferrer\" href=\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/\" target=\"_blank\">https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/</a> for more details.</p>\n            \n          </div>\n\n          \n      </section>\n\n      <div class=\"feedback-hidden py-8 text-center\" id=\"error-feedback\">\n    <div id=\"error-feedback-survey\" class=\"footer-line-wrapper\">\n        Was this page helpful?\n        <button class=\"border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded\" id=\"feedback-button-yes\" type=\"button\">Yes</button>\n        <button class=\"border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded\" id=\"feedback-button-no\" type=\"button\">No</button>\n    </div>\n    <div class=\"feedback-success feedback-hidden\" id=\"error-feedback-success\">\n        Thank you for your feedback!\n    </div>\n</div>\n\n\n      <div class=\"cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300\">\n  <p class=\"text-13\">\n    <span class=\"cf-footer-item sm:block sm:mb-1\">Cloudflare Ray ID: <strong class=\"font-semibold\">95401b524f9c665e</strong></span>\n    <span class=\"cf-footer-separator sm:hidden\">&bull;</span>\n    <span id=\"cf-footer-item-ip\" class=\"cf-footer-item hidden sm:block sm:mb-1\">\n      Your IP:\n      <button type=\"button\" id=\"cf-footer-ip-reveal\" class=\"cf-footer-ip-reveal-btn\">Click to reveal</button>\n      <span class=\"hidden\" id=\"cf-footer-ip\">194.110.207.110</span>\n      <span class=\"cf-footer-separator sm:hidden\">&bull;</span>\n    </span>\n    <span class=\"cf-footer-item sm:block sm:mb-1\"><span>Performance &amp; security by</span> <a rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com/5xx-error-landing\" id=\"brand_link\" target=\"_blank\">Cloudflare</a></span>\n    \n  </p>\n  <script>(function(){function d(){var b=a.getElementById(\"cf-footer-item-ip\"),c=a.getElementById(\"cf-footer-ip-reveal\");b&&\"classList\"in b&&(b.classList.remove(\"hidden\"),c.addEventListener(\"click\",function(){c.classList.add(\"hidden\");a.getElementById(\"cf-footer-ip\").classList.remove(\"hidden\")}))}var a=document;document.addEventListener&&a.addEventListener(\"DOMContentLoaded\",d)})();</script>\n</div><!-- /.error-footer -->\n\n\n    </div><!-- /#cf-error-details -->\n  </div><!-- /#cf-wrapper -->\n\n  <script>\n  window._cf_translation = {};\n  \n  \n</script>\n\n<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'95401b524f9c665e',t:'MTc1MDY0MTAzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);\";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>\n</html>\n"
+  },
+  {
+    "timestamp": "2025-06-23T04:10:36.389983",
+    "model": "deepseek-reasoner",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "6a4adc33-a1f2-4e25-9c4a-0eb117eb5cf3",
+    "success": false,
+    "error": "API Error 429: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n<title>Access denied | hubai.loe.gg used Cloudflare to restrict access</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<link rel=\"stylesheet\" id=\"cf_styles-css\" href=\"/cdn-cgi/styles/main.css\" />\n\n\n<script>\n(function(){if(document.addEventListener&&window.XMLHttpRequest&&JSON&&JSON.stringify){var e=function(a){var c=document.getElementById(\"error-feedback-survey\"),d=document.getElementById(\"error-feedback-success\"),b=new XMLHttpRequest;a={event:\"feedback clicked\",properties:{errorCode:1015,helpful:a,version:1}};b.open(\"POST\",\"https://sparrow.cloudflare.com/api/v1/event\");b.setRequestHeader(\"Content-Type\",\"application/json\");b.setRequestHeader(\"Sparrow-Source-Key\",\"c771f0e4b54944bebf4261d44bd79a1e\");\nb.send(JSON.stringify(a));c.classList.add(\"feedback-hidden\");d.classList.remove(\"feedback-hidden\")};document.addEventListener(\"DOMContentLoaded\",function(){var a=document.getElementById(\"error-feedback\"),c=document.getElementById(\"feedback-button-yes\"),d=document.getElementById(\"feedback-button-no\");\"classList\"in a&&(a.classList.remove(\"feedback-hidden\"),c.addEventListener(\"click\",function(){e(!0)}),d.addEventListener(\"click\",function(){e(!1)}))})}})();\n</script>\n\n<script defer src=\"https://performance.radar.cloudflare.com/beacon.js\"></script>\n</head>\n<body>\n  <div id=\"cf-wrapper\">\n    <div class=\"cf-alert cf-alert-error cf-cookie-error hidden\" id=\"cookie-alert\" data-translate=\"enable_cookies\">Please enable cookies.</div>\n    <div id=\"cf-error-details\" class=\"p-0\">\n      <header class=\"mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-15 antialiased\">\n         <h1 class=\"inline-block md:block mr-2 md:mb-2 font-light text-60 md:text-3xl text-black-dark leading-tight\">\n           <span data-translate=\"error\">Error</span>\n           <span>1015</span>\n         </h1>\n         <span class=\"inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed\">Ray ID: 95401b524f9c665e &bull;</span>\n         <span class=\"inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed\">2025-06-23 01:10:37 UTC</span>\n        <h2 class=\"text-gray-600 leading-1.3 text-3xl lg:text-2xl font-light\">You are being rate limited</h2>\n      </header>\n\n      <section class=\"w-240 lg:w-full mx-auto mb-8 lg:px-8\">\n          <div id=\"what-happened-section\" class=\"w-1/2 md:w-full\">\n            <h2 class=\"text-3xl leading-tight font-normal mb-4 text-black-dark antialiased\" data-translate=\"what_happened\">What happened?</h2>\n            <p>The owner of this website (hubai.loe.gg) has banned you temporarily from accessing this website.</p>\n            \n              <p>Please see <a rel=\"noopener noreferrer\" href=\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/\" target=\"_blank\">https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/</a> for more details.</p>\n            \n          </div>\n\n          \n      </section>\n\n      <div class=\"feedback-hidden py-8 text-center\" id=\"error-feedback\">\n    <div id=\"error-feedback-survey\" class=\"footer-line-wrapper\">\n        Was this page helpful?\n        <button class=\"border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded\" id=\"feedback-button-yes\" type=\"button\">Yes</button>\n        <button class=\"border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded\" id=\"feedback-button-no\" type=\"button\">No</button>\n    </div>\n    <div class=\"feedback-success feedback-hidden\" id=\"error-feedback-success\">\n        Thank you for your feedback!\n    </div>\n</div>\n\n\n      <div class=\"cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300\">\n  <p class=\"text-13\">\n    <span class=\"cf-footer-item sm:block sm:mb-1\">Cloudflare Ray ID: <strong class=\"font-semibold\">95401b524f9c665e</strong></span>\n    <span class=\"cf-footer-separator sm:hidden\">&bull;</span>\n    <span id=\"cf-footer-item-ip\" class=\"cf-footer-item hidden sm:block sm:mb-1\">\n      Your IP:\n      <button type=\"button\" id=\"cf-footer-ip-reveal\" class=\"cf-footer-ip-reveal-btn\">Click to reveal</button>\n      <span class=\"hidden\" id=\"cf-footer-ip\">194.110.207.110</span>\n      <span class=\"cf-footer-separator sm:hidden\">&bull;</span>\n    </span>\n    <span class=\"cf-footer-item sm:block sm:mb-1\"><span>Performance &amp; security by</span> <a rel=\"noopener noreferrer\" href=\"https://www.cloudflare.com/5xx-error-landing\" id=\"brand_link\" target=\"_blank\">Cloudflare</a></span>\n    \n  </p>\n  <script>(function(){function d(){var b=a.getElementById(\"cf-footer-item-ip\"),c=a.getElementById(\"cf-footer-ip-reveal\");b&&\"classList\"in b&&(b.classList.remove(\"hidden\"),c.addEventListener(\"click\",function(){c.classList.add(\"hidden\");a.getElementById(\"cf-footer-ip\").classList.remove(\"hidden\")}))}var a=document;document.addEventListener&&a.addEventListener(\"DOMContentLoaded\",d)})();</script>\n</div><!-- /.error-footer -->\n\n\n    </div><!-- /#cf-error-details -->\n  </div><!-- /#cf-wrapper -->\n\n  <script>\n  window._cf_translation = {};\n  \n  \n</script>\n\n<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'95401b524f9c665e',t:'MTc1MDY0MTAzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);\";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>\n</html>\n"
+  },
+  {
+    "timestamp": "2025-06-23T04:24:44.618673",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "30995c36-cf06-417a-a252-27daace6c96e",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:24:49.394273",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "bec09e35-fc35-4a04-888c-fe24f4f10e0b",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:24:53.719149",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "f315b693-6658-4db1-9840-6c6fb2779fa9",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:25:17.389555",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "0776fefd-4363-41b1-ad33-7c9f2276d8e4",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:26:07.558109",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "dfc67d86-6ef9-437d-bfd5-c95bdf2a5e49",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:26:08.886679",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "6955bb91-74a3-4720-9474-4ae798108de8",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:26:10.206023",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "7cd35558-4e28-4dbd-9b13-d7097d077096",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:26:11.435155",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "f7076850-8a00-4591-a051-07bdc54d24e2",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:26:49.970420",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "c212e13c-87f0-4fa1-9787-2de353d5ff43",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:31:55.436172",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "3da6a276-4489-472e-80f9-8fafe2836b70",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:32:01.234971",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "c31bdcff-82a9-4c88-9e4b-fd98aa24e1b3",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:32:24.370659",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "63f5fa6e-5973-44f3-beb6-4c20652cf4b5",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:32:58.808967",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "db841915-642c-4596-b7c6-8df6d6563b9e",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:33:33.198763",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "de60565b-7d2b-4eac-8fd2-5e41ddbdde7a",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:34:08.759098",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "c7616089-1e86-405c-b006-02eb1938edfa",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:34:47.265294",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "d4dead12-7be5-44bc-a3fe-ac67f60c08ce",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:35:06.472705",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "e43d6fab-59c9-4400-8418-9a1f2996e269",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:35:49.968134",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "c7d38d4c-eb1b-4330-ad05-a5b1532ccb53",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T04:36:20.919149",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "6fc200e6-443f-4f53-9d1c-2db89e660114",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T19:57:59.621857",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "bd0bc6e5-4816-4b02-8a0f-9e05e5394cb4",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T19:58:21.412960",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "69d55945-5ea9-4276-90e2-449d5157f8f1",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T19:58:35.963746",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "ba7cbab2-498c-45f1-8323-cfe25d823261",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T19:59:02.661098",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "f0104a9e-0bfa-48ff-8067-07f2d8646e1f",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T19:59:23.949954",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "8fc47959-7e2a-47a0-8b39-fa982adb9dfe",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:00:39.969023",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "ccd932d4-a48c-468c-9bac-5e0a8ec6f5e4",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:00:49.721498",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "fccee11a-913d-4bdd-8c63-65c658934fd6",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:01:00.943513",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "b0964c9b-ec06-4c69-98ea-5743c9213cd9",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:01:13.042802",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "bd327491-efb3-4e47-904c-4038d7d6bfce",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:01:30.759251",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "8b589d16-99c0-4866-bade-60c0a3711910",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:01:47.493903",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "c6afdc73-fa5c-45b9-8bb2-bfe8ea9b4d49",
+    "success": true,
+    "error": null
+  },
+  {
+    "timestamp": "2025-06-23T20:01:59.490419",
+    "model": "deepseek-chat",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": 0.0,
+    "request_id": "4badd991-28ae-4aa2-977a-00931526eb90",
+    "success": true,
+    "error": null
+  }
+]

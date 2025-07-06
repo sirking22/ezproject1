@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  admin-bot:
+    build: .
+    container_name: life-admin-bot
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_ALLOWED_USERS=${TELEGRAM_ALLOWED_USERS}
+      - TELEGRAM_ADMIN_USERS=${TELEGRAM_ADMIN_USERS}
+      - NOTION_TOKEN=${NOTION_TOKEN}
+      - NOTION_DATABASES=${NOTION_DATABASES}
+    volumes:
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    command: python run_admin_bot.py
+    restart: unless-stopped
+
+  enhanced-bot:
+    build: .
+    container_name: life-enhanced-bot
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_ENHANCED_BOT_TOKEN}
+      - TELEGRAM_ALLOWED_USERS=${TELEGRAM_ALLOWED_USERS}
+      - NOTION_TOKEN=${NOTION_TOKEN}
+      - NOTION_DATABASES=${NOTION_DATABASES}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    volumes:
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    command: python run_enhanced_bot.py
+    restart: unless-stopped
+
+  agent-team:
+    build: .
+    container_name: life-agent-team
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_AGENT_BOT_TOKEN}
+      - TELEGRAM_ALLOWED_USERS=${TELEGRAM_ALLOWED_USERS}
+      - NOTION_TOKEN=${NOTION_TOKEN}
+      - NOTION_DATABASES=${NOTION_DATABASES}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    volumes:
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    command: python run_agent_team.py
+    restart: unless-stopped
+
+  llm-server:
+    build: .
+    container_name: life-llm-server
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - NOTION_TOKEN=${NOTION_TOKEN}
+      - NOTION_DATABASES=${NOTION_DATABASES}
+    volumes:
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    command: python server/llm_api_server.py
+    restart: unless-stopped
+
+volumes:
+  logs: 

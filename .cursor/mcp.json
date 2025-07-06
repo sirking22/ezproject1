@@ -1,0 +1,29 @@
+{
+    "mcpServers": {
+        "notion-mcp-server": {
+            "type": "command",
+            "command": "Z:\\Files\\VS_code\\venv\\Scripts\\python.exe",
+            "args": [
+                "Z:\\Files\\VS_code\\notion_mcp_server.py"
+            ],
+            "env": {
+                "NOTION_TOKEN": "${NOTION_TOKEN}",
+                "NOTION_DATABASE_ID": "${NOTION_IDEAS_DB_ID}",
+                "NOTION_MATERIALS_DB_ID": "${NOTION_MATERIALS_DB_ID}",
+                "NOTION_GUIDES_DB_ID": "${NOTION_GUIDES_DB_ID}",
+                "NOTION_IDEAS_DB_ID": "${NOTION_IDEAS_DB_ID}",
+                "NOTION_COMPETITORS_DB_ID": "${NOTION_COMPETITORS_DB_ID}",
+                "NOTION_LINKS_DB_ID": "${NOTION_LINKS_DB_ID}",
+                "NOTION_CONTENT_PLAN_DB_ID": "${NOTION_CONTENT_PLAN_DB_ID}",
+                "NOTION_PROJECTS_DB_ID": "${NOTION_PROJECTS_DB_ID}",
+                "NOTION_KPI_DB_ID": "${NOTION_KPI_DB_ID}",
+                "NOTION_EPICS_DB_ID": "${NOTION_EPICS_DB_ID}",
+                "NOTION_SUPER_GUIDES_DB_ID": "${NOTION_SUPER_GUIDES_DB_ID}",
+                "NOTION_MARKETING_TASKS_DB_ID": "${NOTION_MARKETING_TASKS_DB_ID}",
+                "NOTION_SMM_TASKS_DB_ID": "${NOTION_SMM_TASKS_DB_ID}",
+                "NOTION_TASKS_DB_ID": "${NOTION_TASKS_DB_ID}",
+                "NOTION_SUBTASKS_DB_ID": "${NOTION_SUBTASKS_DB_ID}"
+            }
+        }
+    }
+}

@@ -1,0 +1,903 @@
+{
+  "object": "database",
+  "id": "47c60868-58d4-42eb-aece-b4fad1b23ba3",
+  "cover": {
+    "type": "external",
+    "external": {
+      "url": "https://images.unsplash.com/photo-1517249430763-8752f84624f6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
+    }
+  },
+  "icon": {
+    "type": "emoji",
+    "emoji": "📬"
+  },
+  "created_time": "2022-11-29T17:02:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_time": "2025-07-02T20:06:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Гайды",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Гайды",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "properties": {
+    "Теги": {
+      "id": "%3E%3CTR",
+      "name": "Теги",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "be12ca6f-6a8a-46e7-9080-57893f6cb356",
+            "name": "продукт",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "88aeb525-55a9-454a-bddc-6be63eaf11f7",
+            "name": "контент",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "6c799e9c-b33a-4810-b470-edca92b930c5",
+            "name": "визуал",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "d92a904b-76e8-44d2-83cd-f0bd60a81095",
+            "name": "структура",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "52835b4e-2281-4cdc-9678-ecb05787a2e0",
+            "name": "брендинг",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "c32fb642-4c9c-4d5a-af05-ba09ba225824",
+            "name": "восприятие",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "59df0c72-d667-47d5-ad88-9b66a2bbfc52",
+            "name": "эмоции",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "6e9d74ac-d8d1-4121-adfe-d1afe0397cc0",
+            "name": "Полиграфия",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "2e146b7b-e74d-45ab-b262-a7dae02c2669",
+            "name": "Листовка",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "e9f4b467-534e-46ff-9858-d2d635a9b226",
+            "name": "A4",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "57a19184-5f8a-4922-bd37-c523f3d76282",
+            "name": "Визитки",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "8f476b01-842a-4122-b98d-9a46d2b04846",
+            "name": "Печать",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "04df040f-8df6-4a4d-bf99-8050db4a6d16",
+            "name": "Флаер",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "da7ae6f0-0840-4025-acdf-d1c812cd19f2",
+            "name": "Реклама",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "1c3bdec7-a9e6-42d2-bda4-fdc72b1274e7",
+            "name": "Буклет",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "eebc02be-8c63-4e0c-8c9a-a1348d73d8ff",
+            "name": "Многостраничное",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "9128b755-04ae-4b16-abd7-b50b5d34cd22",
+            "name": "Баннер",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "03f566b5-f91b-4e04-911a-e837a9bfb097",
+            "name": "Упаковка",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "7022fb8a-1ce0-4006-b026-c2f7fb7e2bf3",
+            "name": "3D",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "9a8713e3-aa1e-4164-bb4a-d1ad2a6cf73d",
+            "name": "Каталог",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "9e6302d3-1b2b-4d69-a710-10fb18176381",
+            "name": "тест",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "083dc0d5-9986-48ef-8014-9e30480bbad8",
+            "name": "статус",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "68b044df-1314-4020-aaad-0811d98316cb",
+            "name": "концепт",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "324ef6ee-9578-4ad1-9b50-154782072676",
+            "name": "гайд",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "9207d163-5ee4-44cb-b7e6-f267a84b4843",
+            "name": "обработка",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "bf45e81c-c018-404d-be69-65f8ae4765e0",
+            "name": "автоматизация",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "535973d9-9f3c-4978-9be0-79e2b14b50f7",
+            "name": "видео",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "821c72ab-c407-4c44-a196-3641ae23bdfd",
+            "name": "статья",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "2b1e0352-04ae-4ce0-8939-8e25243704ff",
+            "name": "знания",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "74d8eabf-083d-4ae5-b7a3-0dc9f60c8cd6",
+            "name": "код",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "352f42e2-ba8d-41dc-961b-ad081ec31658",
+            "name": "техническое",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "f34d9662-a433-429b-a632-150bea259c41",
+            "name": "соцсети",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "0c5c411e-48e0-4d76-9e69-a4aa0fd76b9f",
+            "name": "тренды",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7da4b6fb-da54-4f71-88aa-de369a089feb",
+            "name": "изображение",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "737b88ed-84f2-40af-b435-2ba88ef2383f",
+            "name": "дизайн",
+            "color": "yellow",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Сборник гайдов": {
+      "id": "%3EBGX",
+      "name": "Сборник гайдов",
+      "type": "relation",
+      "relation": {
+        "database_id": "3e6a5838-b404-4a87-a843-3c3664995c5b",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 КГМ",
+          "synced_property_id": "xP_O"
+        }
+      }
+    },
+    "Рефы": {
+      "id": "%40%5DT%5E",
+      "name": "Рефы",
+      "type": "relation",
+      "relation": {
+        "database_id": "2a0d2884-7d74-40a7-bad0-37e38157933f",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "База",
+          "synced_property_id": "R%60v%3D"
+        }
+      }
+    },
+    "Проекты": {
+      "id": "A%3D~~",
+      "name": "Проекты",
+      "type": "relation",
+      "relation": {
+        "database_id": "342f18c6-7a5e-41fe-ad73-dcec00770f4e",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Гайды",
+          "synced_property_id": "B%3CLd"
+        }
+      }
+    },
+    "База идей/советов": {
+      "id": "CV~N",
+      "name": "База идей/советов",
+      "type": "relation",
+      "relation": {
+        "database_id": "ad92a6e2-1485-428c-84de-8587706b3be1",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "WJ%3EJ"
+        }
+      }
+    },
+    "Created time": {
+      "id": "D%7CNf",
+      "name": "Created time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "📄 Концепты/Сценарии 1": {
+      "id": "FBi~",
+      "name": "📄 Концепты/Сценарии 1",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8088-97df-c7e1e74173ce",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "dLLY"
+        }
+      }
+    },
+    "В цепочке": {
+      "id": "F%7Cyq",
+      "name": "В цепочке",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "|rmY",
+            "name": "Сторонний",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "Ro<J",
+            "name": "Планирование",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "d5926bbe-201b-41b7-8436-a57118dd11fc",
+            "name": "Предпроизводство",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "|lJP",
+            "name": "Производство",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "V\\DQ",
+            "name": "Продвижение",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "LIqA",
+            "name": "Поддержка",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "32122149-045e-4048-8a81-6ae033b17245",
+            "name": "Закрыт",
+            "color": "green",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "a8c01c3f-f715-456b-be43-a5f1deeb0fee",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "Ro<J",
+              "|rmY"
+            ]
+          },
+          {
+            "id": "add4fe48-a3cf-4452-9ace-77f2c0d6815f",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "d5926bbe-201b-41b7-8436-a57118dd11fc",
+              "|lJP",
+              "V\\DQ",
+              "LIqA"
+            ]
+          },
+          {
+            "id": "8b31549a-4e23-4981-b4c1-85fe2f3a3384",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "32122149-045e-4048-8a81-6ae033b17245"
+            ]
+          }
+        ]
+      }
+    },
+    "Приоритет": {
+      "id": "OHNQ",
+      "name": "Приоритет",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "eNoM",
+            "name": "Высокий",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "Nk?y",
+            "name": "Средний",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Наш": {
+      "id": "QJlj",
+      "name": "Наш",
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "Доп теги": {
+      "id": "Q~kC",
+      "name": "Доп теги",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "1b897682-3a69-46e0-9eec-c72b6c367969",
+            "name": "Доп",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "d5e53e2c-4b60-49a8-b0e0-d8eb546b1333",
+            "name": "Основ",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "c773f03b-ece3-4e3a-aa14-2564c2732dcd",
+            "name": "тест",
+            "color": "yellow",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Guide Status": {
+      "id": "RGCh",
+      "name": "Guide Status",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "73f111ee-465d-4108-8a71-59966ee62db5",
+            "name": "Active",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "bf8f246b-6f4a-41e5-8706-2553470e99e0",
+            "name": "In Progress",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "e88397f7-bfe2-4937-944b-94ab5296f057",
+            "name": "Archived",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Статус": {
+      "id": "RT%3Cy",
+      "name": "Статус",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "0e4e560f-f2c8-43d3-8236-70cdba5c808d",
+            "name": "Старт",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": ":KzU",
+            "name": "Pause",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "kpI?",
+            "name": "В процессе",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "va`s",
+            "name": "На проверке",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "Ws<C",
+            "name": "+\\-",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "8b8c02ac-68e1-4c9d-98b7-5389202577a9",
+            "name": "Готов",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "9a964ca6-5d16-4371-b6bd-ce5c4c15f302",
+            "name": "Черновик",
+            "color": "default",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "1dab4ada-d4ae-42d7-8af1-2b22e3b19a3d",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "0e4e560f-f2c8-43d3-8236-70cdba5c808d",
+              "9a964ca6-5d16-4371-b6bd-ce5c4c15f302"
+            ]
+          },
+          {
+            "id": "0ebfc2bd-d8b1-446b-8610-e7272051874d",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "va`s",
+              ":KzU",
+              "kpI?"
+            ]
+          },
+          {
+            "id": "c21b198c-5b8a-427c-80c1-877ea943a29f",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "Ws<C",
+              "8b8c02ac-68e1-4c9d-98b7-5389202577a9"
+            ]
+          }
+        ]
+      }
+    },
+    "Last edited time": {
+      "id": "Rk%3Bw",
+      "name": "Last edited time",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "Материалы": {
+      "id": "YWbA",
+      "name": "Материалы",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d9ace03-d9ff-8041-91a4-d35aeedcbbd4",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "v%7D%3EI"
+        }
+      }
+    },
+    "Описание": {
+      "id": "%5B%5Cd%3C",
+      "name": "Описание",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Статус актуальности": {
+      "id": "%5B%60bW",
+      "name": "Статус актуальности",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "7e6d1b93-25ee-41ac-bb1f-88a0147a4aaa",
+            "name": "Актуальный",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "229b6cbc-f50e-41b5-941a-a540d78c8a3e",
+            "name": "Требует обновления",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "08c51b93-d904-4240-b16f-cfbaea4167f3",
+            "name": "Устарел",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Created by": {
+      "id": "dVPM",
+      "name": "Created by",
+      "type": "created_by",
+      "created_by": {}
+    },
+    "Важность": {
+      "id": "dqbh",
+      "name": "Важность",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Дизайн задачи": {
+      "id": "hdt%5C",
+      "name": "Дизайн задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "%5CKOv"
+        }
+      }
+    },
+    "Дизайн подзадачи": {
+      "id": "iVrm",
+      "name": "Дизайн подзадачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "9c5f4269-d614-49b6-a748-5579a3c21da3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "l%5E%5Cq"
+        }
+      }
+    },
+    "Мини": {
+      "id": "jUyG",
+      "name": "Мини",
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "Статус гайда": {
+      "id": "ldQL",
+      "name": "Статус гайда",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "a57f1a9b-3761-4d13-a8d7-79c02d344b80",
+            "name": "Активный",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "cfdf706d-fba2-4905-99fb-ca4896363549",
+            "name": "В доработке",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "a2124c49-c859-4812-a804-68f6615dfbd6",
+            "name": "Архивный",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Лайки": {
+      "id": "nIr%5D",
+      "name": "Лайки",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:A%3D~~:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:lox_:342f18c6-7a5e-41fe-ad73-dcec00770f4e:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:_E%5BU:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(current.{{notion:block_property:HXqN:b760c8e1-9805-455d-9541-10f691e824f1:a8867646-eef8-49a8-a40e-b0c79f39315e}})))"
+      }
+    },
+    "Relevance Status": {
+      "id": "q%5BKS",
+      "name": "Relevance Status",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "0e9e82aa-accd-4758-879c-7c6e0941a38e",
+            "name": "Relevant",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "94341a85-f6fc-4b49-b709-0c9eeafde5a8",
+            "name": "Needs Update",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1b218acc-36a6-4c8a-80cc-7638c7e4a03f",
+            "name": "Outdated",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Связь с задачей": {
+      "id": "rk%7B_",
+      "name": "Связь с задачей",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "URL": {
+      "id": "rr%3Ch",
+      "name": "URL",
+      "type": "url",
+      "url": {}
+    },
+    "KPI": {
+      "id": "tZ%5By",
+      "name": "KPI",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "📬 Гайды",
+          "synced_property_id": "%3ALpk"
+        }
+      }
+    },
+    "Направление/отделы": {
+      "id": "v%3B%3DX",
+      "name": "Направление/отделы",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "uFwb",
+            "name": "Бренд",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "dOTt",
+            "name": "Продукт",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "d78e68d4-d75d-4918-a9d8-be5c18c47940",
+            "name": "Маркет",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": ">oOw",
+            "name": "SMM",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "uYoJ",
+            "name": "Фото",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "jxdD",
+            "name": "Видео",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "E>Oo",
+            "name": "Копирайт",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "=sh{",
+            "name": "Веб",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "aBRI",
+            "name": "Дизайн",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "lNWt",
+            "name": "Стратегия",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "ohH;",
+            "name": "Орг",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "02df0f12-a3bf-49be-b38f-515eb0af5cfd",
+            "name": "PR",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "3f3bf5d9-bbfa-4c75-bfdb-94dda2d47aa3",
+            "name": "маркет",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "9aa94796-e8a3-4e23-82ec-f0079278b7fd",
+            "name": "дизайн",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "762ef737-3505-46b0-8a11-5184f0149dad",
+            "name": "продукт",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "4bfa77fe-ed2f-4144-8058-c2f7575cfb26",
+            "name": "Полиграфия",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "307fe6e9-2f9f-4715-92ec-18137ee05333",
+            "name": "тест",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Участники": {
+      "id": "z%3Fwf",
+      "name": "Участники",
+      "type": "people",
+      "people": {}
+    },
+    "Name": {
+      "id": "title",
+      "name": "Name",
+      "type": "title",
+      "title": {}
+    },
+    "Для чего?": {
+      "id": "ef95e387-2605-43ee-af06-543bbb20a66c",
+      "name": "Для чего?",
+      "type": "rich_text",
+      "rich_text": {}
+    }
+  },
+  "parent": {
+    "type": "block_id",
+    "block_id": "2709187c-f26b-4872-829c-d472f7ba7243"
+  },
+  "url": "https://www.notion.so/47c6086858d442ebaeceb4fad1b23ba3",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "f7b3f1a0-76ab-4057-94d7-aa5035c31dd7"
+}

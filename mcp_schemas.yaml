@@ -1,0 +1,131 @@
+tools:
+  - name: "get_notion_database"
+    description: "Получает страницы из указанной базы данных Notion. Если ID базы не указан, используется база по умолчанию."
+    inputSchema:
+      type: "object"
+      properties:
+        database_id:
+          type: "string"
+          description: "ID базы данных Notion, из которой нужно получить страницы."
+      required: []
+
+  - name: "create_notion_page"
+    description: "Создать новую страницу в Notion"
+    inputSchema:
+      type: "object"
+      properties:
+        database_id:
+          type: "string"
+          description: "ID базы данных"
+        title:
+          type: "string"
+          description: "Заголовок страницы"
+        description:
+          type: "string"
+          description: "Описание"
+        tags:
+          type: "array"
+          items:
+            type: "string"
+          description: "Теги"
+        status:
+          type: "string"
+          description: "Статус"
+        importance:
+          type: "integer"
+          description: "Важность (1-5)"
+      required: ["database_id", "title"]
+
+  - name: "update_notion_page"
+    description: "Обновить существующую страницу в Notion"
+    inputSchema:
+      type: "object"
+      properties:
+        page_id:
+          type: "string"
+          description: "ID страницы"
+        title:
+          type: "string"
+          description: "Новый заголовок"
+        description:
+          type: "string"
+          description: "Новое описание"
+        tags:
+          type: "array"
+          items:
+            type: "string"
+          description: "Новые теги"
+        status:
+          type: "string"
+          description: "Новый статус"
+        importance:
+          type: "integer"
+          description: "Новая важность (1-5)"
+      required: ["page_id"]
+
+  - name: "delete_notion_page"
+    description: "Удалить страницу из Notion"
+    inputSchema:
+      type: "object"
+      properties:
+        page_id:
+          type: "string"
+          description: "ID страницы для удаления"
+      required: ["page_id"]
+
+  - name: "search_notion"
+    description: "Поиск в базах данных Notion"
+    inputSchema:
+      type: "object"
+      properties:
+        query:
+          type: "string"
+          description: "Поисковый запрос"
+        database_ids:
+          type: "array"
+          items:
+            type: "string"
+          description: "ID баз данных для поиска"
+        limit:
+          type: "integer"
+          description: "Максимальное количество результатов"
+          default: 50
+      required: ["query"]
+
+  - name: "get_notion_databases"
+    description: "Получить список всех доступных баз данных"
+    inputSchema:
+      type: "object"
+      properties: {}
+
+  - name: "analyze_notion_content"
+    description: "Анализ контента в Notion с помощью LLM"
+    inputSchema:
+      type: "object"
+      properties:
+        database_id:
+          type: "string"
+          description: "ID базы данных для анализа"
+        analysis_type:
+          type: "string"
+          enum: ["categorization", "sentiment", "keywords", "summary"]
+          description: "Тип анализа"
+        limit:
+          type: "integer"
+          description: "Количество записей для анализа"
+          default: 10
+      required: ["database_id", "analysis_type"]
+
+  - name: "analyze_notion_completeness"
+    description: "Аналитика базы: completeness, freshness, orphan, дубли. Возвращает summary-отчёт."
+    inputSchema:
+      type: "object"
+      properties:
+        database_id:
+          type: "string"
+          description: "ID базы данных для анализа"
+        freshness_days:
+          type: "integer"
+          description: "Порог свежести (дней) для анализа актуальности"
+          default: 14
+      required: ["database_id"] 

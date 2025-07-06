@@ -1,0 +1,53 @@
+# Telegram Bot Configuration
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+
+# Notion API Configuration
+NOTION_TOKEN=your_notion_token
+
+# Notion Databases
+NOTION_DATABASE_ID_RITUALS=1fddb2b98a1b80b6a12dc29e84fce46d
+NOTION_DATABASE_ID_HABITS=1fddb2b98a1b8053a54aedf250530798
+NOTION_DATABASE_ID_REFLECTION=1fddb2b98a1b80518f9be7a55e84294f
+NOTION_DATABASE_ID_GUIDES=1fddb2b98a1b806e8c70c1d7dd406dd8
+NOTION_DATABASE_ID_ACTIONS=1fddb2b98a1b80d7901ecdf0cb22ce42
+NOTION_DATABASE_ID_TERMS=201db2b98a1b800ea076deec76f5f17a
+NOTION_DATABASE_ID_MATERIALS=1ffdb2b98a1b80b98cffce229152b0d7
+
+# LLM Configuration (optional)
+OPENROUTER_API_KEY=your_openrouter_key
+USE_LOCAL_MODEL=false
+
+# Application Settings
+ALLOWED_TELEGRAM_USERS=123456789,987654321
+LOG_LEVEL=INFO
+DEBUG_MODE=false
+
+# Database IDs (add as needed)
+NOTION_IDEAS_DB_ID=your_ideas_database_id
+NOTION_LEARNING_DB_ID=your_learning_database_id
+NOTION_KPI_DB_ID=your_kpi_database_id
+NOTION_TEAM_DB_ID=your_team_database_id
+NOTION_SOCIAL_MEDIA_DB_ID=your_social_media_database_id
+NOTION_TYPICAL_TASKS_DB_ID=your_typical_tasks_database_id
+
+# Todoist API Token (уже настроен)
+TODOIST_API_TOKEN=05e680098895c97a2e24b1eab2c9de3977672a69
+
+# Notion (опционально)
+NOTION_TASKS_DB_ID=your_tasks_database_id
+NOTION_HABITS_DB_ID=your_habits_database_id
+NOTION_REFLECTIONS_DB_ID=your_reflections_database_id
+NOTION_RITUALS_DB_ID=your_rituals_database_id
+NOTION_GUIDES_DB_ID=your_guides_database_id
+NOTION_ACTIONS_DB_ID=your_actions_database_id
+NOTION_TERMS_DB_ID=your_terms_database_id
+NOTION_MATERIALS_DB_ID=your_materials_database_id
+
+# LLM (OpenRouter или OpenAI)
+OPENROUTER_API_KEY=your_openrouter_key
+# или
+OPENAI_API_KEY=your_openai_key
+
+# Настройки
+DEBUG=False
+LOG_LEVEL=INFO 

@@ -1,0 +1,12 @@
+{
+  "total_processed": 8,
+  "successful": 0,
+  "failed": 0,
+  "no_url": 0,
+  "not_image": 0,
+  "download_failed": 8,
+  "upload_failed": 0,
+  "notion_update_failed": 0,
+  "processing_times": [],
+  "errors": []
+}
