@@ -429,27 +429,30 @@ class NotionMCPServer:
                 content=[TextContent(type="text", text=f"Ошибка: {str(e)}")]
             )
 
-    async def get_pages(self, database_id: str, filter_dict: Optional[dict] = None) -> List[dict]:
-        """Получить страницы из базы данных с опциональным фильтром"""
+    async def get_pages(self, database_id: str, filter_dict: Optional[dict] = None, limit: Optional[int] = None) -> List[dict]:
+        """Получить страницы из базы данных с опциональным фильтром и лимитом"""
         try:
             kwargs = {"database_id": database_id}
             if filter_dict:
                 kwargs["filter"] = filter_dict
+            if limit:
+                kwargs["page_size"] = limit
             
             response = await self.client.databases.query(**kwargs)
             pages = response.get("results", [])
             
-            # Пагинация для получения всех страниц
-            while response.get("has_more"):
-                next_kwargs = {
-                    "database_id": database_id,
-                    "start_cursor": response.get("next_cursor")
-                }
-                if filter_dict:
-                    next_kwargs["filter"] = filter_dict
-                
-                response = await self.client.databases.query(**next_kwargs)
-                pages.extend(response.get("results", []))
+            # Пагинация для получения всех страниц (только если не указан лимит)
+            if not limit:
+                while response.get("has_more"):
+                    next_kwargs = {
+                        "database_id": database_id,
+                        "start_cursor": response.get("next_cursor")
+                    }
+                    if filter_dict:
+                        next_kwargs["filter"] = filter_dict
+                    
+                    response = await self.client.databases.query(**next_kwargs)
+                    pages.extend(response.get("results", []))
             
             logger.info(f"[MCP] Получено {len(pages)} страниц из базы {database_id}")
             return pages
@@ -1815,5 +1818,72 @@ async def main():
             ),
         )
 
+async def cli_main():
+    """CLI режим для прямых команд"""
+    import argparse
+    import json
+    
+    parser = argparse.ArgumentParser(description="Notion MCP Server CLI")
+    parser.add_argument("command", help="Команда для выполнения")
+    parser.add_argument("--database_id", help="ID базы данных")
+    parser.add_argument("--limit", type=int, default=10, help="Лимит записей")
+    parser.add_argument("--properties", help="JSON свойства")
+    parser.add_argument("--properties_file", help="Файл с JSON свойствами")
+    parser.add_argument("--filter_dict", help="JSON фильтр")
+    
+    args = parser.parse_args()
+    
+    server = NotionMCPServer()
+    
+    try:
+        if args.command == "list_pages":
+            if not args.database_id:
+                print("❌ Ошибка: требуется --database_id")
+                return
+            
+            pages = await server.get_pages(args.database_id, limit=args.limit)
+            print(f"✅ Найдено {len(pages)} записей:")
+            for i, page in enumerate(pages[:5], 1):
+                title = server._get_property_text(page.get("properties", {}), "Название") or server._get_property_text(page.get("properties", {}), "Задача") or "Без названия"
+                print(f"  {i}. {title} (ID: {page.get('id', 'N/A')})")
+        
+        elif args.command == "safe_create_with_auto_options":
+            if not args.database_id:
+                print("❌ Ошибка: требуется --database_id")
+                return
+            
+            properties = {}
+            if args.properties:
+                properties = json.loads(args.properties)
+            elif args.properties_file:
+                with open(args.properties_file, 'r', encoding='utf-8') as f:
+                    properties = json.load(f)
+            else:
+                print("❌ Ошибка: требуется --properties или --properties_file")
+                return
+            
+            result = await server.safe_create_with_auto_options({"database_id": args.database_id, "properties": properties})
+            print(f"✅ Результат: {json.dumps(result, ensure_ascii=False, indent=2)}")
+        
+        elif args.command == "get_database_info":
+            if not args.database_id:
+                print("❌ Ошибка: требуется --database_id")
+                return
+            
+            result = await server.get_database_info({"database_id": args.database_id})
+            print(f"✅ Информация о базе: {json.dumps(result, ensure_ascii=False, indent=2)}")
+        
+        else:
+            print(f"❌ Неизвестная команда: {args.command}")
+            print("Доступные команды: list_pages, safe_create_with_auto_options, get_database_info")
+    
+    except Exception as e:
+        print(f"❌ Ошибка: {e}")
+
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    if len(sys.argv) > 1 and sys.argv[1] not in ["--help", "-h"]:
+        # CLI режим
+        asyncio.run(cli_main())
+    else:
+        # MCP сервер режим
+        asyncio.run(main()) 

@@ -224,62 +224,93 @@ DATABASE_SCHEMAS = {
         relations={}
     ),
     
+    "smm_tasks": DatabaseSchema(
+        name="SMM задачи",
+        database_id=os.getenv("NOTION_SMM_TASKS_DB_ID", ""),
+        description="Задачи SMM отдела",
+        properties={
+            " Задача": {"type": "title"},
+            "Участники": {"type": "people"},
+            "Статус": {"type": "status"},
+            "Проект": {"type": "relation"},
+            " Теги": {"type": "multi_select"},
+            "! Задачи": {"type": "select"},
+            "Дата": {"type": "date"},
+            "Ориентир": {"type": "number"},
+            "CRM задачи": {"type": "url"},
+            "Описание": {"type": "rich_text"},
+            "Отзыв ?": {"type": "rich_text"},
+            "Комент": {"type": "rich_text"},
+        },
+        status_options={
+            "Статус": ["Regular", "Backlog", "To do", "Paused", "Review", "In Progress", "In Production", "Done", "Canceled"]
+        },
+        select_options={
+            "! Задачи": ["!!!", "!!", "!"]
+        },
+        multi_select_options={
+            " Теги": ["Полиграфия товаров", "Полиграфия", "Маркет", "Бренд", "Веб", "SMM", "Видео", "Фото", "Орг", "Активности", "Копирайт", "Дизайн", "Стратегия", "Материалы"]
+        },
+        relations={
+            "Проект": os.getenv("NOTION_PROJECTS_DB_ID", "")
+        }
+    ),
+    
     "kpi": DatabaseSchema(
-        name="KPI и метрики",
+        name="KPI",
         database_id=os.getenv("NOTION_KPI_DB_ID", ""),
-        description="Метрики и KPI производительности",
+        description="Система KPI и метрик",
         properties={
             "Name": {"type": "title"},
+            "Тип контента / направление": {"type": "select"},
             "Тип KPI": {"type": "select"},
-            "Целевое значение": {"type": "number"},
-            "Стартовое значение": {"type": "number"},
-            "Период": {"type": "date"},
-            "Команда": {"type": "relation"},
+            "Цель / задача": {"type": "number"},
+            "Факт (результат)": {"type": "number"},
+            "Достижение (%)": {"type": "number"},
+            "Период": {"type": "select"},
+            "Команда": {"type": "multi_select"},
+            "Сотрудники": {"type": "people"},
+            "Дата периода": {"type": "date"},
             "Комментарий": {"type": "rich_text"},
-            "Тип контента": {"type": "multi_select"},
-            "Метрика": {"type": "select"},
-            "Текущее значение": {"type": "number"},
-            "Достижение (%)": {"type": "formula"},
-            "Формула расчёта": {"type": "rich_text"},
-            "Период расчёта": {"type": "select"},
-            "Статус": {"type": "select"},
-            "Сотрудник": {"type": "people"},
-            "Проект": {"type": "relation"},
-            "Материалы": {"type": "relation"},
-            "Задачи": {"type": "relation"},
             "Время выполнения": {"type": "number"},
             "Охват": {"type": "number"},
             "Вовлечённость": {"type": "number"},
             "Конверсия": {"type": "number"},
             "CTR": {"type": "number"},
             "ROI": {"type": "number"},
-            "Просмотры": {"type": "number"},
-            "Клики": {"type": "number"},
-            "Переходы": {"type": "number"},
-            "Продажи": {"type": "number"},
-            "Добавления в корзину": {"type": "number"},
-            "Время на задачу": {"type": "number"},
-            "Качество выполнения": {"type": "number"},
-            "Количество правок": {"type": "number"},
-            "Эффективность": {"type": "formula"},
-            "Бонус": {"type": "formula"}
+            "Стартовое значение": {"type": "number"},
+            "Значение по умолчанию": {"type": "number"},
+            "%": {"type": "number"},
+            "Формула расчёта": {"type": "rich_text"},
+            "Контент план": {"type": "relation"},
+            "Задачи сотрудника": {"type": "relation"},
+            "Задачи полиграфии": {"type": "relation"},
+            "Задачи SMM": {"type": "relation"},
+            "Задачи маркетинг": {"type": "relation"},
+            "Материалы": {"type": "relation"},
+            "Дизайн": {"type": "relation"},
+            "📬 Гайды": {"type": "relation"},
+            "1 правок": {"type": "relation"},
         },
-        status_options={
-            "Статус": ["🟢 Норма", "🟡 Внимание", "🔴 Критично", "📊 Анализ"]
-        },
+        status_options={},
         select_options={
-            "Тип KPI": ["% выполнено", "Охват", "Вовлечённость", "Количество", "Среднее значение", "Эффективность", "Качество", "Скорость"],
-            "Метрика": ["Просмотры", "Клики", "Конверсия", "Время", "Качество", "Охват", "Вовлечённость", "ROI", "CTR"],
-            "Период расчёта": ["День", "Неделя", "Месяц", "Квартал", "Год"]
+            "Тип контента / направление": ["YouTube", "Instagram", "Telegram", "Полиграфия", "Веб", "Видео", "Фото", "SMM", "Маркетинг"],
+            "Тип KPI": ["Просмотры", "Подписчики", "Лайки", "Комментарии", "Репосты", "Конверсия", "Продажи", "Охват", "Вовлечённость", "CTR", "ROI"],
+            "Период": ["День", "Неделя", "Месяц", "Квартал", "Год"]
         },
         multi_select_options={
-            "Тип контента / направление": ["Фото (Ozon", "WB)", "Текст", "визуал", "SMM", "Бренд в целом", "Видео (Reels", "Shorts)", "Видео", "Фото", "Polygraphy", "Projects", "Tasks", "YouTube", "Instagram", "Полиграфия"]
+            "Команда": ["Дизайн", "SMM", "Маркетинг", "Полиграфия", "Веб", "Видео", "Фото", "Аналитика"]
         },
         relations={
-            "Команда": os.getenv("NOTION_TEAMS_DB_ID", ""),
-            "Проект": os.getenv("NOTION_PROJECTS_DB_ID", ""),
+            "Контент план": os.getenv("NOTION_CONTENT_PLAN_DB_ID", ""),
+            "Задачи сотрудника": os.getenv("NOTION_TASKS_DB_ID", ""),
+            "Задачи полиграфии": os.getenv("NOTION_TASKS_DB_ID", ""),
+            "Задачи SMM": os.getenv("NOTION_SMM_TASKS_DB_ID", ""),
+            "Задачи маркетинг": os.getenv("NOTION_MARKETING_TASKS_DB_ID", ""),
             "Материалы": os.getenv("NOTION_MATERIALS_DB_ID", ""),
-            "Задачи": os.getenv("NOTION_TASKS_DB_ID", "")
+            "Дизайн": os.getenv("NOTION_TASKS_DB_ID", ""),
+            "📬 Гайды": os.getenv("NOTION_GUIDES_DB_ID", ""),
+            "1 правок": os.getenv("NOTION_SUBTASKS_DB_ID", "")
         }
     ),
     
@@ -552,6 +583,13 @@ def get_database_schema(db_name: str) -> Optional[DatabaseSchema]:
     """Получить схему базы данных по имени"""
     return DATABASE_SCHEMAS.get(db_name)
 
+def get_database_schema_by_id(database_id: str) -> Optional[DatabaseSchema]:
+    """Получить схему базы данных по ID"""
+    for schema in DATABASE_SCHEMAS.values():
+        if schema.database_id == database_id:
+            return schema
+    return None
+
 def get_all_database_ids() -> Dict[str, str]:
     """Получить все ID баз данных из переменных окружения"""
     return {
@@ -596,10 +634,24 @@ def get_select_options(db_name: str, property_name: str) -> List[str]:
     if schema and property_name in schema.select_options:
         return schema.select_options[property_name]
     return []
+
+def get_select_options_by_id(database_id: str, property_name: str) -> List[str]:
+    """Получить варианты выбора для поля базы данных по ID"""
+    schema = get_database_schema_by_id(database_id)
+    if schema and property_name in schema.select_options:
+        return schema.select_options[property_name]
+    return []
     
 def get_multi_select_options(db_name: str, property_name: str) -> List[str]:
     """Получить варианты множественного выбора для поля базы данных"""
     schema = get_database_schema(db_name)
+    if schema and property_name in schema.multi_select_options:
+        return schema.multi_select_options[property_name]
+    return []
+
+def get_multi_select_options_by_id(database_id: str, property_name: str) -> List[str]:
+    """Получить варианты множественного выбора для поля базы данных по ID"""
+    schema = get_database_schema_by_id(database_id)
     if schema and property_name in schema.multi_select_options:
         return schema.multi_select_options[property_name]
     return []

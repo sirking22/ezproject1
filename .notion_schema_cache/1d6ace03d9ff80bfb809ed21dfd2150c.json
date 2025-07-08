@@ -13,9 +13,9 @@
   },
   "last_edited_by": {
     "object": "user",
-    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+    "id": "36acddeb-3152-4e67-a1fc-9f054cfbf40d"
   },
-  "last_edited_time": "2025-07-08T12:29:00.000Z",
+  "last_edited_time": "2025-07-08T14:25:00.000Z",
   "title": [
     {
       "type": "text",
@@ -264,6 +264,36 @@
             "name": "Полиграфия",
             "color": "red",
             "description": null
+          },
+          {
+            "id": "8fc60ffe-2063-47a4-8fd9-bc7252c7c9bc",
+            "name": "Новое направление",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "15d44572-f981-4bd9-8fbf-65419d1ab7b9",
+            "name": "Ещё одно направление",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "53aa174c-bb0a-4e77-8fec-9285dcc54baf",
+            "name": "TikTok",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "7af6f8dd-41db-4bc7-8eff-aeba3d08ea73",
+            "name": "Telegram",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "8f4e9994-df06-4140-b1ea-83f11b920ff5",
+            "name": "VK",
+            "color": "default",
+            "description": null
           }
         ]
       }
@@ -338,6 +368,18 @@
             "id": "cdb1d5b6-5bfe-418f-af9b-558cabbad3fd",
             "name": "Эффективность",
             "color": "gray",
+            "description": null
+          },
+          {
+            "id": "f1db62fe-6305-4205-bbb6-d104b0b981bd",
+            "name": "YouTube метрики",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "6fad80e8-0f83-44ef-a0a8-261f4e08eab3",
+            "name": "Новый тип KPI",
+            "color": "default",
             "description": null
           }
         ]
@@ -483,5 +525,5 @@
   "public_url": null,
   "archived": false,
   "in_trash": false,
-  "request_id": "3bc984fc-495d-4a6b-b52c-c97e70ae6892"
+  "request_id": "c49732e2-7c08-47b6-b4f0-f46eb890bd0e"
 }

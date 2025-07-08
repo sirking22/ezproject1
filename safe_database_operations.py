@@ -4,7 +4,7 @@ import logging
 from typing import Dict, List, Any, Optional, Union, Tuple
 from datetime import datetime
 from notion_client import AsyncClient
-from notion_database_schemas import get_database_schema, get_select_options, get_multi_select_options, get_database_id
+from notion_database_schemas import get_database_schema, get_database_schema_by_id, get_select_options, get_select_options_by_id, get_multi_select_options, get_multi_select_options_by_id, get_database_id
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -137,7 +137,7 @@ class SafeDatabaseOperations:
         """Проверить и добавить значение в select поле, если его нет"""
         try:
             # Получаем текущие опции из схемы
-            current_options = get_select_options(database_id, property_name)
+            current_options = get_select_options_by_id(database_id, property_name)
             
             if option in current_options:
                 return {"success": True, "message": f"Значение '{option}' уже существует в поле '{property_name}'"}
@@ -154,7 +154,7 @@ class SafeDatabaseOperations:
         """Проверить и добавить значение в multi_select поле, если его нет"""
         try:
             # Получаем текущие опции из схемы
-            current_options = get_multi_select_options(database_id, property_name)
+            current_options = get_multi_select_options_by_id(database_id, property_name)
             
             if option in current_options:
                 return {"success": True, "message": f"Значение '{option}' уже существует в поле '{property_name}'"}
@@ -360,7 +360,7 @@ class SafeDatabaseOperations:
             self.logger.info(f"🔄 Создание записи в базе {database_id} с автоматическим добавлением опций")
             
             # Получаем схему базы
-            schema = get_database_schema(database_id)
+            schema = get_database_schema_by_id(database_id)
             if not schema:
                 return {"success": False, "error": f"Схема для базы {database_id} не найдена"}
             
