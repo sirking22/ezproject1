@@ -28,8 +28,12 @@ from notion_database_schemas import (
     get_select_options,
     get_multi_select_options,
     get_relations,
-    validate_property_value
+    validate_property_value,
+    get_database_id
 )
+
+# Импорт безопасных операций
+from safe_database_operations import SafeDatabaseOperations
 
 from notion_client import AsyncClient
 
@@ -119,7 +123,7 @@ class NotionMCPServer:
         
         if not self.notion_token:
             raise ValueError("NOTION_TOKEN не найден в переменных окружения")
-            
+        
         self.client = AsyncClient(auth=self.notion_token)
         logger.info(f"[MCP] NOTION_TOKEN loaded: {bool(self.notion_token)}")
         logger.info(f"[MCP] TASKS_DB_ID: {self.tasks_db_id}")
@@ -252,6 +256,115 @@ class NotionMCPServer:
                     "type": "object",
                     "properties": {}
                 }
+            ),
+            Tool(
+                name="get_kpi_metrics",
+                description="Получить KPI метрики по сотруднику/периоду/типу",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "employee_name": {"type": "string", "description": "Имя сотрудника"},
+                        "kpi_type": {"type": "string", "description": "Тип KPI (полиграфия/контент/дизайн/общие)"},
+                        "period_start": {"type": "string", "description": "Начало периода (YYYY-MM-DD)"},
+                        "period_end": {"type": "string", "description": "Конец периода (YYYY-MM-DD)"},
+                        "include_formulas": {"type": "boolean", "description": "Включить формулы расчёта", "default": True}
+                    }
+                }
+            ),
+            Tool(
+                name="calculate_bonus",
+                description="Рассчитать бонус по формуле эффективности",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "employee_name": {"type": "string", "description": "Имя сотрудника"},
+                        "base_salary": {"type": "number", "description": "Базовая зарплата", "default": 100000},
+                        "period": {"type": "string", "description": "Период расчёта (месяц/квартал)"}
+                    },
+                    "required": ["employee_name"]
+                }
+            ),
+            Tool(
+                name="get_performance_data",
+                description="Получить данные эффективности по проектам/материалам",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "content_type": {"type": "string", "description": "Тип контента (карточки/YouTube/соцсети/полиграфия/концепты)"},
+                        "metric_type": {"type": "string", "description": "Тип метрики (просмотры/конверсия/время/качество)"},
+                        "date_from": {"type": "string", "description": "Дата начала (YYYY-MM-DD)"},
+                        "date_to": {"type": "string", "description": "Дата окончания (YYYY-MM-DD)"}
+                    }
+                }
+            ),
+            Tool(
+                name="update_kpi_record",
+                description="Обновить или создать KPI запись",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "kpi_name": {"type": "string", "description": "Название KPI"},
+                        "kpi_type": {"type": "string", "description": "Тип KPI"},
+                        "target_value": {"type": "number", "description": "Целевое значение"},
+                        "current_value": {"type": "number", "description": "Текущее значение"},
+                        "content_type": {"type": "string", "description": "Тип контента"},
+                        "period": {"type": "string", "description": "Период (YYYY-MM-DD)"},
+                        "comment": {"type": "string", "description": "Комментарий"}
+                    },
+                    "required": ["kpi_name", "kpi_type", "target_value"]
+                }
+            ),
+            Tool(
+                name="add_select_option",
+                description="Добавить новое значение в select поле",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "database_id": {"type": "string", "description": "ID базы данных"},
+                        "property_name": {"type": "string", "description": "Имя поля"},
+                        "new_option": {"type": "string", "description": "Новое значение для добавления"}
+                    },
+                    "required": ["database_id", "property_name", "new_option"]
+                }
+            ),
+            Tool(
+                name="add_multi_select_option",
+                description="Добавить новое значение в multi_select поле",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "database_id": {"type": "string", "description": "ID базы данных"},
+                        "property_name": {"type": "string", "description": "Имя поля"},
+                        "new_option": {"type": "string", "description": "Новое значение для добавления"}
+                    },
+                    "required": ["database_id", "property_name", "new_option"]
+                }
+            ),
+            Tool(
+                name="safe_create_with_auto_options",
+                description="Создать запись с автоматическим добавлением новых значений в select/multi_select поля",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "database_id": {"type": "string", "description": "ID базы данных"},
+                        "properties": {"type": "object", "description": "Свойства записи"}
+                    },
+                    "required": ["database_id", "properties"]
+                }
+            ),
+            Tool(
+                name="add_multiple_options",
+                description="Добавить несколько новых значений в select или multi_select поле",
+                inputSchema={
+                    "type": "object",
+                    "properties": {
+                        "database_id": {"type": "string", "description": "ID базы данных"},
+                        "property_name": {"type": "string", "description": "Имя поля"},
+                        "new_options": {"type": "array", "items": {"type": "string"}, "description": "Список новых значений"},
+                        "field_type": {"type": "string", "description": "Тип поля (select/multi_select)", "default": "select"}
+                    },
+                    "required": ["database_id", "property_name", "new_options"]
+                }
             )
         ]
         return ListToolsResult(tools=tools)
@@ -268,15 +381,15 @@ class NotionMCPServer:
                     arguments.get("filter_dict")
                 )
             elif tool_name == "create_page":
-                result = await self.create_page(arguments)
+                    result = await self.create_page(arguments)
             elif tool_name == "update_page":
-                result = await self.update_page(arguments)
+                    result = await self.update_page(arguments)
             elif tool_name == "search_pages":
-                result = await self.search_pages(arguments)
+                    result = await self.search_pages(arguments)
             elif tool_name == "get_database_info":
-                result = await self.get_database_info(arguments)
+                    result = await self.get_database_info(arguments)
             elif tool_name == "get_notion_schema":
-                result = await self.get_notion_schema(arguments)
+                    result = await self.get_notion_schema(arguments)
             elif tool_name == "get_schema_database_info":
                 result = await self.get_schema_database_info(arguments)
             elif tool_name == "get_schema_options":
@@ -285,6 +398,22 @@ class NotionMCPServer:
                 result = await self.validate_schema_property(arguments)
             elif tool_name == "list_schema_databases":
                 result = await self.list_schema_databases(arguments)
+            elif tool_name == "get_kpi_metrics":
+                result = await self.get_kpi_metrics(arguments)
+            elif tool_name == "calculate_bonus":
+                result = await self.calculate_bonus(arguments)
+            elif tool_name == "get_performance_data":
+                result = await self.get_performance_data(arguments)
+            elif tool_name == "update_kpi_record":
+                result = await self.update_kpi_record(arguments)
+            elif tool_name == "add_select_option":
+                result = await self.add_select_option(arguments)
+            elif tool_name == "add_multi_select_option":
+                result = await self.add_multi_select_option(arguments)
+            elif tool_name == "safe_create_with_auto_options":
+                result = await self.safe_create_with_auto_options(arguments)
+            elif tool_name == "add_multiple_options":
+                result = await self.add_multiple_options(arguments)
             else:
                 return CallToolResult(
                     content=[TextContent(type="text", text=f"Неизвестный инструмент: {tool_name}")]
@@ -537,7 +666,27 @@ class NotionMCPServer:
     async def delete_page(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Удалить страницу"""
         logger.info(f"[MCP] DELETE_PAGE: {arguments}")
-        return [{"success": False, "error": "Delete page not implemented yet"}]
+        
+        try:
+            page_id = arguments["page_id"]
+            
+            # Удаляем страницу через Notion API
+            await self.client.pages.update(
+                page_id=page_id,
+                archived=True  # Архивируем вместо удаления
+            )
+            
+            result = {
+                "success": True,
+                "page_id": page_id,
+                "message": "Страница успешно архивирована"
+            }
+            
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"[MCP] ERROR DELETE_PAGE: {e}")
+            return [{"success": False, "error": str(e)}]
 
     async def get_page_content(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Получить содержимое страницы"""
@@ -1123,6 +1272,533 @@ class NotionMCPServer:
             })
         
         return [{"success": True, "databases": databases}]
+
+    async def get_kpi_metrics(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Получить KPI метрики по сотруднику/периоду/типу"""
+        employee_name = arguments.get("employee_name")
+        kpi_type = arguments.get("kpi_type")
+        period_start = arguments.get("period_start")
+        period_end = arguments.get("period_end")
+        include_formulas = arguments.get("include_formulas", True)
+        
+        logger.info(f"[MCP] GET_KPI_METRICS: employee_name={employee_name}, kpi_type={kpi_type}, period_start={period_start}, period_end={period_end}")
+        
+        try:
+            # Получаем KPI базу из схем
+            kpi_db_id = get_database_id("kpi")
+            if not kpi_db_id:
+                return [{"success": False, "error": "KPI база не найдена в схемах"}]
+            
+            # Строим фильтр для запроса
+            filter_conditions = []
+            
+            if employee_name:
+                # Для фильтрации по людям нужно использовать UUID или правильный синтаксис
+                # Пока убираем фильтр по сотруднику, будем фильтровать на уровне приложения
+                logger.info(f"[MCP] Фильтр по сотруднику '{employee_name}' будет применен на уровне приложения")
+            
+            if kpi_type:
+                filter_conditions.append({
+                    "property": "Тип KPI",
+                    "select": {"equals": kpi_type}
+                })
+            
+            if period_start or period_end:
+                date_filter = {"property": "Период", "date": {}}
+                if period_start:
+                    date_filter["date"]["on_or_after"] = period_start
+                if period_end:
+                    date_filter["date"]["on_or_before"] = period_end
+                filter_conditions.append(date_filter)
+            
+            # Выполняем запрос
+            query_kwargs = {"database_id": kpi_db_id}
+            if filter_conditions:
+                if len(filter_conditions) == 1:
+                    query_kwargs["filter"] = filter_conditions[0]
+                else:
+                    query_kwargs["filter"] = {"and": filter_conditions}
+            
+            response = await self.client.databases.query(**query_kwargs)
+            pages = response.get("results", [])
+            
+            # Обрабатываем результаты
+            metrics = []
+            for page in pages:
+                properties = page.get("properties", {})
+                
+                # Фильтрация по сотруднику на уровне приложения
+                if employee_name:
+                    page_employees = self._get_property_people(properties, "Сотрудник")
+                    if not any(employee_name.lower() in emp.lower() for emp in page_employees):
+                        continue
+                
+                metric = {
+                    "id": page["id"],
+                    "name": self._get_property_text(properties, "Name"),
+                    "kpi_type": self._get_property_select(properties, "Тип KPI"),
+                    "target_value": self._get_property_number(properties, "Целевое значение"),
+                    "current_value": self._get_property_number(properties, "Текущее значение"),
+                    "achievement_percent": self._get_property_number(properties, "Достижение (%)"),
+                    "content_type": self._get_property_multi_select(properties, "Тип контента"),
+                    "metric_type": self._get_property_select(properties, "Метрика"),
+                    "status": self._get_property_select(properties, "Статус"),
+                    "period": self._get_property_date(properties, "Период"),
+                    "employee": self._get_property_people(properties, "Сотрудник"),
+                    "formula": self._get_property_text(properties, "Формула расчёта") if include_formulas else None,
+                    "comment": self._get_property_text(properties, "Комментарий")
+                }
+                
+                # Добавляем специфичные метрики по типу контента
+                if "Карточки товаров" in metric["content_type"]:
+                    metric.update({
+                        "views": self._get_property_number(properties, "Просмотры"),
+                        "clicks": self._get_property_number(properties, "Клики"),
+                        "conversion": self._get_property_number(properties, "Конверсия"),
+                        "sales": self._get_property_number(properties, "Продажи"),
+                        "cart_additions": self._get_property_number(properties, "Добавления в корзину")
+                    })
+                elif "YouTube" in metric["content_type"]:
+                    metric.update({
+                        "views": self._get_property_number(properties, "Просмотры"),
+                        "engagement": self._get_property_number(properties, "Вовлечённость"),
+                        "ctr": self._get_property_number(properties, "CTR")
+                    })
+                elif "Соцсети" in metric["content_type"]:
+                    metric.update({
+                        "reach": self._get_property_number(properties, "Охват"),
+                        "engagement": self._get_property_number(properties, "Вовлечённость"),
+                        "clicks": self._get_property_number(properties, "Клики")
+                    })
+                elif "Полиграфия" in metric["content_type"]:
+                    metric.update({
+                        "execution_time": self._get_property_number(properties, "Время выполнения"),
+                        "quality": self._get_property_number(properties, "Качество выполнения"),
+                        "revisions": self._get_property_number(properties, "Количество правок")
+                    })
+                
+                metrics.append(metric)
+            
+            result = {
+                "success": True,
+                "metrics": metrics,
+                "total_count": len(metrics),
+                "filters_applied": {
+                    "employee_name": employee_name,
+                    "kpi_type": kpi_type,
+                    "period_start": period_start,
+                    "period_end": period_end
+                }
+            }
+            
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"[MCP] ERROR GET_KPI_METRICS: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def calculate_bonus(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Рассчитать бонус по формуле эффективности"""
+        employee_name = arguments.get("employee_name")
+        base_salary = arguments.get("base_salary", 100000)
+        period = arguments.get("period", "месяц")
+        
+        logger.info(f"[MCP] CALCULATE_BONUS: employee_name={employee_name}, base_salary={base_salary}, period={period}")
+        
+        try:
+            if not employee_name:
+                return [{"success": False, "error": "Не указано имя сотрудника"}]
+            
+            # Получаем KPI метрики для сотрудника
+            kpi_result = await self.get_kpi_metrics({
+                "employee_name": employee_name,
+                "period_start": "2025-01-01",  # Можно сделать динамическим
+                "period_end": "2025-12-31"
+            })
+            
+            if not kpi_result[0]["success"]:
+                return kpi_result
+            
+            metrics = kpi_result[0]["metrics"]
+            
+            # Рассчитываем эффективность по формуле из документации
+            efficiency = 0.0
+            quality = 0.0
+            overdue_tasks = 0.0
+            
+            for metric in metrics:
+                if metric["kpi_type"] == "Эффективность":
+                    efficiency = metric["current_value"] or 0.0
+                elif metric["kpi_type"] == "Качество":
+                    quality = metric["current_value"] or 0.0
+                elif metric["kpi_type"] == "% выполнено":
+                    # Просрочки = 100% - % выполнено
+                    overdue_tasks = 1.0 - ((metric["current_value"] or 0.0) / 100.0)
+            
+            # Формула бонуса из документации
+            bonus_multiplier = (1 + efficiency * 0.2 + quality * 0.3 - overdue_tasks * 0.3)
+            bonus = base_salary * bonus_multiplier
+            
+            result = {
+                "success": True,
+                "employee_name": employee_name,
+                "base_salary": base_salary,
+                "efficiency": efficiency,
+                "quality": quality,
+                "overdue_tasks": overdue_tasks,
+                "bonus_multiplier": bonus_multiplier,
+                "bonus": bonus,
+                "period": period,
+                "formula": "бонус = base_salary * (1 + эффективность*0.2 + качество*0.3 − просрочки*0.3)"
+            }
+            
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"[MCP] ERROR CALCULATE_BONUS: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def get_performance_data(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Получить данные эффективности по проектам/материалам"""
+        content_type = arguments.get("content_type")
+        metric_type = arguments.get("metric_type")
+        date_from = arguments.get("date_from")
+        date_to = arguments.get("date_to")
+        
+        logger.info(f"[MCP] GET_PERFORMANCE_DATA: content_type={content_type}, metric_type={metric_type}, date_from={date_from}, date_to={date_to}")
+        
+        try:
+            # Получаем KPI базу
+            kpi_db_id = get_database_id("kpi")
+            if not kpi_db_id:
+                return [{"success": False, "error": "KPI база не найдена в схемах"}]
+            
+            # Строим фильтр
+            filter_conditions = []
+            
+            if content_type:
+                filter_conditions.append({
+                    "property": "Тип контента",
+                    "multi_select": {"contains": content_type}
+                })
+            
+            if metric_type:
+                filter_conditions.append({
+                    "property": "Метрика",
+                    "select": {"equals": metric_type}
+                })
+            
+            if date_from or date_to:
+                date_filter = {"property": "Период", "date": {}}
+                if date_from:
+                    date_filter["date"]["on_or_after"] = date_from
+                if date_to:
+                    date_filter["date"]["on_or_before"] = date_to
+                filter_conditions.append(date_filter)
+            
+            # Выполняем запрос
+            query_kwargs = {"database_id": kpi_db_id}
+            if filter_conditions:
+                if len(filter_conditions) == 1:
+                    query_kwargs["filter"] = filter_conditions[0]
+                else:
+                    query_kwargs["filter"] = {"and": filter_conditions}
+            
+            response = await self.client.databases.query(**query_kwargs)
+            pages = response.get("results", [])
+            
+            # Группируем данные по типам контента
+            performance_data = {
+                "Карточки товаров": {"metrics": [], "total": 0},
+                "YouTube": {"metrics": [], "total": 0},
+                "Соцсети": {"metrics": [], "total": 0},
+                "Полиграфия": {"metrics": [], "total": 0},
+                "Концепты": {"metrics": [], "total": 0},
+                "Гайды": {"metrics": [], "total": 0}
+            }
+            
+            for page in pages:
+                properties = page.get("properties", {})
+                content_types = self._get_property_multi_select(properties, "Тип контента")
+                
+                for content_type_name in content_types:
+                    if content_type_name in performance_data:
+                        metric = {
+                            "name": self._get_property_text(properties, "Name"),
+                            "current_value": self._get_property_number(properties, "Текущее значение"),
+                            "target_value": self._get_property_number(properties, "Целевое значение"),
+                            "achievement_percent": self._get_property_number(properties, "Достижение (%)"),
+                            "metric_type": self._get_property_select(properties, "Метрика"),
+                            "period": self._get_property_date(properties, "Период")
+                        }
+                        
+                        performance_data[content_type_name]["metrics"].append(metric)
+                        performance_data[content_type_name]["total"] += 1
+            
+            # Убираем пустые категории
+            performance_data = {k: v for k, v in performance_data.items() if v["total"] > 0}
+            
+            result = {
+                "success": True,
+                "performance_data": performance_data,
+                "filters_applied": {
+                    "content_type": content_type,
+                    "metric_type": metric_type,
+                    "date_from": date_from,
+                    "date_to": date_to
+                }
+            }
+            
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"[MCP] ERROR GET_PERFORMANCE_DATA: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def update_kpi_record(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Обновить или создать KPI запись"""
+        kpi_name = arguments.get("kpi_name")
+        kpi_type = arguments.get("kpi_type")
+        target_value = arguments.get("target_value")
+        current_value = arguments.get("current_value")
+        content_type = arguments.get("content_type")
+        period = arguments.get("period")
+        comment = arguments.get("comment")
+        
+        logger.info(f"[MCP] UPDATE_KPI_RECORD: kpi_name={kpi_name}, kpi_type={kpi_type}, target_value={target_value}, current_value={current_value}")
+        
+        try:
+            if not kpi_name or not kpi_type:
+                return [{"success": False, "error": "Не указаны обязательные поля kpi_name и kpi_type"}]
+            
+            # Получаем KPI базу
+            kpi_db_id = get_database_id("kpi")
+            if not kpi_db_id:
+                return [{"success": False, "error": "KPI база не найдена в схемах"}]
+            
+            # Подготавливаем свойства для создания/обновления
+            properties = {
+                "Name": {
+                    "title": [{"text": {"content": kpi_name}}]
+                },
+                "Тип KPI": {
+                    "select": {"name": kpi_type}
+                }
+            }
+            
+            if target_value is not None:
+                properties["Целевое значение"] = {"number": target_value}
+            
+            if current_value is not None:
+                properties["Текущее значение"] = {"number": current_value}
+            
+            if content_type:
+                # Обрабатываем content_type как строку или список
+                if isinstance(content_type, str):
+                    content_types = [ct.strip() for ct in content_type.split(",")]
+                else:
+                    content_types = content_type
+                
+                properties["Тип контента"] = {
+                    "multi_select": [{"name": ct} for ct in content_types]
+                }
+            
+            if period:
+                properties["Период"] = {"date": {"start": period}}
+            
+            if comment:
+                properties["Комментарий"] = {
+                    "rich_text": [{"text": {"content": comment}}]
+                }
+            
+            # Создаем новую запись
+            response = await self.client.pages.create(
+                parent={"database_id": kpi_db_id},
+                properties=properties
+            )
+            
+            result = {
+                "success": True,
+                "message": f"KPI запись '{kpi_name}' создана",
+                "page_id": response["id"],
+                "url": response["url"],
+                "properties": properties
+            }
+            
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"[MCP] ERROR UPDATE_KPI_RECORD: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def safe_create_page(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Безопасное создание страницы с валидацией и post-check"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_name = arguments.get("database_name")
+            properties = arguments.get("properties", {})
+            
+            if not database_name or not properties:
+                return [{"success": False, "error": "Не указаны database_name или properties"}]
+            
+            result = await safe_ops.safe_create_page(database_name, properties)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка safe_create_page: {e}")
+            return [{"success": False, "error": str(e)}]
+    
+    async def safe_update_page(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Безопасное обновление страницы с валидацией и post-check"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            page_id = arguments.get("page_id")
+            properties = arguments.get("properties", {})
+            
+            if not page_id or not properties:
+                return [{"success": False, "error": "Не указаны page_id или properties"}]
+            
+            result = await safe_ops.safe_update_page(page_id, properties)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка safe_update_page: {e}")
+            return [{"success": False, "error": str(e)}]
+    
+    async def safe_bulk_create(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Безопасное массовое создание с валидацией"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_name = arguments.get("database_name")
+            properties_list = arguments.get("properties_list", [])
+            
+            if not database_name or not properties_list:
+                return [{"success": False, "error": "Не указаны database_name или properties_list"}]
+            
+            result = await safe_ops.safe_bulk_create(database_name, properties_list)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка safe_bulk_create: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def add_select_option(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Добавить новое значение в select поле"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_id = arguments.get("database_id")
+            property_name = arguments.get("property_name")
+            new_option = arguments.get("new_option")
+            
+            if not all([database_id, property_name, new_option]):
+                return [{"success": False, "error": "Не указаны database_id, property_name или new_option"}]
+            
+            result = await safe_ops.add_select_option(database_id, property_name, new_option)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка add_select_option: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def add_multi_select_option(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Добавить новое значение в multi_select поле"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_id = arguments.get("database_id")
+            property_name = arguments.get("property_name")
+            new_option = arguments.get("new_option")
+            
+            if not all([database_id, property_name, new_option]):
+                return [{"success": False, "error": "Не указаны database_id, property_name или new_option"}]
+            
+            result = await safe_ops.add_multi_select_option(database_id, property_name, new_option)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка add_multi_select_option: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def safe_create_with_auto_options(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Создать запись с автоматическим добавлением новых значений в select/multi_select поля"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_id = arguments.get("database_id")
+            properties = arguments.get("properties", {})
+            
+            if not database_id or not properties:
+                return [{"success": False, "error": "Не указаны database_id или properties"}]
+            
+            result = await safe_ops.safe_create_page_with_auto_options(database_id, properties)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка safe_create_with_auto_options: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    async def add_multiple_options(self, arguments: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Добавить несколько новых значений в select или multi_select поле"""
+        try:
+            safe_ops = SafeDatabaseOperations()
+            database_id = arguments.get("database_id")
+            property_name = arguments.get("property_name")
+            new_options = arguments.get("new_options", [])
+            field_type = arguments.get("field_type", "select")
+            
+            if not all([database_id, property_name, new_options]):
+                return [{"success": False, "error": "Не указаны database_id, property_name или new_options"}]
+            
+            result = await safe_ops.add_multiple_options(database_id, property_name, new_options, field_type)
+            return [result]
+            
+        except Exception as e:
+            logger.error(f"Ошибка add_multiple_options: {e}")
+            return [{"success": False, "error": str(e)}]
+
+    def _get_property_text(self, properties: Dict[str, Any], property_name: str) -> str:
+        """Получить текстовое значение свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "title":
+            return "".join([text.get("text", {}).get("content", "") for text in prop.get("title", [])])
+        elif prop.get("type") == "rich_text":
+            return "".join([text.get("text", {}).get("content", "") for text in prop.get("rich_text", [])])
+        return ""
+
+    def _get_property_number(self, properties: Dict[str, Any], property_name: str) -> Optional[float]:
+        """Получить числовое значение свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "number":
+            return prop.get("number")
+        return None
+
+    def _get_property_select(self, properties: Dict[str, Any], property_name: str) -> Optional[str]:
+        """Получить значение select свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "select":
+            select_value = prop.get("select", {})
+            return select_value.get("name") if select_value else None
+        return None
+
+    def _get_property_multi_select(self, properties: Dict[str, Any], property_name: str) -> List[str]:
+        """Получить значения multi_select свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "multi_select":
+            return [item.get("name", "") for item in prop.get("multi_select", [])]
+        return []
+
+    def _get_property_date(self, properties: Dict[str, Any], property_name: str) -> Optional[str]:
+        """Получить значение date свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "date":
+            date_value = prop.get("date", {})
+            return date_value.get("start") if date_value else None
+        return None
+
+    def _get_property_people(self, properties: Dict[str, Any], property_name: str) -> List[str]:
+        """Получить значения people свойства"""
+        prop = properties.get(property_name, {})
+        if prop.get("type") == "people":
+            return [person.get("name", "") for person in prop.get("people", [])]
+        return []
 
 async def main():
     """Основная функция запуска MCP сервера"""

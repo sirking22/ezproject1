@@ -1,0 +1,258 @@
+{
+  "object": "database",
+  "id": "195ace03-d9ff-80c1-a1b0-d236ec3564d2",
+  "cover": null,
+  "icon": {
+    "type": "external",
+    "external": {
+      "url": "https://www.notion.so/icons/meeting_gray.svg"
+    }
+  },
+  "created_time": "2025-02-09T17:34:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "5565a62d-85a3-486a-9b9a-95b6d3752afe"
+  },
+  "last_edited_time": "2025-07-07T21:56:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "RDT",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "RDT",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": true,
+  "properties": {
+    "% в срок": {
+      "id": "%3A%3EYo",
+      "name": "% в срок",
+      "type": "formula",
+      "formula": {
+        "expression": "if (\n  {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n    formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n    and current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n  ).length() > 0,\n\n  round(\n    (\n      {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n        formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        and current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n        and current.{{notion:block_property:zMYP:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == true\n      ).length()\n      /\n      {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n        formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        and current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n      ).length()\n    ),\n    2\n  ),\n\n  0\n)\n"
+      }
+    },
+    "Status": {
+      "id": "%40%3FZm",
+      "name": "Status",
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "a0a40813-edf4-47fc-8d8a-79c401a86793",
+            "name": "Not started",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "a^_k",
+            "name": "At risk",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "7136809d-d9f2-459d-8dae-e0f0a3844849",
+            "name": "On track",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "976d2766-7da7-472d-b6c9-d4fc79726c07",
+            "name": "Completed",
+            "color": "default",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "1ea05443-61c6-4503-b4cb-ed852e12f1d0",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "a0a40813-edf4-47fc-8d8a-79c401a86793"
+            ]
+          },
+          {
+            "id": "feafa21f-1784-491b-8f3b-ef66cd260a36",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "a^_k",
+              "7136809d-d9f2-459d-8dae-e0f0a3844849"
+            ]
+          },
+          {
+            "id": "7146eaae-ee6b-4cdb-8d95-67883d028b41",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "976d2766-7da7-472d-b6c9-d4fc79726c07"
+            ]
+          }
+        ]
+      }
+    },
+    "KPI": {
+      "id": "%40jrs",
+      "name": "KPI",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-80bf-b809-ed21dfd2150c",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Сотрудники",
+          "synced_property_id": "xciK"
+        }
+      }
+    },
+    "Команда": {
+      "id": "EQrZ",
+      "name": "Команда",
+      "type": "relation",
+      "relation": {
+        "database_id": "1d6ace03-d9ff-8057-87b9-ec31f5b4dde7",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "RDT",
+          "synced_property_id": "aflj"
+        }
+      }
+    },
+    "Качество ": {
+      "id": "Fn%3FA",
+      "name": "Качество ",
+      "type": "formula",
+      "formula": {
+        "expression": "if({{notion:block_property:eAc%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\") and current.{{notion:block_property:V%3FxL:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0 and current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0).length() > 0, round({{notion:block_property:eAc%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\") and current.{{notion:block_property:V%3FxL:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0 and current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0).map(current.{{notion:block_property:V%3FxL:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() / {{notion:block_property:eAc%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\") and current.{{notion:block_property:V%3FxL:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0 and current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}} > 0).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() * 10) / 10, 0)\n"
+      }
+    },
+    "% без правок": {
+      "id": "I%3ER_",
+      "name": "% без правок",
+      "type": "formula",
+      "formula": {
+        "expression": "if (\n  {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n    formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n  ).filter(\n    current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n  ).length() > 0,\n\n  round(\n    (\n      {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n        formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n      ).filter(\n        current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n      ).filter(\n        current.{{notion:block_property:GN%5Ev:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == true\n      ).length()\n      /\n      {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n        formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n      ).filter(\n        current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n      ).length()\n    ),\n    2\n  ),\n\n  0\n)\n"
+      }
+    },
+    "Задачи в срок": {
+      "id": "Mt%5CQ",
+      "name": "Задачи в срок",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n  formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\") and current.{{notion:block_property:zMYP:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == true\n).length()\n"
+      }
+    },
+    "Отклонение": {
+      "id": "Qu%3CJ",
+      "name": "Отклонение",
+      "type": "formula",
+      "formula": {
+        "expression": "if(\n  {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n    formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n  ).length() == 0,\n  \"–\",\n  if(\n    {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n      formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n    ).map(current.{{notion:block_property:IxgN:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() / \n    {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n      formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n    ).length() > 0,\n    \n    \"🔴 +\" + format(\n      round(\n        {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n          formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        ).map(current.{{notion:block_property:IxgN:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() /\n        {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n          formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        ).length() * 10\n      ) / 10\n    ) + \" %\",\n    \n    \"🟢 \" + format(\n      round(\n        {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n          formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        ).map(current.{{notion:block_property:IxgN:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() /\n        {{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n          formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n        ).length() * 10\n      ) / 10\n    ) + \" %\"\n  )\n)\n"
+      }
+    },
+    "За неделю": {
+      "id": "SiV%3A",
+      "name": "За неделю",
+      "type": "formula",
+      "formula": {
+        "expression": "(\n  {{notion:block_property:eAc%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n    .filter(\n      not empty(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}) \n      and formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"W\") == formatDate(now(), \"W\")\n      and formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"Y\") == formatDate(now(), \"Y\")\n    )\n    .map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}})\n    .sum()\n).round(1)\n"
+      }
+    },
+    "Задачи без правок": {
+      "id": "%60%7DA%5D",
+      "name": "Задачи без правок",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n  formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\") and current.{{notion:block_property:GN%5Ev:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == true\n).length()\n"
+      }
+    },
+    "Готовые задачи": {
+      "id": "dOn_",
+      "name": "Готовые задачи",
+      "description": "",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}\n  .filter(\n    formatDate(current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fproject_dates_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n    and current.{{notion:block_property:notion%3A%2F%2Fprojects%2Fstatus_property:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}} == \"Done\"\n  )\n  .length()\n"
+      }
+    },
+    "Дизайн чеклисты": {
+      "id": "eAc%40",
+      "name": "Дизайн чеклисты",
+      "type": "relation",
+      "relation": {
+        "database_id": "9c5f4269-d614-49b6-a748-5579a3c21da3",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Исполнитель (стата)",
+          "synced_property_id": "t%3Fx_"
+        }
+      }
+    },
+    "Дизайн задачи": {
+      "id": "o%5E%60C",
+      "name": "Дизайн задачи",
+      "type": "relation",
+      "relation": {
+        "database_id": "d09df250-ce7e-4e0d-9fbe-4e036d320def",
+        "type": "dual_property",
+        "dual_property": {
+          "synced_property_name": "Участник (стата)",
+          "synced_property_id": "y%3FoP"
+        }
+      }
+    },
+    "Экономия времени": {
+      "id": "uAA%3D",
+      "name": "Экономия времени",
+      "type": "formula",
+      "formula": {
+        "expression": "{{notion:block_property:o%5E%60C:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.map(current.{{notion:block_property:%5BDk%3B:d09df250-ce7e-4e0d-9fbe-4e036d320def:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum()"
+      }
+    },
+    "Owner": {
+      "id": "vWEX",
+      "name": "Owner",
+      "type": "people",
+      "people": {}
+    },
+    "За месяц": {
+      "id": "zK%3Cj",
+      "name": "За месяц",
+      "type": "formula",
+      "formula": {
+        "expression": "round(\n  {{notion:block_property:eAc%40:00000000-0000-0000-0000-000000000000:a8867646-eef8-49a8-a40e-b0c79f39315e}}.filter(\n    formatDate(current.{{notion:block_property:notion%3A%2F%2Ftasks%2Fdue_date_property:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}, \"YYYY-MM\") == formatDate(now(), \"YYYY-MM\")\n  ).map(current.{{notion:block_property:%7D_rx:9c5f4269-d614-49b6-a748-5579a3c21da3:a8867646-eef8-49a8-a40e-b0c79f39315e}}).sum() * 10\n) / 10\n"
+      }
+    },
+    "Сотрудник": {
+      "id": "title",
+      "name": "Сотрудник",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "11620376-a9e2-4802-ac8f-41c5187a79aa"
+  },
+  "url": "https://www.notion.so/195ace03d9ff80c1a1b0d236ec3564d2",
+  "public_url": null,
+  "archived": false,
+  "in_trash": false,
+  "request_id": "1c4f55f8-8ff7-43f5-9fb9-b85cdeb7ac67"
+}

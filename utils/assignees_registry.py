@@ -31,7 +31,7 @@ class AssigneesRegistry:
         """Загрузка исполнителей по умолчанию"""
         default_assignees = [
             Assignee(
-                name="Arsentiy",
+                name="Arsentiy"  # UUID: 229ace03-d9ff-8182-a8ac-c40987fa42b1  # UUID: 229ace03-d9ff-8182-a8ac-c40987fa42b1,
                 role="арт-директор",
                 is_designer=True,
                 is_active=True
