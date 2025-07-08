@@ -1844,7 +1844,7 @@ async def cli_main():
             pages = await server.get_pages(args.database_id, limit=args.limit)
             print(f"✅ Найдено {len(pages)} записей:")
             for i, page in enumerate(pages[:5], 1):
-                title = server._get_property_text(page.get("properties", {}), "Название") or server._get_property_text(page.get("properties", {}), "Задача") or "Без названия"
+                title = server._get_property_text(page.get("properties", {}), "Name") or server._get_property_text(page.get("properties", {}), "Название") or server._get_property_text(page.get("properties", {}), "Задача") or "Без названия"
                 print(f"  {i}. {title} (ID: {page.get('id', 'N/A')})")
         
         elif args.command == "safe_create_with_auto_options":
