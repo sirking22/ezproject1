@@ -55,7 +55,20 @@ NOTION_DATABASE_IDS = {
     # Дополнительные
     'clients': os.getenv('NOTION_CLIENTS_DB_ID'),
     'competitors': os.getenv('NOTION_COMPETITORS_DB_ID'),
-    'products': os.getenv('NOTION_PRODUCTS_DB_ID')
+    'products': os.getenv('NOTION_PRODUCTS_DB_ID'),
+    
+    # RAMIT базы данных (созданные на основе совещания)
+    'ramit_strengths': os.getenv('NOTION_RAMIT_STRENGTHS_DB_ID'),
+    'ramit_competitors': os.getenv('NOTION_RAMIT_COMPETITORS_DB_ID'),
+    'ramit_deterministic_rules': os.getenv('NOTION_RAMIT_DETERMINISTIC_RULES_DB_ID'),
+    'ramit_design_strategy': os.getenv('NOTION_RAMIT_DESIGN_STRATEGY_DB_ID'),
+    'ramit_client_profiles': os.getenv('NOTION_RAMIT_CLIENT_PROFILES_DB_ID'),
+    'ramit_revenue_impact': os.getenv('NOTION_RAMIT_REVENUE_IMPACT_DB_ID'),
+    'ramit_tech_capabilities': os.getenv('NOTION_RAMIT_TECH_CAPABILITIES_DB_ID'),
+    'ramit_market_opportunities': os.getenv('NOTION_RAMIT_MARKET_OPPORTUNITIES_DB_ID'),
+    
+    # Видео и контент
+    'shots': os.getenv('NOTION_SHOTS_DB_ID')  # База кадров для съемок
 }
 
 # Категории баз данных для быстрой навигации
@@ -76,6 +89,27 @@ DATABASE_CATEGORIES = {
             'tasks_templates'    # Шаблоны задач
         ],
         'description': 'Управление командой, задачами и KPI'
+    },
+    'ramit': {
+        'name': 'RAMIT аналитика и стратегия',
+        'databases': [
+            'ramit_strengths',           # Сильные стороны RAMIT
+            'ramit_competitors',         # Анализ конкурентов RAMIT
+            'ramit_deterministic_rules', # Детерминированные правила RAMIT
+            'ramit_design_strategy',     # Стратегия развития дизайн-отдела
+            'ramit_client_profiles',     # Клиентские профили RAMIT
+            'ramit_revenue_impact',      # Revenue Impact Score
+            'ramit_tech_capabilities',   # Технологические возможности
+            'ramit_market_opportunities' # Рыночные возможности
+        ],
+        'description': 'Комплексная аналитика и стратегия развития RAMIT'
+    },
+    'content': {
+        'name': 'Контент и видео',
+        'databases': [
+            'shots'  # База кадров для съемок
+        ],
+        'description': 'Управление видео-контентом и съемками'
     }
 }
 

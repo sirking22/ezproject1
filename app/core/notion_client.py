@@ -149,11 +149,20 @@ class NotionManager:
                     ]
                 }
             
-            # Добавляем важность (используем правильное имя свойства)
+            # Добавляем важность/вес (используем правильное имя свойства в зависимости от базы)
             if page_data.get("importance"):
-                properties["~Весомость?"] = {
-                    "number": page_data["importance"]
-                }
+                # Определяем базу по ID
+                ideas_db_id = os.getenv("NOTION_IDEAS_DB_ID")
+                if database_id == ideas_db_id:
+                    # База идей - используем "Вес"
+                    properties["Вес"] = {
+                        "number": page_data["importance"]
+                    }
+                else:
+                    # Другие базы - используем "~Весомость?"
+                    properties["~Весомость?"] = {
+                        "number": page_data["importance"]
+                    }
             
             # Добавляем статус (используем правильное имя свойства и значения)
             if page_data.get("status"):
@@ -174,7 +183,7 @@ class NotionManager:
             
             # Добавляем дату выполнения (если есть)
             if page_data.get("due_date"):
-                properties["Due Date"] = {
+                properties["Date"] = {
                     "date": {
                         "start": page_data["due_date"]
                     }
@@ -189,11 +198,8 @@ class NotionManager:
             return NotionPage(response)
         except Exception as e:
             print(f"Ошибка при создании страницы: {e}")
-            # Возвращаем заглушку в случае ошибки
-            return NotionPage({
-                "id": "error",
-                "properties": {"Name": {"title": [{"plain_text": page_data.get("title", "Error")}]}}
-            })
+            # Пробрасываем исключение вместо возврата заглушки
+            raise
 
     async def update_page(self, page_id: str, update_data: dict) -> NotionPage:
         """Обновляет существующую страницу"""

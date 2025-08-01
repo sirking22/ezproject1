@@ -12,4 +12,28 @@ class YandexCloudClient:
 
     def do_something(self):
         # TODO: реализовать вызовы к Яндекс Облаку
-        pass 
+        pass
+
+
+class YandexDiskUploader:
+    """Загрузчик файлов на Яндекс.Диск"""
+    
+    def __init__(self, token: str):
+        self.token = token
+        self.base_url = "https://cloud-api.yandex.net/v1/disk"
+        
+    def upload_file(self, file_path: str, remote_path: str) -> bool:
+        """Загружает файл на Яндекс.Диск"""
+        # TODO: Реализовать загрузку файла
+        print(f"YandexDiskUploader: Загрузка {file_path} -> {remote_path}")
+        return True
+        
+    def get_upload_url(self, remote_path: str) -> Optional[str]:
+        """Получает URL для загрузки файла"""
+        # TODO: Реализовать получение URL
+        return f"https://test-upload-url.yandex.net/{remote_path}"
+        
+    def get_public_url(self, remote_path: str) -> Optional[str]:
+        """Получает публичную ссылку на файл"""
+        # TODO: Реализовать получение публичной ссылки
+        return f"https://disk.yandex.ru/i/{remote_path}" 

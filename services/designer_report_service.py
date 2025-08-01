@@ -83,6 +83,64 @@ class DesignerReportService:
         
         return None
     
+    def parse_report(self, text: str) -> Dict[str, Any]:
+        """Парсинг отчета в универсальном формате для бота"""
+        result = {
+            'time_spent': 0,
+            'description': '',
+            'status': 'В процессе',
+            'materials': [],
+            'title': 'Отчет о работе'
+        }
+        
+        # Извлекаем время
+        time_patterns = [
+            r'потратил\s+(\d+(?:\.\d+)?)\s*(?:час|часа|часов|ч)',
+            r'работал\s+(\d+(?:\.\d+)?)\s*(?:час|часа|часов|ч)',
+            r'(\d+(?:\.\d+)?)\s*(?:час|часа|часов|ч)',
+            r'(\d+)\s*минут'
+        ]
+        
+        for pattern in time_patterns:
+            match = re.search(pattern, text.lower())
+            if match:
+                time_value = float(match.group(1))
+                if 'минут' in pattern:
+                    time_value = time_value / 60  # Конвертируем минуты в часы
+                result['time_spent'] = time_value
+                break
+        
+        # Извлекаем описание
+        # Убираем время из текста для получения описания
+        clean_text = re.sub(r'потратил\s+\d+(?:\.\d+)?\s*(?:час|часа|часов|ч)', '', text, flags=re.IGNORECASE)
+        clean_text = re.sub(r'работал\s+\d+(?:\.\d+)?\s*(?:час|часа|часов|ч)', '', clean_text, flags=re.IGNORECASE)
+        clean_text = re.sub(r'\d+(?:\.\d+)?\s*(?:час|часа|часов|ч)', '', clean_text, flags=re.IGNORECASE)
+        clean_text = re.sub(r'\d+\s*минут', '', clean_text, flags=re.IGNORECASE)
+        
+        # Убираем статус
+        status_patterns = [
+            r'статус:\s*(завершено|в процессе|проблемы|готово)',
+            r'(завершено|в процессе|проблемы|готово)'
+        ]
+        
+        for pattern in status_patterns:
+            status_match = re.search(pattern, clean_text.lower())
+            if status_match:
+                result['status'] = status_match.group(1).title()
+                clean_text = re.sub(pattern, '', clean_text, flags=re.IGNORECASE)
+                break
+        
+        # Очищаем текст от лишних символов
+        clean_text = re.sub(r'\s+', ' ', clean_text).strip()
+        if clean_text:
+            result['description'] = clean_text
+            result['title'] = clean_text[:50] + '...' if len(clean_text) > 50 else clean_text
+        
+        # Извлекаем материалы
+        result['materials'] = self.extract_materials_from_text(text)
+        
+        return result
+    
     def find_task_in_notion(self, task_name: str, project_name: str = "") -> Optional[Dict]:
         """Найти задачу в Notion"""
         try:
@@ -316,6 +374,7 @@ class DesignerReportService:
             "figma": r'figma\.com/file/[a-zA-Z0-9]+',
             "drive": r'drive\.google\.com/[^\s]+',
             "yandex": r'disk\.yandex\.ru/[^\s]+',
+            "lightshot": r'prnt\.sc/[a-zA-Z0-9]+',  # LightShot ссылки
             "image": r'\.(jpg|jpeg|png|gif|svg)\b',
             "video": r'\.(mp4|avi|mov|mkv)\b'
         }
@@ -325,6 +384,22 @@ class DesignerReportService:
                 materials.append(material_type)
         
         return materials
+
+    def process_lightshot_link(self, url: str) -> Dict[str, str]:
+        """Особая обработка для LightShot ссылок"""
+        try:
+            # Извлекаем код из URL
+            code = url.split('/')[-1]
+            
+            return {
+                "preview": f"https://prnt.sc/thumb/{code}.jpg",
+                "type": "screenshot",
+                "original_url": url,
+                "code": code
+            }
+        except Exception as e:
+            logger.error(f"Ошибка обработки LightShot ссылки: {e}")
+            return {"type": "screenshot", "original_url": url}
     
     def process_report(self, report: WorkReport) -> Tuple[bool, str]:
         """Обработать отчёт"""

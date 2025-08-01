@@ -99,13 +99,14 @@
         },
         "env_access": {
             "allow_read": true,
-            "allow_edit": true,
-            "purpose": "Configuration management for development",
+            "allow_edit": false,
+            "purpose": "Configuration management for development - READ ONLY",
             "protected_files": [
                 ".env",
                 ".env.local",
                 ".env.production"
-            ]
+            ],
+            "strict_rule": "НИКОГДА НЕ ТРОГАТЬ .env ФАЙЛЫ! Только чтение для диагностики. Все изменения через пользователя."
         }
     }
 }
