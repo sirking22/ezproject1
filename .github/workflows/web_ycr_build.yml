@@ -33,7 +33,11 @@ jobs:
       - name: Setup YC CLI
         uses: yc-actions/yc-cli@v2
         with:
-          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_KEY }}
+          yc-sa-json-credentials: ${{ secrets.YC_SA_KEY_JSON }}
+
+      - name: Configure default folder (optional)
+        if: ${{ secrets.YC_FOLDER_ID != '' }}
+        run: yc config set folder-id "${{ secrets.YC_FOLDER_ID }}"
 
       - name: Login to Yandex Container Registry
         uses: yc-actions/yc-cr-login@v1
