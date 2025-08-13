@@ -35,9 +35,12 @@ jobs:
         with:
           yc-sa-json-credentials: ${{ secrets.YC_SA_KEY_JSON }}
 
-      - name: Configure default folder (optional)
-        if: ${{ secrets.YC_FOLDER_ID != '' }}
-        run: yc config set folder-id "${{ secrets.YC_FOLDER_ID }}"
+      - name: Configure YC cloud/folder (optional)
+        run: |
+          set -euxo pipefail
+          if [ -n "${{ secrets.YC_CLOUD_ID }}" ]; then yc config set cloud-id "${{ secrets.YC_CLOUD_ID }}"; fi
+          if [ -n "${{ secrets.YC_FOLDER_ID }}" ]; then yc config set folder-id "${{ secrets.YC_FOLDER_ID }}"; fi
+          yc config list
 
       - name: Login to Yandex Container Registry
         uses: yc-actions/yc-cr-login@v1
@@ -45,9 +48,10 @@ jobs:
       - name: Compute image tag
         id: meta
         run: |
+          set -euxo pipefail
           SHA=${GITHUB_SHA::7}
-          if [ -n "${{ github.event.inputs.vite_demo }}" ]; then DEMO=${{ github.event.inputs.vite_demo }}; else DEMO=0; fi
-          if [ -n "${{ github.event.inputs.vite_api_url }}" ]; then API=${{ github.event.inputs.vite_api_url }}; else API="https://api.example.com"; fi
+          if [ -n "${{ github.event.inputs.vite_demo }}" ]; then DEMO=${{ github.event.inputs.vite_demo }}; else DEMO=1; fi
+          if [ -n "${{ github.event.inputs.vite_api_url }}" ]; then API=${{ github.event.inputs.vite_api_url }}; else API=""; fi
           echo "tag=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${SHA}" >> $GITHUB_OUTPUT
           echo "latest=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
           echo "demo=$DEMO" >> $GITHUB_OUTPUT
@@ -68,22 +72,25 @@ jobs:
 
       - name: Ensure serverless container exists
         run: |
-          yc serverless container get --name taskflow-web >/dev/null 2>&1 || \
-          yc serverless container create --name taskflow-web
+          set -euxo pipefail
+          yc serverless container get --name taskflow-web >/dev/null 2>&1 || yc serverless container create --name taskflow-web
 
       - name: Deploy serverless revision
         run: |
-          ARGS=( \
-            --container-name taskflow-web \
-            --image "${{ steps.meta.outputs.latest }}" \
-            --cores 1 --memory 256m --execution-timeout 5s --concurrency 16 \
-            --environment VITE_DEMO=${{ steps.meta.outputs.demo }},VITE_API_URL=${{ steps.meta.outputs.api }} \
+          set -euxo pipefail
+          ARGS=(
+            --container-name taskflow-web
+            --image "${{ steps.meta.outputs.latest }}"
+            --cores 1 --memory 256m --execution-timeout 10s --concurrency 16
+            --environment VITE_DEMO=${{ steps.meta.outputs.demo }},VITE_API_URL=${{ steps.meta.outputs.api }}
           )
           if [ -n "${{ secrets.YC_SA_ID }}" ]; then ARGS+=( --service-account-id "${{ secrets.YC_SA_ID }}" ); fi
           yc serverless container revision deploy "${ARGS[@]}"
 
       - name: Allow public access
-        run: yc serverless container allow-unauthenticated-invoke --name taskflow-web || true
+        run: |
+          set -euxo pipefail
+          yc serverless container allow-unauthenticated-invoke --name taskflow-web || true
 
       - name: Output URL
         id: url
