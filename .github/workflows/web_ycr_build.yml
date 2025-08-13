@@ -30,11 +30,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install YC CLI (no external actions)
+      - name: Install YC CLI (script)
         run: |
           set -euxo pipefail
-          sudo curl -sSL -o /usr/local/bin/yc 'https://storage.yandexcloud.net/yandexcloud-yc/release/latest/linux/amd64/yc'
-          sudo chmod +x /usr/local/bin/yc
+          curl -sSL -o yc_install.sh https://storage.yandexcloud.net/yandexcloud-yc/install.sh
+          bash yc_install.sh -a
+          echo "$HOME/yandex-cloud/bin" >> $GITHUB_PATH
           yc --version
 
       - name: Configure YC profile and context
