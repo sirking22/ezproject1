@@ -35,6 +35,7 @@ jobs:
           set -euxo pipefail
           curl -sSL -o yc_install.sh https://storage.yandexcloud.net/yandexcloud-yc/install.sh
           bash yc_install.sh -a
+          export PATH="$HOME/yandex-cloud/bin:$PATH"
           echo "$HOME/yandex-cloud/bin" >> $GITHUB_PATH
           yc --version
 
