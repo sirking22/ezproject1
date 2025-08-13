@@ -1,0 +1,94 @@
+﻿name: Build and Push Web to Yandex Container Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      vite_demo:
+        description: "VITE_DEMO (1|0)"
+        required: true
+        default: "0"
+      vite_api_url:
+        description: "VITE_API_URL (backend base URL)"
+        required: true
+        default: "https://api.example.com"
+  push:
+    branches:
+      - main
+    paths:
+      - 'web/**'
+
+env:
+  IMAGE_NAME: photoguide-web
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup YC CLI
+        uses: yc-actions/yc-cli@v2
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_KEY }}
+
+      - name: Login to Yandex Container Registry
+        uses: yc-actions/yc-cr-login@v1
+
+      - name: Compute image tag
+        id: meta
+        run: |
+          SHA=${GITHUB_SHA::7}
+          if [ -n "${{ github.event.inputs.vite_demo }}" ]; then DEMO=${{ github.event.inputs.vite_demo }}; else DEMO=0; fi
+          if [ -n "${{ github.event.inputs.vite_api_url }}" ]; then API=${{ github.event.inputs.vite_api_url }}; else API="https://api.example.com"; fi
+          echo "tag=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${SHA}" >> $GITHUB_OUTPUT
+          echo "latest=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
+          echo "demo=$DEMO" >> $GITHUB_OUTPUT
+          echo "api=$API" >> $GITHUB_OUTPUT
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./web
+          file: ./web/Dockerfile
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.latest }}
+          build-args: |
+            VITE_DEMO=${{ steps.meta.outputs.demo }}
+            VITE_API_URL=${{ steps.meta.outputs.api }}
+
+      - name: Ensure serverless container exists
+        run: |
+          yc serverless container get --name taskflow-web >/dev/null 2>&1 || \
+          yc serverless container create --name taskflow-web
+
+      - name: Deploy serverless revision
+        run: |
+          ARGS=( \
+            --container-name taskflow-web \
+            --image "${{ steps.meta.outputs.latest }}" \
+            --cores 1 --memory 256m --execution-timeout 5s --concurrency 16 \
+            --environment VITE_DEMO=${{ steps.meta.outputs.demo }},VITE_API_URL=${{ steps.meta.outputs.api }} \
+          )
+          if [ -n "${{ secrets.YC_SA_ID }}" ]; then ARGS+=( --service-account-id "${{ secrets.YC_SA_ID }}" ); fi
+          yc serverless container revision deploy "${ARGS[@]}"
+
+      - name: Allow public access
+        run: yc serverless container allow-unauthenticated-invoke --name taskflow-web || true
+
+      - name: Output URL
+        id: url
+        run: |
+          URL=$(yc serverless container get --name taskflow-web --format json | python3 -c 'import sys,json;print(json.load(sys.stdin)["url"])')
+          echo "url=${URL}" >> $GITHUB_OUTPUT
+          echo "Web URL: ${URL}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Summary
+        run: |
+          echo "Pushed: ${{ steps.meta.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "Also tagged: ${{ steps.meta.outputs.latest }}" >> $GITHUB_STEP_SUMMARY
