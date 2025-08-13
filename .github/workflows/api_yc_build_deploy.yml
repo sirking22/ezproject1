@@ -1,0 +1,90 @@
+﻿name: Build and Deploy API to Yandex Serverless Containers
+
+on:
+  workflow_dispatch:
+    inputs:
+      container_name:
+        description: "Serverless Container name"
+        required: true
+        default: "taskflow-api"
+  push:
+    branches: [ main ]
+    paths:
+      - 'api/**'
+      - '.github/workflows/api_yc_build_deploy.yml'
+
+env:
+  IMAGE_NAME: taskflow-api
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup YC CLI
+        uses: yc-actions/yc-cli@v2
+        with:
+          yc-sa-json-credentials: ${{ secrets.YC_SA_JSON_KEY }}
+
+      - name: Login to Yandex Container Registry
+        uses: yc-actions/yc-cr-login@v1
+
+      - name: Configure default folder (optional)
+        if: secrets.YC_FOLDER_ID != ''
+        run: yc config set folder-id "${{ secrets.YC_FOLDER_ID }}"
+
+      - name: Compute image meta
+        id: meta
+        shell: bash
+        run: |
+          SHA=${GITHUB_SHA::7}
+          NAME="${{ github.event.inputs.container_name || 'taskflow-api' }}"
+          echo "name=${NAME}" >> $GITHUB_OUTPUT
+          echo "tag=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:${SHA}" >> $GITHUB_OUTPUT
+          echo "latest=cr.yandex/${{ secrets.YC_REGISTRY_ID }}/${{ env.IMAGE_NAME }}:latest" >> $GITHUB_OUTPUT
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./api
+          file: ./api/Dockerfile
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.latest }}
+
+      - name: Ensure container exists
+        shell: bash
+        run: |
+          set -e
+          yc serverless container get --name "${{ steps.meta.outputs.name }}" >/dev/null 2>&1 || \
+          yc serverless container create --name "${{ steps.meta.outputs.name }}"
+
+      - name: Deploy revision
+        shell: bash
+        run: |
+          set -e
+          ARGS=(
+            --container-name "${{ steps.meta.outputs.name }}"
+            --image "${{ steps.meta.outputs.latest }}"
+            --cores 1 --memory 256m --execution-timeout 5s --concurrency 16
+          )
+          if [ -n "${{ secrets.YC_SA_ID }}" ]; then ARGS+=( --service-account-id "${{ secrets.YC_SA_ID }}" ); fi
+          yc serverless container revision deploy "${ARGS[@]}"
+
+      - name: Allow public access
+        shell: bash
+        run: yc serverless container allow-unauthenticated-invoke --name "${{ steps.meta.outputs.name }}" || true
+
+      - name: Output URL
+        id: url
+        shell: bash
+        run: |
+          URL=$(yc serverless container get --name "${{ steps.meta.outputs.name }}" --format json | python3 -c 'import sys,json;print(json.load(sys.stdin)["url"])')
+          echo "url=${URL}" >> $GITHUB_OUTPUT
+          echo "API URL: ${URL}" >> $GITHUB_STEP_SUMMARY
